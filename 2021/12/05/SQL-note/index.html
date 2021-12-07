@@ -1,15 +1,15 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="安全有效的食用数据库，不挂向波！       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="安全有效的食用数据库，不挂向波！更新中       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL食用笔记">
 <meta property="og:url" content="https://nrhs-space.github.io/2021/12/05/SQL-note/index.html">
 <meta property="og:site_name" content="朝花夕拾">
-<meta property="og:description" content="安全有效的食用数据库，不挂向波！       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
+<meta property="og:description" content="安全有效的食用数据库，不挂向波！更新中       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/06/or02FS.png">
 <meta property="article:published_time" content="2021-12-05T09:10:52.000Z">
-<meta property="article:modified_time" content="2021-12-06T01:54:16.850Z">
+<meta property="article:modified_time" content="2021-12-07T06:38:19.538Z">
 <meta property="article:author" content="不是花生">
-<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="期末">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s4.ax1x.com/2021/12/06/or02FS.png"><title>SQL食用笔记 | 朝花夕拾</title><link ref="canonical" href="https://nrhs-space.github.io/2021/12/05/SQL-note/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
@@ -36,22 +36,37 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-menu-item__text">蓝色空间</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://www.lieren.xyz/"><span class="header-nav-menu-item__text">林的博客</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">A梦的口袋</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">城南旧事</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://sso.sxyyc.net/"><span class="header-nav-submenu-item__text">三峡医专</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">一只猫的小杂铺</span></a></div></div></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">朝花夕拾</div><div class="header-banner-info__subtitle">理想现实主义者</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SQL食用笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-06</span></span></div></header><div class="post-body"><p><img src="https://s4.ax1x.com/2021/12/06/or02FS.png"></p>
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-menu-item__text">蓝色空间</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://www.lieren.xyz/"><span class="header-nav-menu-item__text">林的博客</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">A梦的口袋</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">城南旧事</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://sso.sxyyc.net/"><span class="header-nav-submenu-item__text">三峡医专</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">一只猫的小杂铺</span></a></div></div></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">朝花夕拾</div><div class="header-banner-info__subtitle">理想现实主义者</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SQL食用笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-07</span></span></div></header><div class="post-body"><p><img src="https://s4.ax1x.com/2021/12/06/or02FS.png"></p>
 
-        <h1 id="安全有效的食用数据库，不挂向波！"   >
-          <a href="#安全有效的食用数据库，不挂向波！" class="heading-link"><i class="fas fa-link"></i></a><a href="#安全有效的食用数据库，不挂向波！" class="headerlink" title="安全有效的食用数据库，不挂向波！"></a>安全有效的食用数据库，不挂向波！</h1>
+        <h1 id="安全有效的食用数据库，不挂向波！更新中">
+          <a href="#安全有效的食用数据库，不挂向波！更新中" class="heading-link"><i class="fas fa-link"></i></a><a href="#安全有效的食用数据库，不挂向波！更新中" class="headerlink" title="安全有效的食用数据库，不挂向波！更新中"></a>安全有效的食用数据库，不挂向波！<code>更新中</code></h1>
       <p>此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</p>
 <span id="more"></span>
+
+    <div class="note-plugin info">
+      <span class="note-plugin__icon note-plugin__icon--info">
+              <i class="fas fa-info-circle"></i>
+            </span>
+      <p><strong>提示</strong><br>文章所指代SQL为SQL server 2008 R2</p>
+    </div>
+  
+
 <blockquote>
-<p>文章所指代SQL为SQL server 2008 R2</p>
+<p>长文预警！！！建议按分支查看,记住Crtl+F哦</p>
 </blockquote>
 <hr>
 
-        <h1 id="数据库基础部分"   >
-          <a href="#数据库基础部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库基础部分" class="headerlink" title="数据库基础部分"></a>数据库基础部分</h1>
-      <blockquote>
-<p>SQL指结构化查询语言，用于访问与处理用于管理关系数据库系统(RDBMS)。</p>
-</blockquote>
+        <h1 id="🗒数据库基础部分">
+          <a href="#🗒数据库基础部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#🗒数据库基础部分" class="headerlink" title="🗒数据库基础部分"></a>🗒数据库基础部分</h1>
+      
+    <div class="note-plugin success no-icon">
+      
+      <p>SQL指结构化查询语言，用于访问与处理用于管理关系数据库系统(RDBMS)。</p>
+    </div>
+  
+
 <ul>
 <li>常见有MySQL、SQL Server、Access、Oracle、Sybase等数据库系统</li>
 </ul>
@@ -83,67 +98,91 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <p><em>一个数据文件只能属于一个文件组，事务文件不属于任何文件组！</em></p>
 <hr>
 
-        <h1 id="数据库操作"   >
-          <a href="#数据库操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h1>
-      <blockquote>
-<p>注：所有操作部分均采用语句书写！具体列名，表名请注意分析题目</p>
-</blockquote>
+        <h1 id="🗒数据库操作">
+          <a href="#🗒数据库操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#🗒数据库操作" class="headerlink" title="🗒数据库操作"></a>🗒数据库操作</h1>
+      
+    <div class="note-plugin success no-icon">
+      
+      <p>注：所有操作部分均采用语句书写！具体列名，表名请注意分析题目</p>
+    </div>
+  
 
-        <h2 id="创建"   >
-          <a href="#创建" class="heading-link"><i class="fas fa-link"></i></a><a href="#创建" class="headerlink" title="创建"></a>创建</h2>
-      <blockquote>
-<p>如何来创建一个数据库</p>
-</blockquote>
+
+        <h2 id="🏷创建">
+          <a href="#🏷创建" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷创建" class="headerlink" title="🏷创建"></a>🏷创建</h2>
+      
+    <div class="note-plugin info no-icon">
+      
+      <p>如何来创建一个数据库</p>
+    </div>
+  
+
 <ul>
 <li>数据库是最基础的东西，数据表与视图等都建立在你的数据库之上。</li>
 </ul>
-<figure class="highlight sql"><figcaption><span>创建'学生'数据库</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> database 学生</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>创建'学生'数据库</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> database 学生</span><br></pre></td></tr></tbody></table></div></figure>
 <blockquote>
 <p>我们也可以使用该语句创建一个表，仅需改变一个词</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>创建'学生表'数据表</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span> 学生表</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>创建'学生表'数据表</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">table</span> 学生表</span><br></pre></td></tr></tbody></table></div></figure>
 
 
-        <h2 id="查询"   >
-          <a href="#查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#查询" class="headerlink" title="查询"></a>查询</h2>
+        <h2 id="🏷查询">
+          <a href="#🏷查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷查询" class="headerlink" title="🏷查询"></a>🏷查询</h2>
       
-        <h4 id="查询部分是涉及最多的内容"   >
+        <h4 id="查询部分是涉及最多的内容">
           <a href="#查询部分是涉及最多的内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#查询部分是涉及最多的内容" class="headerlink" title="查询部分是涉及最多的内容"></a>查询部分是涉及最多的内容</h4>
-      <p>在我们所有操作之前，你应该会使用use选择我们的数据库，这是所有操作的第一步！</p>
-<figure class="highlight sql"><figcaption><span>选择'学生'数据库</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 学生</span><br></pre></td></tr></table></div></figure>
+      
+    <div class="note-plugin success no-icon">
+      
+      <p><strong>提示</strong><br>在我们所有操作之前，你应该会使用use选择我们的数据库，这是所有操作的第一步！</p>
+    </div>
+  
+
+<figure class="highlight sql"><figcaption><span>选择'学生'数据库</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 学生</span><br></pre></td></tr></tbody></table></div></figure>
 
 <blockquote>
 <p>查看一个表的内容</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>查看'学生表'</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sp_helpdb 学生表</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>查看'学生表'</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sp_helpdb 学生表</span><br></pre></td></tr></tbody></table></div></figure>
 <blockquote>
 <p>同样，该语句也可以去查看一个视图</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>查看'View_学生视图'</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sp_help View_学生视图</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>查看'View_学生视图'</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sp_help View_学生视图</span><br></pre></td></tr></tbody></table></div></figure>
 <p>上面的语句是完整的返回所有内容，我们可以加上判断条件：</p>
-<blockquote>
-<p>select 语句格式，用于从数据库中选取数据</p>
-</blockquote>
-<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 列名,第二个列名... <span class="keyword">from</span> 表名</span><br><span class="line"></span><br><span class="line"><span class="comment">--当然也可以使用*代替所有的列名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名</span><br></pre></td></tr></table></div></figure>
+
+    <div class="note-plugin info no-icon">
+      
+      <p>select 语句格式，用于从数据库中选取数据</p>
+    </div>
+  
+<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 列名,第二个列名... <span class="keyword">from</span> 表名</span><br><span class="line"></span><br><span class="line"><span class="comment">--当然也可以使用*代替所有的列名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名</span><br></pre></td></tr></tbody></table></div></figure>
 
 <hr>
 <p>有时候我们想对表的内容再进行一个筛选，例如我们希望选择’性别为女的同学’，则就需要使用 where子句</p>
 
-        <h4 id="where子句"   >
-          <a href="#where子句" class="heading-link"><i class="fas fa-link"></i></a><a href="#where子句" class="headerlink" title="where子句"></a>where子句</h4>
-      <blockquote>
-<p>WHERE 子句用于提取那些满足指定条件的记录</p>
-</blockquote>
-<figure class="highlight sql"><figcaption><span>性别为女</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 性别<span class="operator">=</span><span class="string">&#x27;女&#x27;</span></span><br></pre></td></tr></table></div></figure>
+        <h4 id="📙where子句">
+          <a href="#📙where子句" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙where子句" class="headerlink" title="📙where子句"></a>📙where子句</h4>
+      
+    <div class="note-plugin info no-icon">
+      
+      <p>WHERE 子句用于提取那些满足指定条件的记录</p>
+    </div>
+  
+<figure class="highlight sql"><figcaption><span>性别为女</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 性别<span class="operator">=</span><span class="string">'女'</span></span><br></pre></td></tr></tbody></table></div></figure>
 <ul>
-<li>但是我们会发现输出来的很多列有重复的值，我们只希望每个班只输出来一次，则可以用<code>Distinct</code>来去掉重复的值<figure class="highlight sql"><figcaption><span>Distinct</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 班级 <span class="keyword">from</span> 学生表</span><br></pre></td></tr></table></div></figure></li>
+<li>但是我们会发现输出来的很多列有重复的值，我们只希望每个班只输出来一次，则可以用<code>Distinct</code>来去掉重复的值<figure class="highlight sql"><figcaption><span>Distinct</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 班级 <span class="keyword">from</span> 学生表</span><br></pre></td></tr></tbody></table></div></figure></li>
 </ul>
 
-        <h4 id="条件运算符"   >
-          <a href="#条件运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h4>
-      <blockquote>
-<p><strong>我们可以使用运算符来连接多个条件</strong></p>
-</blockquote>
+        <h4 id="📙条件运算符">
+          <a href="#📙条件运算符" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙条件运算符" class="headerlink" title="📙条件运算符"></a>📙条件运算符</h4>
+      
+    <div class="note-plugin info no-icon">
+      
+      <p><strong>我们可以使用运算符来连接多个条件</strong></p>
+    </div>
+  
+
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -187,22 +226,22 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>判断年龄小于18,性别为女且不是1班的同学</p>
 </blockquote>
-<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 性别<span class="operator">=</span><span class="string">&#x27;女&#x27;</span> <span class="keyword">and</span> 年龄<span class="operator">&lt;</span><span class="number">18</span> <span class="keyword">and</span> 班级<span class="operator">!=</span><span class="string">&#x27;1班&#x27;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 性别<span class="operator">=</span><span class="string">'女'</span> <span class="keyword">and</span> 年龄<span class="operator">&lt;</span><span class="number">18</span> <span class="keyword">and</span> 班级<span class="operator">!=</span><span class="string">'1班'</span></span><br></pre></td></tr></tbody></table></div></figure>
 
 <blockquote>
 <p>输出出生年月在2001-2002年间的同学姓名</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>year()</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名 <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 出生年月 <span class="keyword">between</span> <span class="string">&#x27;2001-1-1&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;2002-12-31&#x27;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>year()</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名 <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 出生年月 <span class="keyword">between</span> <span class="string">'2001-1-1'</span> <span class="keyword">and</span> <span class="string">'2002-12-31'</span></span><br></pre></td></tr></tbody></table></div></figure>
 <blockquote>
 <p>输出学号在1001，1002，1003中的同学姓名</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>year()</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名 <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 学号 <span class="keyword">in</span>(<span class="string">&#x27;1001&#x27;</span>,<span class="string">&#x27;1002&#x27;</span>,<span class="string">&#x27;1003&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>year()</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名 <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 学号 <span class="keyword">in</span>(<span class="string">'1001'</span>,<span class="string">'1002'</span>,<span class="string">'1003'</span>)</span><br></pre></td></tr></tbody></table></div></figure>
 
 <p>如果法外狂徒张某犯事了，需要找出所有姓张的男生进行匹配，那么我们就需要进行模糊匹配:</p>
 <blockquote>
 <p>匹配所有张姓</p>
 </blockquote>
-<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 性别<span class="operator">=</span><span class="string">&#x27;男&#x27;</span> <span class="keyword">and</span> 姓名 <span class="keyword">like</span> <span class="string">&#x27;张%&#x27;</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 性别<span class="operator">=</span><span class="string">'男'</span> <span class="keyword">and</span> 姓名 <span class="keyword">like</span> <span class="string">'张%'</span></span><br></pre></td></tr></tbody></table></div></figure>
 <p>上面即涉及到了模糊匹配，其实模糊匹配仅是将where后面的条件的=换为了like，我们需要记住下面的通配符:</p>
 <div class="table-container"><table>
 <thead>
@@ -231,15 +270,20 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>输出所有姓王(名字共两个字)缺考(成绩为空)的非1班的同学的姓名,成绩</p>
 </blockquote>
-<figure class="highlight sql"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,成绩 <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 班级<span class="operator">!=</span><span class="string">&#x27;1班&#x27;</span> <span class="keyword">and</span> 姓名 <span class="keyword">like</span> <span class="string">&#x27;王_&#x27;</span> <span class="keyword">and</span> 成绩 <span class="keyword">is</span> <span class="keyword">null</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,成绩 <span class="keyword">from</span> 学生表 <span class="keyword">where</span> 班级<span class="operator">!=</span><span class="string">'1班'</span> <span class="keyword">and</span> 姓名 <span class="keyword">like</span> <span class="string">'王_'</span> <span class="keyword">and</span> 成绩 <span class="keyword">is</span> <span class="keyword">null</span></span><br></pre></td></tr></tbody></table></div></figure>
 <p><em>注意，其中一个_可以表示一个字符，可以多个使用，它们也可以匹配空格</em></p>
 <hr>
 
-        <h4 id="集合函数"   >
-          <a href="#集合函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h4>
+        <h4 id="📙集合函数">
+          <a href="#📙集合函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙集合函数" class="headerlink" title="📙集合函数"></a>📙集合函数</h4>
+      
+    <div class="note-plugin info no-icon">
+      
       <p>select 中可以使用集合函数来对数据进行一些快捷操作，例如求和，平均数等…</p>
+    </div>
+  
+
 <blockquote>
-<p>集合函数</p>
 </blockquote>
 <div class="table-container"><table>
 <thead>
@@ -272,42 +316,50 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <blockquote>
 <p>当然还有时间函数</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>GetDate</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">year</span>()   <span class="comment">--取年份</span></span><br><span class="line"><span class="keyword">month</span>()  <span class="comment">--月</span></span><br><span class="line"><span class="keyword">day</span>()    <span class="comment">--日</span></span><br><span class="line">getate() <span class="comment">--获取现在的时间</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>GetDate</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">year</span>()   <span class="comment">--取年份</span></span><br><span class="line"><span class="keyword">month</span>()  <span class="comment">--月</span></span><br><span class="line"><span class="keyword">day</span>()    <span class="comment">--日</span></span><br><span class="line">getate() <span class="comment">--获取现在的时间</span></span><br></pre></td></tr></tbody></table></div></figure>
 
 <blockquote>
 <p>查询所有学生姓名并添加上查询的时间</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>其中查询日期列未在表内</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,查询日期<span class="operator">=</span>getdate() <span class="keyword">from</span> 学生表</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>其中查询日期列未在表内</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,查询日期<span class="operator">=</span>getdate() <span class="keyword">from</span> 学生表</span><br></pre></td></tr></tbody></table></div></figure>
 
 <p>我们可以看见，这种方式实现了两个功能，添加了一列和时间</p>
 <ul>
-<li>其中也可以这么实现<figure class="highlight sql"><figcaption><span>墙裂推荐，as太爽了</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,getdate() <span class="keyword">as</span> 查询日期 <span class="keyword">from</span> 学生表</span><br></pre></td></tr></table></div></figure></li>
+<li>其中也可以这么实现<figure class="highlight sql"><figcaption><span>墙裂推荐，as太爽了</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 姓名,getdate() <span class="keyword">as</span> 查询日期 <span class="keyword">from</span> 学生表</span><br></pre></td></tr></tbody></table></div></figure></li>
 </ul>
 <p>上面使用了as别名与时间函数，其中时间函数还可以用来取值</p>
 <blockquote>
 <p>输出所有学生的出生年(单独的列)</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>year()</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">year</span>(出生年月) <span class="keyword">as</span> 出生年 <span class="keyword">from</span> 学生表</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight sql"><figcaption><span>year()</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">year</span>(出生年月) <span class="keyword">as</span> 出生年 <span class="keyword">from</span> 学生表</span><br></pre></td></tr></tbody></table></div></figure>
 
 <hr>
 
-        <h4 id="select的分组与排序"   >
-          <a href="#select的分组与排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#select的分组与排序" class="headerlink" title="select的分组与排序"></a>select的分组与排序</h4>
-      <blockquote>
-<p><strong>Order by 用于对返回结果排序</strong></p>
-</blockquote>
+        <h4 id="📙select的分组与排序">
+          <a href="#📙select的分组与排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙select的分组与排序" class="headerlink" title="📙select的分组与排序"></a>📙select的分组与排序</h4>
+      
+    <div class="note-plugin info no-icon">
+      
+      <p><strong>Order by 用于对返回结果排序</strong></p>
+    </div>
+  
+
 <ul>
 <li>1.Asc 升序排列<code>默认</code></li>
 <li>2.Desc 降序排列</li>
 <li><blockquote>
 <p>对计算机课的学生的成绩按降序排列</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>Order by</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生 <span class="keyword">where</span> 课程<span class="operator">=</span><span class="string">&#x27;计算机&#x27;</span> <span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span></span><br></pre></td></tr></table></div></figure></li>
+<figure class="highlight sql"><figcaption><span>Order by</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 学生 <span class="keyword">where</span> 课程<span class="operator">=</span><span class="string">'计算机'</span> <span class="keyword">order</span> <span class="keyword">by</span> 成绩 <span class="keyword">desc</span></span><br></pre></td></tr></tbody></table></div></figure></li>
 </ul>
 <p> <em>降序必须写Desc，升序默认可忽略</em></p>
-<blockquote>
-<p><strong>group by是用于分组的子句   <em>教材P95</em></strong></p>
-</blockquote>
+
+    <div class="note-plugin info no-icon">
+      
+      <p><strong>group by是用于分组的子句   <em>教材P95</em></strong></p>
+    </div>
+  
+
 <p>使用它需要满足以下条件：</p>
 <ol>
 <li>列名运用了集合函数(sum,avg等…)</li>
@@ -317,7 +369,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <li><blockquote>
 <p>统计男女各人数</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>group by</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 性别,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> 男女人数 <span class="keyword">from</span> 学生 <span class="keyword">group</span> <span class="keyword">by</span> 性别</span><br></pre></td></tr></table></div></figure></li>
+<figure class="highlight sql"><figcaption><span>group by</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 性别,<span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> 男女人数 <span class="keyword">from</span> 学生 <span class="keyword">group</span> <span class="keyword">by</span> 性别</span><br></pre></td></tr></tbody></table></div></figure></li>
 <li><p>我们对性别进行了分组，可以看见它没有使用集合函数，所以它必须包含在group by子句当中。也就是说，对什么进行分组，必须将它放到select后面查找一遍。</p>
 </li>
 <li><blockquote>
@@ -329,50 +381,58 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
 <li><blockquote>
 <p>查询每门课成绩都在70以上的学生学号</p>
 </blockquote>
-<figure class="highlight sql"><figcaption><span>Group by</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号 <span class="keyword">from</span> 课程 <span class="keyword">group</span> <span class="keyword">by</span> 学号 <span class="keyword">having</span> <span class="built_in">min</span>(成绩)<span class="operator">&gt;=</span><span class="number">70</span></span><br></pre></td></tr></table></div></figure></li>
+<figure class="highlight sql"><figcaption><span>Group by</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号 <span class="keyword">from</span> 课程 <span class="keyword">group</span> <span class="keyword">by</span> 学号 <span class="keyword">having</span> <span class="built_in">min</span>(成绩)<span class="operator">&gt;=</span><span class="number">70</span></span><br></pre></td></tr></tbody></table></div></figure></li>
 </ul>
-<blockquote>
-<p><strong>compute by子句 用于明细查询</strong></p>
-</blockquote>
+
+    <div class="note-plugin info no-icon">
+      
+      <p><strong>compute by子句 用于明细查询</strong></p>
+    </div>
+  
+
 <p>即显示统计结果，又显示明细数据。了解即可 详见教程P96</p>
 <hr>
 
-        <h3 id="多表连接查询"   >
-          <a href="#多表连接查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#多表连接查询" class="headerlink" title="多表连接查询"></a>多表连接查询</h3>
+        <h3 id="🏷多表连接查询">
+          <a href="#🏷多表连接查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷多表连接查询" class="headerlink" title="🏷多表连接查询"></a>🏷多表连接查询</h3>
       <blockquote>
 <p><del>基本的语句已结束，下面我们来点刺激的吧</del></p>
 </blockquote>
 
-        <h4 id="内连接"   >
-          <a href="#内连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#内连接" class="headerlink" title="内连接"></a><strong>内连接</strong></h4>
+        <h4 id="📙内连接">
+          <a href="#📙内连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙内连接" class="headerlink" title="📙内连接"></a>📙<strong>内连接</strong></h4>
       
-        <h4 id="外连接"   >
-          <a href="#外连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#外连接" class="headerlink" title="外连接"></a><strong>外连接</strong></h4>
+        <h4 id="📙外连接">
+          <a href="#📙外连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙外连接" class="headerlink" title="📙外连接"></a>📙<strong>外连接</strong></h4>
       <ul>
 <li>左外连接</li>
 <li>右外连接</li>
 </ul>
 
-        <h4 id="交叉连接"   >
-          <a href="#交叉连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#交叉连接" class="headerlink" title="交叉连接"></a><strong>交叉连接</strong></h4>
-      <blockquote>
-<p>未完待续~</p>
-</blockquote>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://nrhs-space.github.io">不是花生</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://nrhs-space.github.io/2021/12/05/SQL-note/">https://nrhs-space.github.io/2021/12/05/SQL-note/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/SQL/">SQL</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/01/hello-zhao-hua-xi-shi/"><span class="paginator-prev__text">Hello 朝花夕拾</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NDg3MC8zMTMzOQ=="></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%89%E6%95%88%E7%9A%84%E9%A3%9F%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E4%B8%8D%E6%8C%82%E5%90%91%E6%B3%A2%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">
-          安全有效的食用数据库，不挂向波！</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">
-          数据库基础部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">
-          数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">
-          创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.2.</span> <span class="toc-text">
-          查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E9%83%A8%E5%88%86%E6%98%AF%E6%B6%89%E5%8F%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">3.2.0.1.</span> <span class="toc-text">
-          查询部分是涉及最多的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#where%E5%AD%90%E5%8F%A5"><span class="toc-number">3.2.0.2.</span> <span class="toc-text">
-          where子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.2.0.3.</span> <span class="toc-text">
-          条件运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">3.2.0.4.</span> <span class="toc-text">
-          集合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select%E7%9A%84%E5%88%86%E7%BB%84%E4%B8%8E%E6%8E%92%E5%BA%8F"><span class="toc-number">3.2.0.5.</span> <span class="toc-text">
-          select的分组与排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.2.1.</span> <span class="toc-text">
-          多表连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">
-          内连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">
-          外连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.1.3.</span> <span class="toc-text">
-          交叉连接</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">朝花夕拾</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="Telegram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__devider"></span><span>花的小金库</span></div><div><span>基于 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 建设</span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span></div><div>思想腐朽，灵魂潮湿</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>function initSearch() {
+        <h4 id="📙交叉连接">
+          <a href="#📙交叉连接" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙交叉连接" class="headerlink" title="📙交叉连接"></a>📙<strong>交叉连接</strong></h4>
+      
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p><strong>未完待续~</strong></p>
+    </div>
+  </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://nrhs-space.github.io">不是花生</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://nrhs-space.github.io/2021/12/05/SQL-note/">https://nrhs-space.github.io/2021/12/05/SQL-note/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E6%9C%9F%E6%9C%AB/">期末</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/04/ICD-note/"><span class="paginator-prev__text">ICD-10 编码笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NDg3MC8zMTMzOQ=="></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%89%E6%95%88%E7%9A%84%E9%A3%9F%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E4%B8%8D%E6%8C%82%E5%90%91%E6%B3%A2%EF%BC%81%E6%9B%B4%E6%96%B0%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">
+          安全有效的食用数据库，不挂向波！更新中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%97%92%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">
+          🗒数据库基础部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%97%92%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">
+          🗒数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%B7%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">
+          🏷创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%B7%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.2.</span> <span class="toc-text">
+          🏷查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E9%83%A8%E5%88%86%E6%98%AF%E6%B6%89%E5%8F%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">3.2.0.1.</span> <span class="toc-text">
+          查询部分是涉及最多的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99where%E5%AD%90%E5%8F%A5"><span class="toc-number">3.2.0.2.</span> <span class="toc-text">
+          📙where子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.2.0.3.</span> <span class="toc-text">
+          📙条件运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">3.2.0.4.</span> <span class="toc-text">
+          📙集合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99select%E7%9A%84%E5%88%86%E7%BB%84%E4%B8%8E%E6%8E%92%E5%BA%8F"><span class="toc-number">3.2.0.5.</span> <span class="toc-text">
+          📙select的分组与排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8F%B7%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.2.1.</span> <span class="toc-text">
+          🏷多表连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">
+          📙内连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">
+          📙外连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E4%BA%A4%E5%8F%89%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.1.3.</span> <span class="toc-text">
+          📙交叉连接</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">朝花夕拾</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="Telegram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__devider"></span><span>花的小金库</span></div><div><span>基于 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 建设</span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span></div><div>思想腐朽，灵魂潮湿</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
