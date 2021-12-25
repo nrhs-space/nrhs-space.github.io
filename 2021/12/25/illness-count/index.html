@@ -1,0 +1,783 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="医院管理学与病案管理期末复习更新中       此文章分为两个部分，分别记录了病案管理与医院统计的重点学习内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="医院统计与病案管理笔记">
+<meta property="og:url" content="https://nrhs-space.github.io/2021/12/25/illness-count/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="医院管理学与病案管理期末复习更新中       此文章分为两个部分，分别记录了病案管理与医院统计的重点学习内容。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg">
+<meta property="article:published_time" content="2021-12-25T05:16:36.000Z">
+<meta property="article:modified_time" content="2021-12-25T14:16:02.788Z">
+<meta property="article:author" content="不是花生">
+<meta property="article:tag" content="期末">
+<meta property="article:tag" content="学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg"><title>医院统计与病案管理笔记 | 朝花夕拾</title><link ref="canonical" href="https://nrhs-space.github.io/2021/12/25/illness-count/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-menu-item__text">蓝色空间</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://www.lieren.xyz/"><span class="header-nav-menu-item__text">林的博客</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">A梦的口袋</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">城南旧事</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://sso.sxyyc.net/"><span class="header-nav-submenu-item__text">三峡医专</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/nrhs/wdsc/"><span class="header-nav-submenu-item__text">一只猫的小杂铺</span></a></div></div></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">朝花夕拾</div><div class="header-banner-info__subtitle">理想现实主义者</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">医院统计与病案管理笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-25</span></span></div></header><div class="post-body"><p><img src="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg"></p>
+
+        <h1 id="医院管理学与病案管理期末复习更新中">
+          <a href="#医院管理学与病案管理期末复习更新中" class="heading-link"><i class="fas fa-link"></i></a><a href="#医院管理学与病案管理期末复习更新中" class="headerlink" title="医院管理学与病案管理期末复习更新中"></a>医院管理学与病案管理期末复习<code>更新中</code></h1>
+      <p><span style="padding-left: 2em;"></span>此文章分为两个部分，分别记录了病案管理与医院统计的重点学习内容。</p>
+<span id="more"></span>
+
+        <h1 id="🏷病案管理">
+          <a href="#🏷病案管理" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷病案管理" class="headerlink" title="🏷病案管理"></a>🏷病案管理</h1>
+      
+        <h2 id="📒法律与时间相关">
+          <a href="#📒法律与时间相关" class="heading-link"><i class="fas fa-link"></i></a><a href="#📒法律与时间相关" class="headerlink" title="📒法律与时间相关"></a>📒法律与时间相关</h2>
+      
+    <div class="note-plugin success">
+      <span class="note-plugin__icon note-plugin__icon--success">
+              <i class="fas fa-check-circle"></i>
+            </span>
+      <p>该类目以题库为基础,分类了与<code>法律</code>，<code>时间</code>规定相关的内容</p>
+    </div>
+  
+<ol>
+<li><code>1982</code>年卫生部颁布(<strong>《全国医院工作条例、医院工作制度与医院工作人员职责》</strong>),要求医院必须建立病案科。</li>
+<li>(<code>2009</code>)年12月26日颁发的<strong>《中华人民共和国侵权责任法》</strong></li>
+</ol>
+<ul>
+<li>第<code>61条</code>规定,医疗机构必须按规定填写并妥善保管病历资料</li>
+<li>第<code>54条</code>规定,患者在诊疗活动中受到损害,医疗机构及其医务人员有过错的,由医疗机构承担赔偿责任</li>
+</ul>
+<ol start="3">
+<li>(<code>2012</code>)年,原卫生部公布<strong>《医院评审标准》</strong>对病案管理人员做了要求</li>
+<li>(<code>2002</code>)年,国务院颁布<strong>《医疗事故处理条例》</strong></li>
+</ol>
+<ul>
+<li>第<code>8</code>条明确规定,医疗机构应当按照国务院卫生行政部门的规定要求,书写并妥善保管病历资料</li>
+<li>明确规定:“严禁涂改、伪造、隐匿、销毁或者抢夺病历资料”</li>
+</ul>
+<ol start="5">
+<li>作为<code>CIS</code>核心的电子病案早期尝试可追溯到(<code>20世纪70年代</code>)</li>
+<li><code>20世纪60年代</code>美`国麻省总医院开发完成的最早期电子病案系统之一是(COSTAR)</li>
+<li><strong>《中华人民共和国电子签名法》</strong>实施日期是(<code>2005年4月1日</code>)</li>
+<li><code>1995</code>年,我国卫生部提出了(<strong>金卫工程</strong>),该工程中将电子病案系统作为重点研究课题之一</li>
+<li><code>2013</code>年的<strong>《医疗机构病历管理规定》</strong>明确了对同一患者建立唯一的标识号码。*<code>1987</code>即开始颁布*</li>
+</ol>
+<ul>
+<li>已建立电子病历的医疗机构,应当将病历标识号码与患者(身份证号)编号相关联。</li>
+<li>明确指出“医疗机构应当建立病历管理制度,设置专门部门或者配备专(兼)职人员具体负责本机构病历和病案的保存与管理工作”</li>
+<li>住院病历由(所在病区)统一保管。</li>
+<li>《医疗机构病历管理规定》施行的时间是<code>2002年9月1日</code></li>
+<li>要求借阅病历应当在(<code>3</code>)个工作日内归还</li>
+<li>纸质病历和电子病历具有(同等效力)</li>
+</ul>
+<ol start="11">
+<li>光盘存储技术目前应用广泛,资料显示光盘的使用寿命为<code>10~20年</code></li>
+<li>目前我国使用的全国统一病案首页是(<code>2012</code>)版病案首页</li>
+<li><code>20世纪80年代中期</code>,政府医疗卫生政策变化催生了临床信息系统的代表国家是(美国)</li>
+<li><strong>《三级综合医院评审标准实施细则(2011年版)》</strong>,其中的C级标准要求</li>
+</ol>
+<ul>
+<li>病案科非相关专业人员小于(<code>50%</code>)</li>
+<li>病案首页诊断填写完整,主要诊断的正确率达到(<code>100%</code>)</li>
+<li>患者出院后,住院病历在7个工作日之内回归病案科达到(<code>90%</code>)</li>
+<li>国务院副总理的病案至少保存(<code>20</code>)年</li>
+<li>门(急)诊病历最后一次就诊后至少保存<code>15年</code></li>
+<li>住院病历的保存期不得少于<code>30年</code></li>
+<li>国务院副总理的病案保密级别为机密级,至少20年</li>
+</ul>
+<ol start="15">
+<li>ISO:</li>
+</ol>
+<ul>
+<li>于<code>1979</code>年成立了(<code>TC176</code>)</li>
+<li>ISO在(<code>1994</code>)年提出的ISO族</li>
+</ul>
+<ol start="16">
+<li>卫生部以文件形式发布的三个文件《城市社区卫生服务机构设置原则》、《城市社区卫生服务中心设置指导标准》、《城市社区卫生站设置指导标准》的时间是(<code>2000年12月29日</code>)</li>
+<li>社区卫生服务管理制度中的处方管理制度规定一般处方保存的时间为(<code>一年</code>)</li>
+<li><code>1968</code>年美国的Weed等率先提出并要求医生的医疗服务中要有(<strong>以个人健康问题</strong>)为导向的健康档案记录方式</li>
+<li>(<code>197``4</code>)年世界卫生组织(WHO)根据社区卫生护理界的专家们的定义,给出了建立在社区卫生作用上的社区定义</li>
+<li>目前,病案的称谓已不再仅指医疗记录,而是指更为广义的健康记录,这种改变首先出现在<code>20世纪90年代</code></li>
+<li>我国最早的病案记录是<code>公元前200年</code>西汉时(<em>最早出现纸张病案</em>)的淳于意,他写的25例病案记录在《史记-扁鹊仓公列传》</li>
+<li>我国最早的医学文字记录出现在<code>3500年前</code></li>
+<li>我国<code>第六次</code>全国病案管理学术会议召开的时间、地点是(<code>1996年9月在成都召开</code>)</li>
+<li><code>20世纪50年代</code>,欧美国家开始采用病案保存的方式是(微缩)</li>
+<li>美国在四所大型医院中开展了病案管理专业教育的时间是<code>1935年</code></li>
+<li>北京市崇文区卫生学校举办了第一个正规教育的中专病案班,时间是<code>1985年</code></li>
+<li>病案管理专业列入<strong>《中华人民共和国普通中等专业学校专业目录》</strong>的时间是<code>1993年</code></li>
+<li>我国<code>第一次</code>全国性的病案统计会议召开的时间、地点是<code>1981年</code>在南京召开</li>
+<li>我国病案学会以中华病案学会的名义加入国际病案学会的时间是<code>1992年</code></li>
+<li>国际病案学术会议每<code>四年一次</code>,正式成立国际病案组织联合会的时间是<code>1968年</code></li>
+<li>人类历史第一个病案室位于美国波士顿的麻省综合医院,建于<code>1897</code>年</li>
+<li>我国原卫生部于(<code>1953</code>)年将诊籍、医案、病历定名为病案</li>
+<li>(<code>1922</code>)年<code>3月</code>建立了医院病案委员会,推动了北京协和医院病案工作的发展建设。</li>
+<li>国际上第一个病案学术组织–北美病案管理学会成立于<code>1928</code>年</li>
+<li>我国第一个地方性病案管理学组织成立于<code>1982</code>年</li>
+<li><strong>《医疗事故处理条例》</strong>生效的时间是(<code>2002年9月1日</code>)</li>
+<li><strong>《中华人民共和国执业医师法》</strong>施行的时间是(<code>1995年5月1日</code>)</li>
+</ol>
+<ul>
+<li>第<code>23</code>条明确指出:“医师实施医疗、预防、保健措施、签署有关医学证明文件,必须亲自诊查、调查,并按照规定及时填写医学文书,不得隐匿、伪造或者销毁医学文书及有关资料”</li>
+<li>第<code>22</code>条规定,医师在执业活动中要关心、爱护、尊重患者,保护患者的隐私</li>
+</ul>
+<ol start="38">
+<li><code>1982</code>年<strong>《医院工作制度》</strong>指出:“住院病案原则上应该(永久保存)</li>
+<li><code>2002年4月1日</code>起实施的<strong>《最高人民法院关于民事诉讼证据的若干规定》</strong>中<code>第四条</code>第一款<code>第八项</code>规定:“因医疗行为引起的侵权诉讼,由医疗机构就医行为与损害后果之间不存在因果关系及不存在医疗过错承担(<strong>举证责任</strong>)</li>
+<li><code>1983</code>年开始的以“相关疾病诊断分组”为标准的“预付收费体制”,其“相关疾病诊断分组”的简称是(<code>DRGs</code>)</li>
+<li>一般需长期治疗的慢性患者或疾病恢复慢的患者出院<code>2-4周</code>内应随访一次,此后至少(<code>三个月</code>)随访一次</li>
+<li>国家档案局正式颁发<strong>《档案库房技术管理暂行规定》</strong>的时间是<code>1987</code>年</li>
+<li>《护士管理办法》第24条规定,护士在执业中得熟悉就医者的隐私,不得泄露,但法律另有规定的除外</li>
+<li>我国最早的医学文字记录起源于<code>商代</code>(载体为甲骨)</li>
+<li>一般认为我国现代病案管理的起始时间是<code>1921</code></li>
+<li>第十二届国际病案大会的主题是“卫生信息管理的未来”,大会举办的地点是<code>德国慕尼黑</code></li>
+</ol>
+<blockquote>
+<p>下面部分不可归类于他处者</p>
+</blockquote>
+<ol>
+<li><strong>《病历书写基本规范》</strong>(试点)规定化验单在出具结果后应在<code>24小时内</code>粘贴</li>
+<li>《病历书写基本规范&gt;(试行)规定首次病程记录应当完成的时间是在患者入院后8小时内</li>
+<li>因抢救危重患者,未能及时书写病历的,有关医务人员应当在抢救结束后6小时内据实补记,并加以注明</li>
+<li>全国医院工作条例规定:“病历是医疗、教学和科研的重要资料,也是法律依据”</li>
+<li>1987年国务院发布的现行《医疗事故处理办法》第8条明确规定:“发生故事或事件的医疗单位,应指派专人妥善保管有关的各种原始资料。”</li>
+<li>医疗机构应当在收到住院患者检查检验结果和相关资料后24小时内归入或者录入住院病历</li>
+<li>借阅病历应当在3个工作日内归还</li>
+</ol>
+
+        <h2 id="📒作用、功能、职责">
+          <a href="#📒作用、功能、职责" class="heading-link"><i class="fas fa-link"></i></a><a href="#📒作用、功能、职责" class="headerlink" title="📒作用、功能、职责"></a>📒作用、功能、职责</h2>
+      
+    <div class="note-plugin success">
+      <span class="note-plugin__icon note-plugin__icon--success">
+              <i class="fas fa-check-circle"></i>
+            </span>
+      <p>该类目以题库为基础，分类了某些名词的<code>作用</code>属性</p>
+    </div>
+  
+
+<blockquote>
+<p>病案信息的作用</p>
+</blockquote>
+<ul>
+<li>医疗作用</li>
+<li>研究作用</li>
+<li>教学作用</li>
+<li>管理作用</li>
+<li>医疗付款作用</li>
+<li>医疗纠纷与法律依据作用</li>
+<li>历史作用</li>
+</ul>
+<blockquote>
+<p>基本医疗</p>
+</blockquote>
+<p><em>我国基本医疗保险组织参保、征收保险费的统筹单位原则上是地级市以上单位</em></p>
+<ul>
+<li>基本技术</li>
+<li>基本服务</li>
+<li>基本收费</li>
+<li>基本用药</li>
+</ul>
+<blockquote>
+<p>病案的功能</p>
+</blockquote>
+<ul>
+<li>备忘功能</li>
+<li>备考功能</li>
+<li>守信功能</li>
+<li>凭证功能</li>
+</ul>
+<blockquote>
+<p>保险三要素</p>
+</blockquote>
+<ul>
+<li>风险存在并导致经济损失</li>
+<li>建立保险基金</li>
+<li>订立保险合同</li>
+</ul>
+<hr>
+<blockquote>
+<p>系列编号</p>
+</blockquote>
+<ul>
+<li>每次都给一个新号</li>
+<li>可减少工作流程，病案磨损等。但资料分散，不利于管理，查找…</li>
+</ul>
+<blockquote>
+<p>单一编号</p>
+</blockquote>
+<ul>
+<li>将一个患者的所有医疗记录集中在一个病案号中管理。</li>
+<li>集中管理，保持了连续性与完整性。但工作流程繁琐，病案容易磨损…</li>
+</ul>
+<blockquote>
+<p>系列单一编号</p>
+</blockquote>
+<ul>
+<li>将前两种编号结合起来。每次患者入院发一个新号，然后将旧号并入新号</li>
+<li>浪费人力物力，又降低了病案供应速度</li>
+</ul>
+<p>P. <em>大多数医院均采用单一编号</em></p>
+<hr>
+<blockquote>
+<p>一号集中制</p>
+</blockquote>
+<p><em>全面搜集有关患者的医疗信息</em> </p>
+<ul>
+<li>患者所有诊疗记录均保存在一个编号当中</li>
+<li>保证了资料的完整性，连续性</li>
+</ul>
+<blockquote>
+<p>两号集中制</p>
+</blockquote>
+<ul>
+<li>住院记录与门诊记录分别编号，但病案却集中在一个编号中管理</li>
+<li>一旦发给住院号，则全使用住院号</li>
+<li>保证了资料的完整性，连续性</li>
+</ul>
+<blockquote>
+<p>一号分开制</p>
+</blockquote>
+<ul>
+<li>住院病案与门诊病案分开管理，但使用同一个病案号</li>
+<li>保证了安全，但增加了工作量</li>
+</ul>
+<blockquote>
+<p>两号分开制</p>
+</blockquote>
+<ul>
+<li>住院病案与门诊病案分别编码，单独存放，互不关联</li>
+</ul>
+<hr>
+<blockquote>
+<p>转科登记所具备的登记作用是</p>
+</blockquote>
+<ul>
+<li>可作为统计的原始资料，也可作为提供查找病案的原始记录</li>
+</ul>
+<blockquote>
+<p>病案对临床研究与临床流行病学研究具有</p>
+</blockquote>
+<ul>
+<li>备考作用</li>
+</ul>
+<blockquote>
+<p>病案所具有的信息作用主要是指</p>
+</blockquote>
+<ul>
+<li>直接提供医疗服务的资料</li>
+</ul>
+<blockquote>
+<p>门诊量的增减、住院病种的变化、住院天数的变化、医疗付费的增减,体现了病案信息的</p>
+</blockquote>
+<ul>
+<li>管理作用</li>
+</ul>
+<blockquote>
+<p>病案的医疗作用主要利用的病案的</p>
+</blockquote>
+<ul>
+<li>备忘作用</li>
+</ul>
+<blockquote>
+<p>病案用于医院管理是利用病案的</p>
+</blockquote>
+<ul>
+<li>备考功能</li>
+</ul>
+<blockquote>
+<p>应用病案的凭证功能的是</p>
+</blockquote>
+<ul>
+<li>医疗付款</li>
+</ul>
+<blockquote>
+<p>病案的历史作用是利用病案</p>
+</blockquote>
+<ul>
+<li>备考与备忘功能</li>
+</ul>
+<blockquote>
+<p>医务人员对患者疾病正确诊断和决定治疗方案时病案信息所起的作用是</p>
+</blockquote>
+<ul>
+<li>医疗作用</li>
+</ul>
+<blockquote>
+<p>通过对病案资料的统计加工才能发挥的病案信息作用是</p>
+</blockquote>
+<ul>
+<li>医院管理作用</li>
+</ul>
+<blockquote>
+<p>基本医疗保险的作用不包括</p>
+</blockquote>
+<ul>
+<li>提高医疗资源利用率</li>
+</ul>
+<blockquote>
+<p>在随诊工作的整个过程中,病案管理人员的作用是</p>
+</blockquote>
+<ul>
+<li>桥梁作用</li>
+</ul>
+<blockquote>
+<p>为保证病案的有效使用及最大效率地发挥病案作用,采用一系列的措施称为</p>
+</blockquote>
+<ul>
+<li>病案控制</li>
+</ul>
+<blockquote>
+<p>病案管理质控主要是</p>
+</blockquote>
+<ul>
+<li>对病案管理工作的各个流程进行质量检查、评估</li>
+</ul>
+<blockquote>
+<p>对医师、护士、技术人员所写的并按内容记录级报告的及时性、完整性、准确性及治疗合理性的要求,反映医疗水平和医院管理水平的是</p>
+</blockquote>
+<ul>
+<li>病案书写质量</li>
+</ul>
+
+        <h2 id="📒缩略简写">
+          <a href="#📒缩略简写" class="heading-link"><i class="fas fa-link"></i></a><a href="#📒缩略简写" class="headerlink" title="📒缩略简写"></a>📒缩略简写</h2>
+      
+    <div class="note-plugin success">
+      <span class="note-plugin__icon note-plugin__icon--success">
+              <i class="fas fa-check-circle"></i>
+            </span>
+      <p>该类目以题库为基础，分类了某些名词的英文缩写等内容</p>
+    </div>
+  
+
+<ol>
+<li>在电子病案术语中,基于计算机的医学记录的缩写是CMR</li>
+<li>一体化病案IMR</li>
+<li>问题排列病案POMR</li>
+<li>资料来源定向病案SOMR</li>
+<li>病案号MRN</li>
+<li>国际病案协会IFHRO</li>
+<li>中华病案学会CMRA</li>
+<li>戴明环又称PDCA循环</li>
+</ol>
+<ul>
+<li>分为4个阶段，8个步骤</li>
+</ul>
+<ol start="9">
+<li>按服务项目收费FFS</li>
+</ol>
+
+        <h2 id="📒病案首页">
+          <a href="#📒病案首页" class="heading-link"><i class="fas fa-link"></i></a><a href="#📒病案首页" class="headerlink" title="📒病案首页"></a>📒病案首页</h2>
+      
+    <div class="note-plugin success">
+      <span class="note-plugin__icon note-plugin__icon--success">
+              <i class="fas fa-check-circle"></i>
+            </span>
+      <p>该类目以题库与教材为基础，是病案管理中最为重要的内容。等待更新</p>
+    </div>
+  
+
+
+        <h2 id="📒指标与要求">
+          <a href="#📒指标与要求" class="heading-link"><i class="fas fa-link"></i></a><a href="#📒指标与要求" class="headerlink" title="📒指标与要求"></a>📒指标与要求</h2>
+      
+    <div class="note-plugin success">
+      <span class="note-plugin__icon note-plugin__icon--success">
+              <i class="fas fa-check-circle"></i>
+            </span>
+      <p>该类目以题库与教材为基础，分类了一些大家喜闻乐见的<del>死规定</del>好要求</p>
+    </div>
+  
+
+<blockquote>
+<p>病案委员会</p>
+</blockquote>
+<ul>
+<li>由院长，临床科室等职能科室专家与病案科主任组成</li>
+<li>每年至少召开1~2次</li>
+<li>病案科是病案委员会的办事机构</li>
+</ul>
+<blockquote>
+<p>三级医院</p>
+</blockquote>
+<ul>
+<li>科主任应具有本专业高技术职务任职资格者承担</li>
+<li>无菌手术切口感染率≤0.5%</li>
+</ul>
+<blockquote>
+<p>其他</p>
+</blockquote>
+<ol>
+<li>病案科应设有供医务人员讨论、分析、参阅病案的阅览室,其总面积为20~50m²</li>
+<li>病案科工作人员需有独立的办公室,每人最少应拥有的工作空间面积为6m²</li>
+<li>发达国家医院病床与病案管理人员的配备比例为10~15:1</li>
+<li>环节质量控制的覆盖率应为35%~45%</li>
+<li>终末质量监控的覆盖率应大于等于70%</li>
+<li>随诊工作开展较好的医院,随诊率一般应≥95%</li>
+<li>病案库房</li>
+</ol>
+<ul>
+<li>防水、防潮重点不包括病案柜周围</li>
+<li>建筑耐火等级为一级</li>
+<li>与周围的建筑之间的防火间距应不小于30~35m</li>
+<li>温度标准为14℃<del>20℃,相对湿度为45%</del> 60%。</li>
+</ul>
+<ol start="8">
+<li>病案科内至少应有贮存5年以上常用病案的空间</li>
+<li>对于病案而言,不适宜的库房温度是指高于30℃，低于0℃</li>
+</ol>
+
+        <h2 id="📚不可归类于他处者的部分题目-T-300-702">
+          <a href="#📚不可归类于他处者的部分题目-T-300-702" class="heading-link"><i class="fas fa-link"></i></a><a href="#📚不可归类于他处者的部分题目-T-300-702" class="headerlink" title="📚不可归类于他处者的部分题目 T.300-702"></a>📚不可归类于他处者的部分题目 T.300-702</h2>
+      <ol>
+<li>目前我国常用的患者姓名索引的排列方法包括：汉语拼音法、四角号码法、汉语拼音与四角号码合用</li>
+<li>对慢性病的精细化管理的要求,每年定期随访监测、行为干预不少于4次</li>
+<li>社区卫生服务是以基层卫生机构为主体，全科医生为骨干，以人的健康为中心，需求为导向。</li>
+<li>病案管理学是一门边缘学科</li>
+<li>病案科属于医技科室,二级以上医院病案管理科室应直属于院长领导</li>
+<li>医务人员在医疗活动过程中形成的医疗记录为病历，完成医疗活动整理后才为病案</li>
+<li>第一所授予病案学士学位的单位是：美国圣-玛丽医院</li>
+<li>医患关系在法律上属于：民事法律关系</li>
+<li>我国各级基本医疗保险经办机构,其行政上隶属于劳动保障部门</li>
+<li>将医疗保险分为直接关系型和间接关系型的分类形式是：按医疗服务的供求关系分类</li>
+<li>基本医疗保险简称的“三个目录”是指:药品目录、诊疗项目目录、医疗服务设施范围目录</li>
+<li>“乙类目录”由国家制定,各地可根据实际情况进行调整,但增加和减少的品种之和不得超过国家制定的乙类目录”药品总数的15%</li>
+<li>我国基本医疗保险统筹基金中用人单位缴纳与个人账户资金的比例大约为7：3</li>
+<li>造纸植物纤维的种类中不包括合成纤维</li>
+<li>造纸植物纤维的主要化学成分是纤维素、半纤维素、木素</li>
+<li>病案表格功能中不包括：审核资料</li>
+</ol>
+<hr>
+
+        <h1 id="🏷医院统计">
+          <a href="#🏷医院统计" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷医院统计" class="headerlink" title="🏷医院统计"></a>🏷医院统计</h1>
+      
+    <div class="note-plugin warning">
+      <span class="note-plugin__icon note-plugin__icon--warning">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+      <p><strong>未完待续~</strong></p>
+    </div>
+  </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://nrhs-space.github.io">不是花生</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://nrhs-space.github.io/2021/12/25/illness-count/">https://nrhs-space.github.io/2021/12/25/illness-count/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E6%9C%9F%E6%9C%AB/">期末</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/05/SQL-note/"><span class="paginator-prev__text">SQL食用笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NDg3MC8zMTMzOQ=="></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%BB%E9%99%A2%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E7%97%85%E6%A1%88%E7%AE%A1%E7%90%86%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E6%9B%B4%E6%96%B0%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">
+          医院管理学与病案管理期末复习更新中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%8F%B7%E7%97%85%E6%A1%88%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">
+          🏷病案管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E6%B3%95%E5%BE%8B%E4%B8%8E%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3"><span class="toc-number">2.1.</span> <span class="toc-text">
+          📒法律与时间相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E4%BD%9C%E7%94%A8%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E8%81%8C%E8%B4%A3"><span class="toc-number">2.2.</span> <span class="toc-text">
+          📒作用、功能、职责</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E7%BC%A9%E7%95%A5%E7%AE%80%E5%86%99"><span class="toc-number">2.3.</span> <span class="toc-text">
+          📒缩略简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E7%97%85%E6%A1%88%E9%A6%96%E9%A1%B5"><span class="toc-number">2.4.</span> <span class="toc-text">
+          📒病案首页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E6%8C%87%E6%A0%87%E4%B8%8E%E8%A6%81%E6%B1%82"><span class="toc-number">2.5.</span> <span class="toc-text">
+          📒指标与要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%9A%E4%B8%8D%E5%8F%AF%E5%BD%92%E7%B1%BB%E4%BA%8E%E4%BB%96%E5%A4%84%E8%80%85%E7%9A%84%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE-T-300-702"><span class="toc-number">2.6.</span> <span class="toc-text">
+          📚不可归类于他处者的部分题目 T.300-702</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%8F%B7%E5%8C%BB%E9%99%A2%E7%BB%9F%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">
+          🏷医院统计</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">朝花夕拾</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="Telegram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__devider"></span><span>花的小金库</span></div><div><span>基于 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 建设</span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span></div><div>思想腐朽，灵魂潮湿</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>function initSearch() {
+  var isXML = true;
+  var search_path = 'search.json';
+
+  if (!search_path) {
+    search_path = 'search.xml';
+  } else if (/json$/i.test(search_path)) {
+    isXML = false;
+  }
+
+  var path = '/' + search_path;
+  $.ajax({
+    url: path,
+    dataType: isXML ? 'xml' : 'json',
+    async: true,
+    success: function (res) {
+      var datas = isXML ? $('entry', res).map(function () {
+        // 将 XML 转为 JSON
+        return {
+          title: $('title', this).text(),
+          content: $('content', this).text(),
+          url: $('url', this).text()
+        };
+      }).get() : res;
+      var $input = $('.search-input input');
+      var $result = $('.search-results');
+      // 搜索对象（标题、内容）的权重，影响显示顺序
+      var WEIGHT = { title: 100, content: 1 };
+      var searchPost = function () {
+        var searchText = $input.val().toLowerCase().trim();
+        // 根据空白字符分隔关键字
+        var keywords = searchText.split(/[\s]+/);
+        // 搜索结果
+        var matchPosts = [];
+
+        // 有多个关键字时，将原文字整个保存下来
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        // 防止未输入字符时搜索
+        if (searchText.length > 0) {
+          datas.forEach(function (data) {
+            var isMatch  = false;
+            // 没有标题的文章使用预设的 i18n 变量代替
+            var title = (data.title && data.title.trim()) || '[ 文章无标题 ]';
+            var titleLower = title && title.toLowerCase();
+            // 删除 HTML 标签 和 所有空白字符
+            var content = data.content && data.content.replace(/<[^>]+>/g, '');
+            var contentLower = content && content.toLowerCase();
+            // 删除重复的 /
+            var postURL = data.url && decodeURI(data.url).replace(/\/{2,}/g, '/');
+            // 标题中匹配到的关键词
+            var titleHitSlice = [];
+            // 内容中匹配到的关键词
+            var contentHitSlice = [];
+
+            keywords.forEach(function (keyword) {
+              /**
+              * 获取匹配的关键词的索引
+              * @param {String} keyword 要匹配的关键字
+              * @param {String} text 原文字
+              * @param {Boolean} caseSensitive 是否区分大小写
+              * @param {Number} weight 匹配对象的权重。权重大的优先显示
+              * @return {Array}
+              */
+              function getIndexByword (word, text, caseSensitive, weight) {
+                if (!word || !text) {
+                  return [];
+                };
+
+                var startIndex = 0; // 每次匹配的开始索引
+                var index = -1;     // 匹配到的索引值
+                var result = [];    // 匹配结果
+
+                if (!caseSensitive) {
+                  word = word.toLowerCase();
+                  text = text.toLowerCase();
+                }
+
+                while((index = text.indexOf(word, startIndex)) !== -1) {
+                  var hasMatch = false;
+                  // 索引位置相同的关键词，保留长度较长的
+                  titleHitSlice.forEach(function (hit) {
+                    if (hit.index === index && hit.word.length < word.length) {
+                      hit.word = word;
+                      hasMatch = true;
+                    }
+                  });
+                  startIndex = index + word.length;
+                  !hasMatch && result.push({ index: index, word: word, weight: weight });
+                }
+                return result;
+              }
+              titleHitSlice = titleHitSlice.concat(getIndexByword(keyword, titleLower, false, WEIGHT.title));
+              contentHitSlice = contentHitSlice.concat(getIndexByword(keyword, contentLower, false, WEIGHT.content));
+            });
+
+            var hitTitle = titleHitSlice.length;
+            var hitContent = contentHitSlice.length;
+
+            if (hitTitle > 0 || hitContent > 0) {
+              isMatch = true;
+            }
+            if (isMatch) {
+              ;[titleHitSlice, contentHitSlice].forEach(function (hit) {
+                // 按照匹配文字的索引的递增顺序排序
+                hit.sort(function (left, right) {
+                  return left.index - right.index;
+                });
+              });
+              /**
+              * 给文本中匹配到的关键词添加标记，从而进行高亮显示
+              * @param {String} text 原文本
+              * @param {Array} hitSlice 匹配项的索引信息
+              * @param {Number} start 开始索引
+              * @param {Number} end 结束索引
+              * @return {String}
+              */
+              function highlightKeyword (text, hitSlice, start, end) {
+                if (!text || !hitSlice || !hitSlice.length) {
+                  return;
+                }
+
+                var result = '';
+                var startIndex = start;
+                var endIndex = end;
+                hitSlice.forEach(function (hit) {
+                  if (hit.index < startIndex) {
+                    return;
+                  }
+
+                  var hitWordEnd = hit.index + hit.word.length;
+                  result += text.slice(startIndex, hit.index);
+                  result += '<b>' + text.slice(hit.index, hitWordEnd) + '</b>';
+                  startIndex = hitWordEnd;
+                });
+                result += text.slice(startIndex, endIndex);
+                return result;
+              }
+
+              var postData = {};
+              // 文章总的搜索权重
+              var postWeight = titleHitSlice.length * WEIGHT.title + contentHitSlice.length * WEIGHT.content;
+              // 标记匹配关键词后的标题
+              var postTitle = highlightKeyword(title, titleHitSlice, 0, title.length) || title;
+              // 标记匹配关键词后的内容
+              var postContent;
+              // 显示内容的长度
+              var SHOW_WORD_LENGTH = 200;
+              // 命中关键词前的字符显示长度
+              var SHOW_WORD_FRONT_LENGTH = 20;
+              var SHOW_WORD_END_LENGTH = SHOW_WORD_LENGTH - SHOW_WORD_FRONT_LENGTH;
+
+              // 截取匹配的第一个字符，前后共 200 个字符来显示
+              if (contentHitSlice.length > 0) {
+                var firstIndex = contentHitSlice[0].index;
+                var start = firstIndex > SHOW_WORD_FRONT_LENGTH ? firstIndex - SHOW_WORD_FRONT_LENGTH : 0;
+                var end = firstIndex + SHOW_WORD_END_LENGTH;
+                postContent = highlightKeyword(content, contentHitSlice, start, end);
+              } else { // 未匹配到内容，直接截取前 200 个字符来显示
+                postContent = content.slice(0, SHOW_WORD_LENGTH);
+              }
+              postData.title = postTitle;
+              postData.content = postContent;
+              postData.url = postURL;
+              postData.weight = postWeight;
+              matchPosts.push(postData);
+            }
+          });
+        }
+
+        var resultInnerHtml = '';
+        if (matchPosts.length) {
+          // 按权重递增的顺序排序，使权重大的优先显示
+          matchPosts.sort(function (left, right) {
+            return right.weight - left.weight;
+          });
+          resultInnerHtml += '<ul>';
+          matchPosts.forEach(function (post) {
+            resultInnerHtml += '<li><a class="search-results-title" href="' + post.url + '">';
+            resultInnerHtml += post.title;
+            resultInnerHtml += '</a><div class="search-results-content">';
+            resultInnerHtml += post.content;
+            resultInnerHtml += '</div></li>';
+          });
+          resultInnerHtml += '</ul>';
+        } else {
+          resultInnerHtml += '<div class="search-results-none"><i class="far fa-meh"></i></div>';
+        }
+        $result.html(resultInnerHtml);
+      };
+      $input.on('input', searchPost);
+      $input.on('keyup', function (e) {
+        if (e.keyCode === Stun.utils.codeToKeyCode('Enter')) {
+          searchPost();
+        }
+      });
+    }
+  });
+}
+
+function closeSearch () {
+  $('body').css({ overflow: 'auto' });
+  $('.search-popup').css({ display: 'none' });
+  $('.search-mask').css({ display: 'none' });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  Stun.utils.pjaxReloadLocalSearch = function () {
+    $('.header-nav-search').on('click', function (e) {
+      e.stopPropagation();
+      $('body').css('overflow', 'hidden');
+      $('.search-popup')
+        .velocity('stop')
+        .velocity('transition.expandIn', {
+          duration: 300,
+          complete: function () {
+            $('.search-popup input').focus();
+          }
+        });
+      $('.search-mask')
+        .velocity('stop')
+        .velocity('transition.fadeIn', {
+          duration: 300
+        });
+
+      initSearch();
+    });
+    $('.search-mask, .search-close').on('click', function () {
+      closeSearch();
+    });
+    $(document).on('keydown', function (e) {
+      // Escape <=> 27
+      if (e.keyCode === Stun.utils.codeToKeyCode('Escape')) {
+        closeSearch();
+      }
+    });
+  };
+
+  Stun.utils.pjaxReloadLocalSearch();
+}, false);
+
+function safeOpenUrl(url) {
+  var newTab = window.open();
+  newTab.opener = null;
+  newTab.location = url;
+}
+
+function extSearch(engine) {
+  var engines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://cn.bing.com/search?q=',
+    baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
+  };
+  var host = window.location.host;
+  var query = $('.search-input input').val().toLowerCase().trim();
+  var uri = engines[engine] + query + ' site:' + host;
+
+  if (query) {
+    safeOpenUrl(uri);
+  } else {
+    Stun.utils.popAlert('warning', '请输入字符');
+  }
+}
+
+var assistSearchList = window.CONFIG.assistSearch;
+
+if (Array.isArray(assistSearchList)) {
+  assistSearchList.forEach(function (name) {
+    document.querySelector('.search-btns-item--' + name).addEventListener('click', function () {
+      extSearch(name);
+    }, false);
+  });
+}</script><script>function loadLivere () {
+  var d = document, s = d.createElement('script');
+
+  if (!d.getElementById('lv-container')) {
+    return;
+  }
+  if (typeof LivereTower === 'function') {
+    return;
+  }
+  s.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  if (false) {
+    s.setAttribute('data-pjax-rm', '');
+  }
+  (d.head || d.body).appendChild(s);
+}
+
+if (false) {
+  loadLivere();
+} else {
+  window.addEventListener('DOMContentLoaded', loadLivere, false);
+}</script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script type="application/json" src="/search.json"></script></body></html>
