@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="安全有效的食用数据库，不挂向波！更新中       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="安全有效的食用数据库 更新中       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL食用笔记">
 <meta property="og:url" content="https://nrhs-space.github.io/2021/12/05/SQL-note/index.html">
 <meta property="og:site_name" content="朝花夕拾">
-<meta property="og:description" content="安全有效的食用数据库，不挂向波！更新中       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
+<meta property="og:description" content="安全有效的食用数据库 更新中       此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/06/or02FS.png">
 <meta property="article:published_time" content="2021-12-05T09:10:52.000Z">
-<meta property="article:modified_time" content="2021-12-24T16:10:10.642Z">
+<meta property="article:modified_time" content="2021-12-27T14:53:38.721Z">
 <meta property="article:author" content="不是花生">
 <meta property="article:tag" content="期末">
 <meta property="article:tag" content="学习笔记">
@@ -38,10 +38,10 @@ var CONFIG = {
 
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-menu-item__text">蓝色空间</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://www.lieren.xyz/"><span class="header-nav-menu-item__text">林的博客</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">A梦的口袋</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">城南旧事</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://sso.sxyyc.net/"><span class="header-nav-submenu-item__text">三峡医专</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/nrhs/wdsc/"><span class="header-nav-submenu-item__text">一只猫的小杂铺</span></a></div></div></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">朝花夕拾</div><div class="header-banner-info__subtitle">理想现实主义者</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SQL食用笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-25</span></span></div></header><div class="post-body"><p><img src="https://s4.ax1x.com/2021/12/06/or02FS.png"></p>
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-menu-item__text">蓝色空间</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" target="_blank" rel="noopener" href="http://www.lieren.xyz/"><span class="header-nav-menu-item__text">林的博客</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">A梦的口袋</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/"><span class="header-nav-submenu-item__text">城南旧事</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://sso.sxyyc.net/"><span class="header-nav-submenu-item__text">三峡医专</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" target="_blank" rel="noopener" href="http://nrhs.xyz/nrhs/wdsc/"><span class="header-nav-submenu-item__text">一只猫的小杂铺</span></a></div></div></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">朝花夕拾</div><div class="header-banner-info__subtitle">理想现实主义者</div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">SQL食用笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-12-27</span></span></div></header><div class="post-body"><p><img src="https://s4.ax1x.com/2021/12/06/or02FS.png"></p>
 
-        <h1 id="安全有效的食用数据库，不挂向波！更新中">
-          <a href="#安全有效的食用数据库，不挂向波！更新中" class="heading-link"><i class="fas fa-link"></i></a><a href="#安全有效的食用数据库，不挂向波！更新中" class="headerlink" title="安全有效的食用数据库，不挂向波！更新中"></a>安全有效的食用数据库，不挂向波！<code>更新中</code></h1>
+        <h1 id="安全有效的食用数据库-更新中">
+          <a href="#安全有效的食用数据库-更新中" class="heading-link"><i class="fas fa-link"></i></a><a href="#安全有效的食用数据库-更新中" class="headerlink" title="安全有效的食用数据库 更新中"></a>安全有效的食用数据库 <code>更新中</code></h1>
       <p><span style="padding-left: 2em;"></span>此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</p>
 <span id="more"></span>
 
@@ -49,7 +49,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
       <span class="note-plugin__icon note-plugin__icon--info">
               <i class="fas fa-info-circle"></i>
             </span>
-      <p><strong>提示</strong><br>文章所指代SQL为SQL server 2008 R2</p>
+      <p><strong>提示</strong><br>文章所指代SQL为<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/syzdev/article/details/79553295">SQL server 2008 R2</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
     </div>
   
 
@@ -84,18 +84,121 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 <p>数据库文件分类</p>
 </blockquote>
 <ul>
-<li>主要数据文件 <code>后缀.mdf</code></li>
+<li>主要数据文件 <code>后缀.mdf</code> <em>- -存储服务器级信息</em></li>
 <li>次要数据文件 <code>后缀.ndf</code></li>
-<li>事务日志文件 <code>后缀.ldf</code></li>
+<li>事务日志文件 <code>后缀.ldf</code> <em>- -用于定点数据库恢复</em></li>
 </ul>
 <blockquote>
 <p>数据库文件组</p>
 </blockquote>
 <ul>
-<li>主文件组</li>
+<li>主文件组<code>Primary``默认</code></li>
 <li>用户定义文件组</li>
 </ul>
 <p><em>一个数据文件只能属于一个文件组，事务文件不属于任何文件组！</em></p>
+<hr>
+
+    <div class="note-plugin info no-icon">
+      
+      <p><strong>模型与联系</strong><br>我很少能记得这些干点子，但是考试似乎有很多。今天看了看题库，整理一点。</p>
+    </div>
+  
+
+<blockquote>
+<p>E-R模型</p>
+</blockquote>
+<ul>
+<li>三要素：实体，属性，联系</li>
+<li>一般在<code>逻辑结构设计</code>阶段将其转化为<code>关系</code>模式并规范化</li>
+</ul>
+<blockquote>
+<p>模式</p>
+</blockquote>
+<ul>
+<li>又称概念模式或逻辑模式</li>
+<li>是数据库中全体数据的逻辑结构和特征的描述</li>
+<li>一个数据库只有一个模式</li>
+<li>体现了数据库的整体观</li>
+</ul>
+<blockquote>
+<p>内模式</p>
+</blockquote>
+<ul>
+<li>也称存储模式</li>
+<li>它是数据的物理结构与存储方式的描述,即对外存数据组织的描述</li>
+<li>一个数据库只有一个内模式</li>
+<li>目的是减少数据冗余，实现共享，提高效率</li>
+</ul>
+<blockquote>
+<p>外模式</p>
+</blockquote>
+<ul>
+<li>也称为子模式或用户模式</li>
+<li>一个数据库可以有多个</li>
+<li>可以保证数据的安全性</li>
+</ul>
+<blockquote>
+<p>参照完整性</p>
+</blockquote>
+<ul>
+<li>表的外关键字必须是另一个表的主键的有效值</li>
+<li>外键约束</li>
+</ul>
+<blockquote>
+<p>实体完整性</p>
+</blockquote>
+<ul>
+<li>可由主键实现</li>
+<li>包含：<code>主键约束</code>，<code>check约束</code>，<code>null约束</code></li>
+</ul>
+<blockquote>
+<p>约束</p>
+</blockquote>
+<ul>
+<li>Check约束：限制一列或多列值的范围</li>
+<li>Default约束：在无值时赋予默认值</li>
+<li>Primary key约束：维持实体完整性，主键列值必须唯一</li>
+<li>Foreign key约束：建立参照完整性，主表主键列被参照的值不能被修改</li>
+<li>Unique约束：为一列或多列提供实体完整性，即两个行间的值不能重复</li>
+</ul>
+<blockquote>
+<p>其他</p>
+</blockquote>
+<ul>
+<li>数据库管理系统中最重要的部分是数据库</li>
+<li>候选码中的属性可以有1个或多个</li>
+</ul>
+<blockquote>
+<p>一些类型解释</p>
+</blockquote>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>对象</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>取值范围:-231~231-1</td>
+</tr>
+<tr>
+<td>varchar</td>
+<td>可变长度字符</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>有符号的取值范围为:-32768——32767；无符号:0——65535</td>
+</tr>
+<tr>
+<td>tinyint</td>
+<td>0~255的整型数据，大小为1字节</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p>探讨AB&gt;CD</p>
+</blockquote>
+<p>待我捋捋</p>
 <hr>
 
         <h1 id="🗒数据库操作">
@@ -142,8 +245,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 </blockquote>
 <figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Create</span> <span class="keyword">function</span> 函数名(参数)</span><br></pre></td></tr></tbody></table></div></figure>
 
-
-
+<ul>
+<li>声明函数：<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Declare</span> @变量名 类型</span><br><span class="line">	<span class="keyword">set</span> @变量名<span class="operator">=</span>值      <span class="comment">--赋值一个变量</span></span><br><span class="line">	<span class="keyword">select</span> @变量名<span class="operator">=</span>值   <span class="comment">--可赋值多个变量</span></span><br></pre></td></tr></tbody></table></div></figure></li>
+</ul>
 <blockquote>
 <p>创建过程</p>
 </blockquote>
@@ -289,13 +393,20 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 <p>删除自定义函数</p>
 </blockquote>
 <figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Drop</span> <span class="keyword">function</span> 函数名称</span><br></pre></td></tr></tbody></table></div></figure>
+<hr>
+
+    <div class="note-plugin success no-icon">
+      
+      <p>重点章节重点部分分类指导</p>
+    </div>
+  
 
         <h2 id="🏷查询">
           <a href="#🏷查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷查询" class="headerlink" title="🏷查询"></a>🏷查询</h2>
-      
-        <h4 id="查询部分是涉及最多的内容">
-          <a href="#查询部分是涉及最多的内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#查询部分是涉及最多的内容" class="headerlink" title="查询部分是涉及最多的内容"></a>查询部分是涉及最多的内容</h4>
-      
+      <ul>
+<li>查询部分是涉及最多的内容，因此整体概述</li>
+</ul>
+
     <div class="note-plugin success no-icon">
       
       <p><strong>提示</strong><br>在我们所有操作之前，你应该会使用use选择我们的数据库，这是所有操作的第一步！</p>
@@ -361,7 +472,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 </tr>
 <tr>
 <td>范围运算</td>
-<td>between…and,not between …and</td>
+<td>between…and(包括界值),not between …and</td>
 <td>列的值是否在某个范围中</td>
 </tr>
 <tr>
@@ -457,7 +568,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 </thead>
 <tbody><tr>
 <td>count()</td>
-<td>计数,常用count(*)统计行数,返回包含空值的行数，但它不能与Distinct（去重复）一起使用</td>
+<td>统计元组,常用count(*)统计行数,返回包含空值的行数，但它不能与Distinct（去重复）一起使用</td>
 </tr>
 <tr>
 <td>SUM()</td>
@@ -556,12 +667,12 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 <p>即显示统计结果，又显示明细数据。了解即可 详见教程P96</p>
 <hr>
 
-        <h3 id="🏷多表连接查询">
-          <a href="#🏷多表连接查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷多表连接查询" class="headerlink" title="🏷多表连接查询"></a>🏷多表连接查询</h3>
+        <h4 id="🏷多表连接查询">
+          <a href="#🏷多表连接查询" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷多表连接查询" class="headerlink" title="🏷多表连接查询"></a>🏷多表连接查询</h4>
       <p><del>基本的语句已结束，下面我们来点刺激的吧</del></p>
 
-        <h4 id="📙内连接-P99">
-          <a href="#📙内连接-P99" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙内连接-P99" class="headerlink" title="📙内连接 P99"></a>📙<strong>内连接 P99</strong></h4>
+        <h5 id="📙内连接-P99">
+          <a href="#📙内连接-P99" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙内连接-P99" class="headerlink" title="📙内连接 P99"></a>📙<strong>内连接 P99</strong></h5>
       <p>连接多个表，并且可以将某些值的连接起来，以此来联系并利用多张表的数据。</p>
 <blockquote>
 <p>将学生表与选课表连接起来，输出每个同学在两张表中的所有数据(用学号连接)</p>
@@ -575,8 +686,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 
 <p><em>内连接可能导致部分信息丢失</em></p>
 
-        <h4 id="📙外连接-P-100">
-          <a href="#📙外连接-P-100" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙外连接-P-100" class="headerlink" title="📙外连接 P.100"></a>📙<strong>外连接 P.100</strong></h4>
+        <h5 id="📙外连接-P-100">
+          <a href="#📙外连接-P-100" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙外连接-P-100" class="headerlink" title="📙外连接 P.100"></a>📙<strong>外连接 P.100</strong></h5>
       <p>外连接有主次之分，不会有信息丢失，但仅适用于两个表</p>
 <ul>
 <li>左外连接</li>
@@ -594,15 +705,15 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
 
 <p><em>该处陈述较为模糊，详见教材P.101</em></p>
 
-        <h4 id="📙自连接-P-101">
-          <a href="#📙自连接-P-101" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙自连接-P-101" class="headerlink" title="📙自连接 P.101"></a>📙<strong>自连接 P.101</strong></h4>
+        <h5 id="📙自连接-P-101">
+          <a href="#📙自连接-P-101" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙自连接-P-101" class="headerlink" title="📙自连接 P.101"></a>📙<strong>自连接 P.101</strong></h5>
       <p>自连接就是一个表的两个<code>副本</code>之间的内连接</p>
 <p>即对一个表进行不同条件的连接查询</p>
 <figure class="highlight sql"><figcaption><span>查询与学号101在同一班级的学生</span></figcaption><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> B.学号,B.姓名</span><br><span class="line"><span class="keyword">from</span> 学生 <span class="keyword">as</span> A <span class="keyword">inner</span> <span class="keyword">join</span> 学生 <span class="keyword">as</span> B</span><br><span class="line"><span class="keyword">on</span> A.班级<span class="operator">=</span>B.班级</span><br><span class="line"><span class="keyword">where</span> A.学号<span class="operator">=</span><span class="string">'101'</span> <span class="keyword">and</span> B.学号<span class="operator">&lt;&gt;</span><span class="string">'101'</span></span><br></pre></td></tr></tbody></table></div></figure>
 
 
-        <h4 id="📙子查询-P-102">
-          <a href="#📙子查询-P-102" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙子查询-P-102" class="headerlink" title="📙子查询 P.102"></a>📙<strong>子查询 P.102</strong></h4>
+        <h5 id="📙子查询-P-102">
+          <a href="#📙子查询-P-102" class="heading-link"><i class="fas fa-link"></i></a><a href="#📙子查询-P-102" class="headerlink" title="📙子查询 P.102"></a>📙<strong>子查询 P.102</strong></h5>
       <p>在一个select语句中嵌套另一个select语句的where条件中使用</p>
 
     <div class="note-plugin info no-icon">
@@ -644,22 +755,164 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
         <h3 id="🏷视图与索引">
           <a href="#🏷视图与索引" class="heading-link"><i class="fas fa-link"></i></a><a href="#🏷视图与索引" class="headerlink" title="🏷视图与索引"></a>🏷视图与索引</h3>
       
-    <div class="note-plugin info no-icon">
+    <div class="note-plugin success no-icon">
       
       <p>视图是基于基表的一个映射，它是一个虚表。在数据库中仅存放它的定义，基表中的数据发生改变，视图也会发生改变；<strong>改变视图也会改变基表</strong>。</p>
     </div>
   
 
+<blockquote>
+<p>视图常用的操作</p>
+</blockquote>
+<ul>
+<li>筛选表的行</li>
+<li>防止用户访问敏感数据</li>
+<li>将多个物理表抽象为一个逻辑数据表</li>
+</ul>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<ul>
+<li>简化用户操作</li>
+<li>使用户能从多个角度看待同一数据</li>
+<li>对数据库提供一定的数据逻辑独立性</li>
+<li>对机密数据提供一定的保护</li>
+<li>可以重新组织数据</li>
+</ul>
+<blockquote>
+<p>其他</p>
+</blockquote>
+<ul>
+<li>当使用<code>Alter</code>修改视图时原权限不会变化，当图形界面修改时权限需要重设。</li>
+<li>视图每次只能对一个基表中的数据进行更新</li>
+</ul>
+
+    <div class="note-plugin success no-icon">
+      
+      <p>索引部分</p>
+    </div>
+  
+
+<blockquote>
+<p>其他</p>
+</blockquote>
+<ul>
+<li>每个表只能有一个聚集索引，在没有索引时<strong>主键</strong>会自动创建该索引</li>
+<li>为一个表创建的索引默认为非聚集性索引</li>
+<li>聚集索引与非聚集性索引都可以是唯一性索引</li>
+<li>每个表最多创建<code>249个</code>非聚集索引</li>
+<li>一个索引宽度不能超过<code>900字节</code></li>
+<li>列类型为:<code>text</code>,<code>ntext</code>,<code>image</code>,<code>bit</code>的列不能创建索引</li>
+<li>一个索引最多包含16个列</li>
+<li>创建唯一性索引时应保证该列没有重复数据且两个及以上空值</li>
+<li>聚集性索引可以对表进行物理排序</li>
+</ul>
+
+        <h3 id="T-SQL编程部分">
+          <a href="#T-SQL编程部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#T-SQL编程部分" class="headerlink" title="T-SQL编程部分"></a>T-SQL编程部分</h3>
+      
+    <div class="note-plugin success no-icon">
+      
+      <p>该部分分类了数据库编程相关内容</p>
+    </div>
+  
 
 
+        <h4 id="基础部分">
+          <a href="#基础部分" class="heading-link"><i class="fas fa-link"></i></a><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h4>
+      <blockquote>
+<p>批处理</p>
+</blockquote>
+<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go</span><br><span class="line">	批处理语句</span><br><span class="line">go</span><br></pre></td></tr></tbody></table></div></figure>
+<p><em>即两个go之间语句为一个整体执行</em></p>
+<blockquote>
+<p>注释</p>
+</blockquote>
+<figure class="highlight sql"><div class="table-container"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	多行注释</span></span><br><span class="line"><span class="comment">	多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></div></figure>
+<p><em>注释即为不执行的语句，写给人看的</em></p>
+<blockquote>
+<p>常变量</p>
+</blockquote>
+<p>局部变量</p>
+<ul>
+<li>以一个@开头</li>
+<li>一定范围有效，批处理结束该变量便结束</li>
+<li>使用前应先使用<code>Declare</code>语句声明 <em>见<code>创建与查询</code>部分</em></li>
+</ul>
+<p>全局变量</p>
+<ul>
+<li>全局变量以@@开头</li>
+<li>用户不能建立，修改全局变量</li>
+<li>@@error 返回错误的编号</li>
+</ul>
+<p><em>常见全局变量见P.137</em></p>
+<blockquote>
+<p>运算符</p>
+</blockquote>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>算术运算符</td>
+<td>+，-，*，/，%(取模)</td>
+</tr>
+<tr>
+<td>赋值运算符</td>
+<td>=</td>
+</tr>
+<tr>
+<td>字符串连接</td>
+<td>+</td>
+</tr>
+<tr>
+<td>位运算符</td>
+<td>&amp;(与)，︱(位或)，^(位异或)</td>
+</tr>
+<tr>
+<td>一元运算符</td>
+<td>+(正)，-(负)，~(位非)</td>
+</tr>
+<tr>
+<td>比较运算符</td>
+<td>&lt;&gt;(不等于)，!=(不等于)，&gt;，&lt;，=，&gt;=，&lt;=</td>
+</tr>
+<tr>
+<td>逻辑运算符</td>
+<td>and，or，not，between…and(范围,包括界值)，in，like，is null，exists(存在)</td>
+</tr>
+</tbody></table></div>
+<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://blog.csdn.net/z_johnny/article/details/114108040">优先级及具体方法</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<blockquote>
+<p>SQL语言</p>
+</blockquote>
+<ul>
+<li>DCL控制语言</li>
+<li>DML操作语言</li>
+<li>DDL定义语言</li>
+</ul>
+<blockquote>
+<p>其他</p>
+</blockquote>
+<ul>
+<li>临时表：一个#开头</li>
+<li>全局临时表：两个##开头</li>
+</ul>
+
+        <h4 id="函数">
+          <a href="#函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#函数" class="headerlink" title="函数"></a>函数</h4>
+      
     <div class="note-plugin warning">
       <span class="note-plugin__icon note-plugin__icon--warning">
               <i class="fas fa-exclamation-circle"></i>
             </span>
       <p><strong>未完待续~</strong></p>
     </div>
-  </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://nrhs-space.github.io">不是花生</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://nrhs-space.github.io/2021/12/05/SQL-note/">https://nrhs-space.github.io/2021/12/05/SQL-note/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E6%9C%9F%E6%9C%AB/">期末</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/12/25/illness-count/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">医院统计与病案管理笔记</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/04/ICD-note/"><span class="paginator-prev__text">ICD-10 编码笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NDg3MC8zMTMzOQ=="></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%89%E6%95%88%E7%9A%84%E9%A3%9F%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E4%B8%8D%E6%8C%82%E5%90%91%E6%B3%A2%EF%BC%81%E6%9B%B4%E6%96%B0%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">
-          安全有效的食用数据库，不挂向波！更新中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%97%92%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">
+  </div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://nrhs-space.github.io">不是花生</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://nrhs-space.github.io/2021/12/05/SQL-note/">https://nrhs-space.github.io/2021/12/05/SQL-note/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E6%9C%9F%E6%9C%AB/">期末</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://nrhs-space.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/12/25/illness-count/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">医院统计与病案管理笔记</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2021/12/04/ICD-note/"><span class="paginator-prev__text">ICD-10 编码笔记</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NDg3MC8zMTMzOQ=="></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%89%E6%95%88%E7%9A%84%E9%A3%9F%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%9B%B4%E6%96%B0%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">
+          安全有效的食用数据库 更新中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%97%92%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">
           🗒数据库基础部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%97%92%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">
           🗒数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%B7%E5%88%9B%E5%BB%BA%E4%B8%8E%E6%8F%92%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">
           🏷创建与插入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5"><span class="toc-number">3.1.1.</span> <span class="toc-text">
@@ -669,18 +922,20 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0">
           DBCC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-number">3.3.2.</span> <span class="toc-text">
           更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%B7%E5%88%A0%E9%99%A4"><span class="toc-number">3.4.</span> <span class="toc-text">
           🏷删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%B7%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.5.</span> <span class="toc-text">
-          🏷查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E9%83%A8%E5%88%86%E6%98%AF%E6%B6%89%E5%8F%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">3.5.0.1.</span> <span class="toc-text">
-          查询部分是涉及最多的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99where%E5%AD%90%E5%8F%A5"><span class="toc-number">3.5.0.2.</span> <span class="toc-text">
-          📙where子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.5.0.3.</span> <span class="toc-text">
-          📙条件运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">3.5.0.4.</span> <span class="toc-text">
-          📙集合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99select%E7%9A%84%E5%88%86%E7%BB%84%E4%B8%8E%E6%8E%92%E5%BA%8F"><span class="toc-number">3.5.0.5.</span> <span class="toc-text">
-          📙select的分组与排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8F%B7%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.5.1.</span> <span class="toc-text">
-          🏷多表连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E5%86%85%E8%BF%9E%E6%8E%A5-P99"><span class="toc-number">3.5.1.1.</span> <span class="toc-text">
-          📙内连接 P99</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E5%A4%96%E8%BF%9E%E6%8E%A5-P-100"><span class="toc-number">3.5.1.2.</span> <span class="toc-text">
-          📙外连接 P.100</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E8%87%AA%E8%BF%9E%E6%8E%A5-P-101"><span class="toc-number">3.5.1.3.</span> <span class="toc-text">
-          📙自连接 P.101</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E5%AD%90%E6%9F%A5%E8%AF%A2-P-102"><span class="toc-number">3.5.1.4.</span> <span class="toc-text">
-          📙子查询 P.102</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8F%B7%E8%A7%86%E5%9B%BE%E4%B8%8E%E7%B4%A2%E5%BC%95"><span class="toc-number">3.5.2.</span> <span class="toc-text">
-          🏷视图与索引</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">朝花夕拾</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="Telegram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__devider"></span><span>花的小金库</span></div><div><span>基于 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 建设</span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span></div><div>思想腐朽，灵魂潮湿</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>function initSearch() {
+          🏷查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99where%E5%AD%90%E5%8F%A5"><span class="toc-number">3.5.0.1.</span> <span class="toc-text">
+          📙where子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.5.0.2.</span> <span class="toc-text">
+          📙条件运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">3.5.0.3.</span> <span class="toc-text">
+          📙集合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%99select%E7%9A%84%E5%88%86%E7%BB%84%E4%B8%8E%E6%8E%92%E5%BA%8F"><span class="toc-number">3.5.0.4.</span> <span class="toc-text">
+          📙select的分组与排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%8F%B7%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.5.0.5.</span> <span class="toc-text">
+          🏷多表连接查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%F0%9F%93%99%E5%86%85%E8%BF%9E%E6%8E%A5-P99"><span class="toc-number">3.5.0.5.1.</span> <span class="toc-text">
+          📙内连接 P99</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%F0%9F%93%99%E5%A4%96%E8%BF%9E%E6%8E%A5-P-100"><span class="toc-number">3.5.0.5.2.</span> <span class="toc-text">
+          📙外连接 P.100</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%F0%9F%93%99%E8%87%AA%E8%BF%9E%E6%8E%A5-P-101"><span class="toc-number">3.5.0.5.3.</span> <span class="toc-text">
+          📙自连接 P.101</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%F0%9F%93%99%E5%AD%90%E6%9F%A5%E8%AF%A2-P-102"><span class="toc-number">3.5.0.5.4.</span> <span class="toc-text">
+          📙子查询 P.102</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8F%B7%E8%A7%86%E5%9B%BE%E4%B8%8E%E7%B4%A2%E5%BC%95"><span class="toc-number">3.5.1.</span> <span class="toc-text">
+          🏷视图与索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#T-SQL%E7%BC%96%E7%A8%8B%E9%83%A8%E5%88%86"><span class="toc-number">3.5.2.</span> <span class="toc-text">
+          T-SQL编程部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="toc-number">3.5.2.1.</span> <span class="toc-text">
+          基础部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">3.5.2.2.</span> <span class="toc-text">
+          函数</span></a></li></ol></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">朝花夕拾</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="Telegram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="/" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2017~2021</span><span class="footer__devider"></span><span>花的小金库</span></div><div><span>基于 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 建设</span><span> v5.4.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span></div><div>思想腐朽，灵魂潮湿</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
