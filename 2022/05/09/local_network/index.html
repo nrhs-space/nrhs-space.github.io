@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>模拟器实现三层交换机互通及telnet登陆 | 朝花夕拾</title><meta name="keywords" content="交换机"><meta name="author" content="不旦枕戈"><meta name="copyright" content="不旦枕戈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="思科三层交换机互联互通，telnet远程登陆。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟器实现三层交换机互通及telnet登陆">
+<meta property="og:url" content="https://nrhs-space.github.io/2022/05/09/local_network/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="思科三层交换机互联互通，telnet远程登陆。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/05/09/OYkwAH.png">
+<meta property="article:published_time" content="2022-05-09T10:18:28.000Z">
+<meta property="article:modified_time" content="2022-05-09T10:18:37.000Z">
+<meta property="article:author" content="不旦枕戈">
+<meta property="article:tag" content="交换机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/05/09/OYkwAH.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://nrhs-space.github.io/2022/05/09/local_network/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d32f3f32e50ca331a0cc77ab592b373";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://npm.elemecdn.com/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '模拟器实现三层交换机互通及telnet登陆',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-09 18:18:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="朝花夕拾" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s4.ax1x.com/2022/01/21/720NAe.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝花夕拾</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">模拟器实现三层交换机互通及telnet登陆</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-09T10:18:28.000Z" title="发表于 2022-05-09 18:18:28">2022-05-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-09T10:18:37.000Z" title="更新于 2022-05-09 18:18:37">2022-05-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="模拟器实现三层交换机互通及telnet登陆"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/05/09/local_network/#post-comment"><span id="twikoo-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('https://s4.ax1x.com/2022/01/21/720NAe.jpg');"></div><article class="post-content" id="article-container"><h1 id="思科"><a href="#思科" class="headerlink" title="思科"></a>思科</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><div class="note primary simple"><p>思科模拟器6.0<a target="_blank" rel="noopener" href="https://nrhs.lanzoui.com/iOHXE04kvn4d">便携包下载</a></p>
+</div>
+<p>点击程序包外快捷方式或打开主程序exe启动模拟器</p>
+<p><img src="https://s1.ax1x.com/2022/05/10/OtSjxS.jpg" alt=""></p>
+<div class="checkbox green checked"><input type="checkbox" checked="checked">
+            <p>在思科模拟器中按照题目要求摆放：</p>
+            </div>
+<ol>
+<li>1个<span class="p red">三层</span>交换机</li>
+<li>3个<span class="p red">二层</span>交换机</li>
+<li>6个<span class="p red">PC终端</span></li>
+</ol>
+<p><img src="https://s1.ax1x.com/2022/05/09/OYkpnS.jpg" alt=""></p>
+<div class="checkbox green checked"><input type="checkbox" checked="checked">
+            <p>以太网连接交换机：</p>
+            </div>
+<ol>
+<li>2个PC为一组，分别通过以太网口连接至二层交换机</li>
+<li>每组第一个pc终端通过<code>RS232</code>端口连接到二层交换机<code>console</code>端口</li>
+<li>最后一个pc终端的<code>RS232</code>连接至三层交换机</li>
+<li>二层交换机<code>fa0/24</code>与三层交换机以太网口连接</li>
+</ol>
+<div class="checkbox green checked"><input type="checkbox" checked="checked">
+            <p>IP配置：</p>
+            </div>
+<ol>
+<li>0-1号PC的IP为<u>192.168.10.2/3</u> 网关:192.168.10.1 子网掩码默认</li>
+<li>2-3号PC的IP为<u>192.168.20.2/3</u> 网关:192.168.20.1 子网掩码默认</li>
+<li>4-5号PC的IP为<u>192.168.30.2/3</u> 网关:192.168.30.1 子网掩码默认</li>
+</ol>
+<p><img src="https://s1.ax1x.com/2022/05/09/OYkkhn.jpg" alt=""></p>
+<div class="note success simple"><p>准备工作完成╮(╯▽╰)╭</p>
+</div>
+<h2 id="配置二层交换机"><a href="#配置二层交换机" class="headerlink" title="配置二层交换机"></a>配置二层交换机</h2><h3 id="划分Vlan"><a href="#划分Vlan" class="headerlink" title="划分Vlan"></a>划分Vlan</h3><p>一个交换机上终端太多，很容易诱发<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B9%BF%E6%92%AD%E9%A3%8E%E6%9A%B4/3574878">广播风暴</a>，瘫痪网络。划分vlan的目的就是<wavy>限制广播风暴</wavy>，更好管理网络。</p>
+<div class="checkbox blue checked"><input type="checkbox" checked="checked">
+            <p>PC0登陆到二层交换机<code>min-switch-0</code></p>
+            </div>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">enable --进入特权模式</span><br><span class="line"></span><br><span class="line">configure terminal --进入全局特权模式</span><br><span class="line"></span><br><span class="line">vlan 10 --创建vlan10</span><br><span class="line"></span><br><span class="line">exit --退出</span><br><span class="line"></span><br><span class="line">interface fa0/1 --进入端口0/1</span><br><span class="line"></span><br><span class="line">switch access vlan 10 --将0/1端口加入到vlan10中</span><br><span class="line"></span><br><span class="line">exit --退出</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s1.ax1x.com/2022/05/10/OtS8Bj.jpg" alt=""></p>
+<div class="note primary simple"><p>这样你就添加了fa0/1到Vlan10里。同样，把另一台pc添加到vlan里来吧。只需要注意一下是<code>0/2</code>端口哦。</p>
+</div>
+<h3 id="交换机更名"><a href="#交换机更名" class="headerlink" title="交换机更名"></a>交换机更名</h3><p>交换机太多，不更名很容易混淆。为了后面远程登陆辨认，快改个名称吧!</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enable --进入特权模式</span><br><span class="line"></span><br><span class="line">configure terminal --进入全局特权模式</span><br><span class="line"></span><br><span class="line">hostname min-switch-0 --更改名称为了'min-switch-0'</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="设置trunk模式"><a href="#设置trunk模式" class="headerlink" title="设置trunk模式"></a>设置<a target="_blank" rel="noopener" href="http://webcast.ctocio.com.cn/wlzb/2020/0827/34386.html#:~:text=TRUNK%E6%A8%A1%E5%BC%8F%E4%B8%BB,LAN%E5%85%B1%E4%BA%AB%E7%BA%BF%E8%B7%AF%E3%80%82">trunk模式</a></h3><p><code>trunk</code>即端口汇聚，允许交换机与交换机、交换机与路由器、主机与交换机或路由器之间通过两个或多个端口并行连接同时传输以提供更高带宽、更大吞吐量， 大幅度提供整个网络能力。</p>
+<p>尤其在一个交换机有多个<code>vlan</code>时，设置<code>trunk模式</code>可以通过一个端口传输多个vlan数据。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--登陆到二层交换机，并且进入全局配置模式</span><br><span class="line"></span><br><span class="line">int fa0/24 --进入到与三层交换机相连接的端口(简写了interface)</span><br><span class="line"></span><br><span class="line">sw mo trunk --设置为trunk模式(简写了switchport)</span><br><span class="line"></span><br><span class="line">sw trunk allowed vlan all --运行所有的vlan通过</span><br><span class="line"></span><br><span class="line">exit</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s1.ax1x.com/2022/05/10/OtSYEn.jpg" alt=""></p>
+<div class="tip info"><p>大部分命令敲一半就可以按<kbd>tab</kbd>键补齐哦~<br>如果都快敲完了也不补全，很可能是你不能在当前状态下执行你的命令<br>例如：<strong>show running-config</strong>查看配置<br>在全局模式下敲show run<kbd>tab</kbd>补全，在其他状态下不会补全~</p>
+</div>
+<h3 id="二层交换机的远程登陆配置"><a href="#二层交换机的远程登陆配置" class="headerlink" title="二层交换机的远程登陆配置"></a>二层交换机的远程登陆配置</h3><p>远程登陆必备吧。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">--登陆到二层交换机，并且进入全局配置模式</span><br><span class="line"></span><br><span class="line">vlan 110 --创建了vlan110用于远程</span><br><span class="line"></span><br><span class="line">int vlan 110 --进入vlan110</span><br><span class="line"></span><br><span class="line">ip address 192.168.110.1 255.255.255.0 --配置它的ip地址及子网掩码</span><br><span class="line"></span><br><span class="line">no shutdown --开启端口（必须！）</span><br><span class="line"></span><br><span class="line">exit --退出</span><br><span class="line"></span><br><span class="line">ip default-getway 192.168.110.254 --设置默认网关</span><br><span class="line"></span><br><span class="line">line vty 0 4 --设置虚拟端口</span><br><span class="line"></span><br><span class="line">password 123 --设置访问密码</span><br><span class="line"></span><br><span class="line">login --登陆</span><br><span class="line"></span><br><span class="line">privilege level 15 --设置用户权限</span><br><span class="line"></span><br><span class="line">end --完成退出</span><br><span class="line"></span><br><span class="line">write --保存</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s1.ax1x.com/2022/05/09/OYkV10.jpg" alt=""></p>
+<div class="tip cogs"><p>另外两台交换机类似操作哦~<br>只是需要注意：</p>
+<ol>
+<li>名称记得改改哦</li>
+<li>远程登陆ip:<code>192.168.110.2/3</code></li>
+</ol>
+</div>
+<h2 id="配置三层交换机"><a href="#配置三层交换机" class="headerlink" title="配置三层交换机"></a>配置三层交换机</h2><p>做到这里有点懵吧？特别是如果你尝试互相ping了一下的话。</p>
+<p>你会发现，只是同一交换机下俩机子能ping通。其他什么都不行，远程登陆也不行的。</p>
+<p>这就开始配置三层交换机。三层交换机才能将二层交换机互相联通。</p>
+<hr>
+<div class="checkbox green checked"><input type="checkbox" checked="checked">
+            <p>PC5登陆到三层交换机，并且进入全局配置模式</p>
+            </div>
+<ol>
+<li>划分vlan<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vlan 10 --创建了vlan10</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">int fa0/1 --进入端口0/1(它与二层交换机相连接)</span><br><span class="line"></span><br><span class="line">no shutdown --开启端口</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">int vlan 10 --进入vlan10</span><br><span class="line"></span><br><span class="line">ip address 192.168.10.1 255.255.255.0 --配置它的ip及子网掩码</span><br><span class="line"></span><br><span class="line">no shutdown --开启vlan</span><br><span class="line"></span><br><span class="line">exit</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<p><img src="https://s1.ax1x.com/2022/05/10/OtS0vF.jpg" alt=""></p>
+<div class="tip info"><p>在这里创建<code>vlan10</code>实际上是将整个二层交换机放了进来。让第一个二层交换机的pc可以通信。</p>
+</div>
+<div class="tip cogs"><p>类似操作，我们分别创建<code>vlan 20</code>与<code>30</code>，将<code>fa0/2</code>与<code>0/3</code>分别放入相应的<code>vlan</code>中。</p>
+</div>
+<ol>
+<li><strong>开启路由</strong></li>
+</ol>
+<p>让不通的交换机相互通信，当然要开启路由转发功能啦。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip routing</span><br></pre></td></tr></tbody></table></figure>
+<p>必须有哦，不然通不了！！！</p>
+<ol>
+<li>三层交换机的远程登陆</li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vlan 110 --创建了vlan110(远程管理专用)</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">int vlan 110</span><br><span class="line"></span><br><span class="line">ip address 192.168.110.254 255.255.255.0 --配置它的ip地址及子网掩码</span><br><span class="line"></span><br><span class="line">no shutdown --开启端口</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">line vty 0 4 --配置虚拟端口</span><br><span class="line"></span><br><span class="line">password 123 --设置访问密码</span><br><span class="line"></span><br><span class="line">login --开启服务</span><br><span class="line"></span><br><span class="line">privilege level 15 --设置权限</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">write --保存</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s1.ax1x.com/2022/05/10/OtSsb9.jpg" alt=""></p>
+<div class="note green no-icon flat"><p>好啦，不出意外的话你就配置好了一台:</p>
+<ol>
+<li><code>6个pc</code>可以互相联通</li>
+<li>任意一台机子可以通过<code>192.168.110.1</code>/<code>2</code>/<code>3</code>/<code>254</code>来远程登陆交换机</li>
+</ol>
+</div>
+<p>ping测试：<br><img src="https://s1.ax1x.com/2022/05/10/OtSRC6.jpg" alt=""></p>
+<p>telnet登陆测试：<br><img src="https://s1.ax1x.com/2022/05/10/OtSHUI.jpg" alt=""></p>
+<div class="note info no-icon flat"><p>示例pkt文件，请用模拟器打开<br><a target="_blank" rel="noopener" href="https://nrhs.lanzoui.com/i6BTs04kwwrg">下载</a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">不旦枕戈</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nrhs-space.github.io/2022/05/09/local_network/">https://nrhs-space.github.io/2022/05/09/local_network/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nrhs-space.github.io" target="_blank">朝花夕拾</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/">交换机</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/05/09/OYkwAH.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/14/nature_e/"><img class="prev-cover" src="https://s1.ax1x.com/2022/05/14/O6mBAU.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">e为什么是自然常数</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/01/The%20truth_leave/"><img class="next-cover" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">The truth that you leave</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">不旦枕戈</div><div class="author-info__description">理想现实主义者</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fab fa-windows"></i><span>花的秘密世界</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-info card-announcement-animation"></i><span>Echo</span></div><div class="announcement_content">“我不想如此过完这一生，可是好像逃不过”</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%9D%E7%A7%91"><span class="toc-number">1.</span> <span class="toc-text">思科</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.2.</span> <span class="toc-text">配置二层交换机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%92%E5%88%86Vlan"><span class="toc-number">1.2.1.</span> <span class="toc-text">划分Vlan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%9B%B4%E5%90%8D"><span class="toc-number">1.2.2.</span> <span class="toc-text">交换机更名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEtrunk%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">设置trunk模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.4.</span> <span class="toc-text">二层交换机的远程登陆配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.3.</span> <span class="toc-text">配置三层交换机</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/Graduation/" title="亲爱的花"><img src="https://pic.imgdb.cn/item/64c8e3d51ddac507cc1a81df.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="亲爱的花"></a><div class="content"><a class="title" href="/2023/06/30/Graduation/" title="亲爱的花">亲爱的花</a><time datetime="2023-06-30T15:59:59.000Z" title="发表于 2023-06-30 23:59:59">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/Always_with_me/" title="Always with me"><img src="https://pic.imgdb.cn/item/64ca3a1a1ddac507cc73853d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always with me"></a><div class="content"><a class="title" href="/2023/06/01/Always_with_me/" title="Always with me">Always with me</a><time datetime="2023-06-01T13:14:05.000Z" title="发表于 2023-06-01 21:14:05">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]"><img src="https://pic.imgdb.cn/item/63bd61cbbe43e0d30e088c6f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于GPS的坐标路径分析系统[待更新]"></a><div class="content"><a class="title" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]">基于GPS的坐标路径分析系统[待更新]</a><time datetime="2022-12-16T07:05:02.000Z" title="发表于 2022-12-16 15:05:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人"><img src="https://s1.ax1x.com/2022/11/27/zNjMhn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NovelAI——AI绘图+QQ机器人"></a><div class="content"><a class="title" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人">NovelAI——AI绘图+QQ机器人</a><time datetime="2022-11-26T10:18:47.000Z" title="发表于 2022-11-26 18:18:47">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！"><img src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『弹幕笔记』开源！"></a><div class="content"><a class="title" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！">『弹幕笔记』开源！</a><time datetime="2022-11-12T13:48:39.000Z" title="发表于 2022-11-12 21:48:39">2022-11-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2023 By 不旦枕戈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">立于皓月之边，不弱星光之势</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async="" data-pjax="" src="https://npm.elemecdn.com/akilar-candyassets/js/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/05/01/The truth_leave/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-01</span><a class="blog-slider__title" href="2022/05/01/The truth_leave/" alt="">The truth that you leave</a><div class="blog-slider__text">原以为告别总会留有时间，相拥着泪别亦或者目送着渐行渐远。但后来才发现，告别大多都是悄无声息的。原来那次相见，就已经是最后一面。</div><a class="blog-slider__button" href="2022/05/01/The truth_leave/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/11/12/BulletNote_open-source/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-12</span><a class="blog-slider__title" href="2022/11/12/BulletNote_open-source/" alt="">『弹幕笔记』开源！</a><div class="blog-slider__text">我喜欢一些奇奇怪怪的东西，即使我不会以此谋生。但我喜欢有能力实现自己想法的自己。</div><a class="blog-slider__button" href="2022/11/12/BulletNote_open-source/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/12/05/Note-sql/" alt=""><img width="48" height="48" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-05</span><a class="blog-slider__title" href="2021/12/05/Note-sql/" alt="">SQL食用笔记</a><div class="blog-slider__text">此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</div><a class="blog-slider__button" href="2021/12/05/Note-sql/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async="" src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

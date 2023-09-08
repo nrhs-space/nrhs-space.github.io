@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>python+Selenium=免费自动博客图床 | 朝花夕拾</title><meta name="keywords" content="python,Selenium"><meta name="author" content="不旦枕戈"><meta name="copyright" content="不旦枕戈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo+Github写写博客多是一件美事，但图片老是困扰我的生产质量。博客不易，阿花叹气。于是，有了这篇文章...🙃">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python+Selenium=免费自动博客图床">
+<meta property="og:url" content="https://nrhs-space.github.io/2022/03/20/IMG-Bed/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="Hexo+Github写写博客多是一件美事，但图片老是困扰我的生产质量。博客不易，阿花叹气。于是，有了这篇文章...🙃">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/03/29/q6Oldg.jpg">
+<meta property="article:published_time" content="2022-03-20T03:00:07.000Z">
+<meta property="article:modified_time" content="2022-05-13T02:30:27.679Z">
+<meta property="article:author" content="不旦枕戈">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="Selenium">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/03/29/q6Oldg.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://nrhs-space.github.io/2022/03/20/IMG-Bed/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d32f3f32e50ca331a0cc77ab592b373";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://npm.elemecdn.com/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python+Selenium=免费自动博客图床',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-13 10:30:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="朝花夕拾" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/03/29/q6ONQ0.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝花夕拾</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python+Selenium=免费自动博客图床</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-20T03:00:07.000Z" title="发表于 2022-03-20 11:00:07">2022-03-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-13T02:30:27.679Z" title="更新于 2022-05-13 10:30:27">2022-05-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python+Selenium=免费自动博客图床"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/03/20/IMG-Bed/#post-comment"><span id="twikoo-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('https://s1.ax1x.com/2022/03/29/q6ONQ0.png');"></div><article class="post-content" id="article-container"><h1 id="前世今生"><a href="#前世今生" class="headerlink" title="前世今生"></a>前世今生</h1><p>对于博客图片问题。我相信大部分博客编辑器都是可以直接将图片粘贴过去。生成一个本地文件夹来存储这些文件。</p>
+<p>例如我比较喜欢的<code>HBuilderX</code>，将截图贴过来，<code>markdown</code>格式自动生成语句，本地创建文件夹。</p>
+<p><img src="https://s1.ax1x.com/2022/03/29/q6X80O.jpg" alt=""></p>
+<p>我们在本地可以很愉快的查看我们的预览效果。但是，推送到Github上就出现了奇奇怪怪的问题。一方面是图片过多，上传速度过慢，且由于一些科学上网的原因，很多时候会上传失败。</p>
+<p>另外是访问速度不是很舒服，这不是优雅的图片解决方案。</p>
+<hr>
+<p>图床，尤其是大厂图床。CDN加速，无流量限制，随用随修改，这才是我们理想的图片解决方案。</p>
+<p>但是，优雅的解决方案往往伴随着需要钞能力的加持。我们租用服务器，搭建平台，建设API……</p>
+<p>我们大可不必重新建设轮子，在网络上有非常多的免费图床提供。</p>
+<p><img src="https://s1.ax1x.com/2022/03/29/q6XAmT.jpg" alt=""></p>
+<p>这些免费图床实现了我们免费白嫖图床的想法。但实际使用检验，很难有免费图床可以<kbd>不登陆</kbd>，<kbd>不删除</kbd>，<kbd>不限流</kbd>，<kbd>不限量</kbd>，<kbd>不跑路</kbd>……</p>
+<p>我很喜欢使用<a target="_blank" rel="noopener" href="https://imgtu.com/">路过图床</a>，它可以很好的解决上述问题。稳如老狗。</p>
+<p><img src="https://s1.ax1x.com/2022/03/29/q6XttH.jpg" alt=""></p>
+<p>但又出现了一个新的问题。在游客中上传图片只能<wavy>一次上传一张</wavy>。作为白嫖客，我完全理解。但这样使用一张图片就需要手动上传一次实在不优雅。</p>
+<hr>
+<u>更优雅的解决方案当然是读取本地markdown文档和相关文件夹，自动上传图片获得Url链接，并将其替换md文档内链接。</u>
+<p>但正如上述，优雅往往需要钞能力加持。提供API接口的图床很多，但免费的寥寥无几。于是，我们需要使用一个次优雅的解决方案。</p>
+<p><img src="https://s1.ax1x.com/2022/03/29/q6XHN4.jpg" alt=""></p>
+<div class="note purple icon flat"><i class="note-icon far fa-hand-scissors"></i><p>次优雅解决方案</p>
+</div>
+<p>我们使用<code>Python+Selenium</code>库来实现python操作浏览器。</p>
+<p>Python进行对本地文件夹与<code>markdown</code>文档读取。循环提交文件夹内的图片，拿到上传成功的<code>Url</code>链接，替换掉md文档内原路径链接。</p>
+<h1 id="理论存在，实践开始"><a href="#理论存在，实践开始" class="headerlink" title="理论存在，实践开始"></a>理论存在，实践开始</h1><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">post_img</span>(<span class="params">path</span>):</span><br><span class="line">    Brower = webdriver.Chrome(<span class="string">"E:\百分浏览器\chromedriver.exe"</span>) <span class="comment"># 浏览器内核驱动路径</span></span><br><span class="line">    Brower.get(<span class="string">'https://imgtu.com/'</span>)</span><br><span class="line">    time.sleep(<span class="number">3</span>)  <span class="comment"># 延时操作</span></span><br><span class="line">    Brower.find_element_by_id(<span class="string">'anywhere-upload-input'</span>).send_keys(path)</span><br><span class="line">    time.sleep(<span class="number">2</span>)  <span class="comment"># 延时操作</span></span><br><span class="line">    button=<span class="string">'document.querySelector("#anywhere-upload-submit &gt; div:nth-child(1) &gt; button").click()'</span></span><br><span class="line">    Brower.execute_script(button)</span><br><span class="line">    time.sleep(<span class="number">6</span>)</span><br><span class="line">    html=Brower.page_source</span><br><span class="line">    jpg=re.findall(<span class="string">r'image_src" href="(.+?)"&gt;'</span>,html)</span><br><span class="line">    Brower.close()  <span class="comment"># 关闭浏览器</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"已完成:%s"</span>%jpg[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> jpg[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">alter</span>(<span class="params">file,old_str,new_str</span>):</span><br><span class="line">  <span class="keyword">with</span> <span class="built_in">open</span>(file, <span class="string">"r"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f1,<span class="built_in">open</span>(<span class="string">"%s.bak"</span> % file, <span class="string">"w"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f2:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f1:</span><br><span class="line">      <span class="keyword">if</span> old_str <span class="keyword">in</span> line:</span><br><span class="line">        line = line.replace(old_str, new_str)</span><br><span class="line">      f2.write(line)</span><br><span class="line">  os.remove(file)</span><br><span class="line">  os.rename(<span class="string">"%s.bak"</span> % file, file)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">folder_name = os.listdir(<span class="string">"G:\\blog\source\_posts2\OCR_img_files"</span>) <span class="comment"># 文件夹路径</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(folder_name)):</span><br><span class="line">    data_name = <span class="string">"OCR_img_files/"</span> + folder_name[i] <span class="comment"># md文档内路径前缀</span></span><br><span class="line">    post_path = <span class="string">"G:\\blog\source\_posts2\\"</span>+data_name.replace(<span class="string">"/"</span>, <span class="string">"\\"</span>) <span class="comment"># 文件夹路径转换/斜杠输出</span></span><br><span class="line"></span><br><span class="line">    alter(<span class="string">"G:\\blog\source\_posts2\OCR_img.md"</span>, data_name, post_img(post_path)) <span class="comment"># md文档绝对路径，替换md文档内路径</span></span><br></pre></td></tr></tbody></table></figure>
+<p>其中文件路径需要仔细注意。</p>
+<p><img src="https://s1.ax1x.com/2022/03/29/q6jP4H.jpg" alt=""></p>
+<p>对<code>Selenium</code>存在疑问可以去”百度+必应”联合大学查找办法。大概流程可以参考我的博客文章<a target="_blank" rel="noopener" href="http://blog.nrhs.tk/2022/01/23/EG-webdriver_py/">基于Selenium实现python浏览器自动化</a></p>
+<div class="tip bell"><p>本文章自豪的采用了该技巧</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">不旦枕戈</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nrhs-space.github.io/2022/03/20/IMG-Bed/">https://nrhs-space.github.io/2022/03/20/IMG-Bed/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nrhs-space.github.io" target="_blank">朝花夕拾</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a><a class="post-meta__tags" href="/tags/Selenium/">Selenium</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/03/29/q6Oldg.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/04/14/I_ever-life/"><img class="prev-cover" src="https://s1.ax1x.com/2022/04/19/LBttv8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">似水流年</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/15/OCR_img/"><img class="next-cover" src="https://pic.imgdb.cn/item/6240064727f86abb2aea341f.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">简单处理一下图片</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/15/OCR_img/" title="简单处理一下图片"><img class="cover" src="https://pic.imgdb.cn/item/6240064727f86abb2aea341f.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-15</div><div class="title">简单处理一下图片</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">不旦枕戈</div><div class="author-info__description">理想现实主义者</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fab fa-windows"></i><span>花的秘密世界</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-info card-announcement-animation"></i><span>Echo</span></div><div class="announcement_content">“我不想如此过完这一生，可是好像逃不过”</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F"><span class="toc-number">1.</span> <span class="toc-text">前世今生</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E5%AD%98%E5%9C%A8%EF%BC%8C%E5%AE%9E%E8%B7%B5%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text">理论存在，实践开始</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/Graduation/" title="亲爱的花"><img src="https://pic.imgdb.cn/item/64c8e3d51ddac507cc1a81df.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="亲爱的花"></a><div class="content"><a class="title" href="/2023/06/30/Graduation/" title="亲爱的花">亲爱的花</a><time datetime="2023-06-30T15:59:59.000Z" title="发表于 2023-06-30 23:59:59">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/Always_with_me/" title="Always with me"><img src="https://pic.imgdb.cn/item/64ca3a1a1ddac507cc73853d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always with me"></a><div class="content"><a class="title" href="/2023/06/01/Always_with_me/" title="Always with me">Always with me</a><time datetime="2023-06-01T13:14:05.000Z" title="发表于 2023-06-01 21:14:05">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]"><img src="https://pic.imgdb.cn/item/63bd61cbbe43e0d30e088c6f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于GPS的坐标路径分析系统[待更新]"></a><div class="content"><a class="title" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]">基于GPS的坐标路径分析系统[待更新]</a><time datetime="2022-12-16T07:05:02.000Z" title="发表于 2022-12-16 15:05:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人"><img src="https://s1.ax1x.com/2022/11/27/zNjMhn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NovelAI——AI绘图+QQ机器人"></a><div class="content"><a class="title" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人">NovelAI——AI绘图+QQ机器人</a><time datetime="2022-11-26T10:18:47.000Z" title="发表于 2022-11-26 18:18:47">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！"><img src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『弹幕笔记』开源！"></a><div class="content"><a class="title" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！">『弹幕笔记』开源！</a><time datetime="2022-11-12T13:48:39.000Z" title="发表于 2022-11-12 21:48:39">2022-11-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2023 By 不旦枕戈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">立于皓月之边，不弱星光之势</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async="" data-pjax="" src="https://npm.elemecdn.com/akilar-candyassets/js/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/05/01/The truth_leave/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-01</span><a class="blog-slider__title" href="2022/05/01/The truth_leave/" alt="">The truth that you leave</a><div class="blog-slider__text">原以为告别总会留有时间，相拥着泪别亦或者目送着渐行渐远。但后来才发现，告别大多都是悄无声息的。原来那次相见，就已经是最后一面。</div><a class="blog-slider__button" href="2022/05/01/The truth_leave/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/11/12/BulletNote_open-source/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-12</span><a class="blog-slider__title" href="2022/11/12/BulletNote_open-source/" alt="">『弹幕笔记』开源！</a><div class="blog-slider__text">我喜欢一些奇奇怪怪的东西，即使我不会以此谋生。但我喜欢有能力实现自己想法的自己。</div><a class="blog-slider__button" href="2022/11/12/BulletNote_open-source/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/12/05/Note-sql/" alt=""><img width="48" height="48" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-05</span><a class="blog-slider__title" href="2021/12/05/Note-sql/" alt="">SQL食用笔记</a><div class="blog-slider__text">此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</div><a class="blog-slider__button" href="2021/12/05/Note-sql/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async="" src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

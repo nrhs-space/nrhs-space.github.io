@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>树莓派备忘录 | 朝花夕拾</title><meta name="keywords" content="树莓派"><meta name="author" content="不旦枕戈"><meta name="copyright" content="不旦枕戈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="树莓派可好吃了...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派备忘录">
+<meta property="og:url" content="https://nrhs-space.github.io/2022/10/14/raspi/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="树莓派可好吃了...">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/6348dda816f2c2beb169c6f4.jpg">
+<meta property="article:published_time" content="2022-10-14T03:49:19.000Z">
+<meta property="article:modified_time" content="2022-12-05T02:37:49.062Z">
+<meta property="article:author" content="不旦枕戈">
+<meta property="article:tag" content="树莓派">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.imgdb.cn/item/6348dda816f2c2beb169c6f4.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://nrhs-space.github.io/2022/10/14/raspi/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d32f3f32e50ca331a0cc77ab592b373";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://npm.elemecdn.com/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '树莓派备忘录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-05 10:37:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="朝花夕拾" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic1.imgdb.cn/item/6348de3d16f2c2beb16a971e.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝花夕拾</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">树莓派备忘录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-14T03:49:19.000Z" title="发表于 2022-10-14 11:49:19">2022-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-05T02:37:49.062Z" title="更新于 2022-12-05 10:37:49">2022-12-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="树莓派备忘录"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/10/14/raspi/#post-comment"><span id="twikoo-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('https://pic1.imgdb.cn/item/6348de3d16f2c2beb16a971e.jpg');"></div><article class="post-content" id="article-container"><h1 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h1><hr>
+<h2 id="树莓派无屏幕连接"><a href="#树莓派无屏幕连接" class="headerlink" title="树莓派无屏幕连接"></a>树莓派无屏幕连接</h2><ol>
+<li>ssh连接ip</li>
+<li>sudo raspi-config开启vnc服务</li>
+<li>登陆提示无屏幕</li>
+<li>ssh连接进入设置，改变分辨率大小，重启</li>
+<li>vnc连接，显示不完全<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.config/lxpanel/LXDE-pi/panels</span><br><span class="line"></span><br><span class="line">curl -O https://gist.githubusercontent.com/ColinNg/9ed317308a9a0f75824f828e75c8469c/raw/a72176416201a0e6ebbce30608e6f7eceb379e0e/panel</span><br><span class="line"></span><br><span class="line">sudo reboot</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2015/06/28/raspberry-pi-date-and-time-correction-method-allowed.html">修正时间</a></p>
+</blockquote>
+<h2 id="开启ssh"><a href="#开启ssh" class="headerlink" title="开启ssh"></a>开启ssh</h2><blockquote>
+<p>boot目录下创建ssh文件，默认ssh账户pi密码为raspberry</p>
+</blockquote>
+<ul>
+<li>修改pi用户的ssh密码:<code>sudo passwd pi</code></li>
+</ul>
+<h2 id="配置Wifi连接及网络"><a href="#配置Wifi连接及网络" class="headerlink" title="配置Wifi连接及网络"></a>配置Wifi连接及网络</h2><p>使用nano修改<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>文件，仿照原配置继续写</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo   iwlist wlan0  scan --扫描周围wifi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></tbody></table></figure>
+<p>例如配置，其中<code>priority=5</code>值越高等级越高，优先连接权更高</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line">country=CN</span><br><span class="line"></span><br><span class="line">network={</span><br><span class="line">        ssid="Three-Body"</span><br><span class="line">        psk="qwertyuiop"</span><br><span class="line">        priority=5</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">network={</span><br><span class="line">        ssid="360 N7 Lite"</span><br><span class="line">        psk="zxcvbnml"</span><br><span class="line">        priority=2</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">network={</span><br><span class="line">        ssid="SXYYC"</span><br><span class="line">        key_mgmt=NONE</span><br><span class="line">        priority=1</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>首次烧录镜像的话，在boot目录下创建<code>wpa_supplicant.conf</code>即可</li>
+</ul>
+<h2 id="定时执行任务"><a href="#定时执行任务" class="headerlink" title="定时执行任务"></a>定时执行任务</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -e 编辑命令，首次选择nano</span><br><span class="line">crontab -l 查看任务</span><br></pre></td></tr></tbody></table></figure>
+<p>取消了秒</p>
+<p>P.<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/1 * * * *  python3 /home/pi/nrhs_pi/pi_py/ip.py 每分钟执行一次py脚本</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="仪表盘安装"><a href="#仪表盘安装" class="headerlink" title="仪表盘安装"></a><a target="_blank" rel="noopener" href="https://make.quwj.com/project/10">仪表盘安装</a></h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx php7.4-fpm php7.4-cli php7.4-curl php7.4-gd php7.4-cgi</span><br><span class="line"></span><br><span class="line"># 由于教程过时，在2022年应该使用php7.4</span><br><span class="line"># 若提示无法找到包，请换成7.3</span><br><span class="line"></span><br><span class="line">location / {</span><br><span class="line">index  index.html index.htm index.php default.html default.htm default.php;</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line">location ~\.php$ {</span><br><span class="line">fastcgi_pass unix:/run/php/php7.4-fpm.sock;</span><br><span class="line">#fastcgi_pass 127.0.0.1:9000;</span><br><span class="line">fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</span><br><span class="line">include fastcgi_params;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>重启nginx:<code>sudo service nginx restart</code></p>
+<p>git克隆：<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br><span class="line"></span><br><span class="line">cd /var/www/html</span><br><span class="line"></span><br><span class="line">sudo git clone https://github.com/nxez/pi-dashboard.git</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="重新安装chromium浏览器"><a href="#重新安装chromium浏览器" class="headerlink" title="重新安装chromium浏览器"></a>重新安装chromium浏览器</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update/sudo apt full-upgrade 升级与完整包升级</span><br><span class="line"></span><br><span class="line">sudo apt install chromium-browser -y 安装chromium-browser</span><br><span class="line"></span><br><span class="line">chromium-browser 启动</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="ftp服务安装"><a href="#ftp服务安装" class="headerlink" title="ftp服务安装"></a>ftp服务安装</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vsftpd   安装vstfpd</span><br><span class="line"></span><br><span class="line">sudo service vsftpd start 启动服务</span><br><span class="line"></span><br><span class="line">sudo nano /etc/vsftpd.conf   编辑vsftdp的配置文件</span><br></pre></td></tr></tbody></table></figure>
+<p>编辑：<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable=NO  不允许匿名访问</span><br><span class="line"></span><br><span class="line">local_enable=YES  设定本地用户可以访问。</span><br><span class="line"></span><br><span class="line">write_enable=YES  设定可以进行写操作</span><br><span class="line"></span><br><span class="line">local_umask=022   设定上传后文件的权限掩码。</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>重启:<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service vsftpd restart</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>上传文件名包含中文时可能会乱码，在linux下无法正常显示。这是因为windows文件名默认GBK编码，而linux是UTF—8。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install convmv -y   --安装convmv文件转码工具</span><br><span class="line"></span><br><span class="line">convmv -f gbk -t utf-8 -r --notest /home/要操作的文件或者文件夹</span><br></pre></td></tr></tbody></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mlgjb/p/9747315.html">转码完成即解决</a></p>
+<h2 id="文件夹及文件操作"><a href="#文件夹及文件操作" class="headerlink" title="文件夹及文件操作"></a>文件夹及文件操作</h2><blockquote>
+<p>移动复制删除文件夹</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo mv FMmp3 /home/pi/nrhs_pi/pi_web/	将当前目录下的FMmp3移动到指定目录</span><br><span class="line"></span><br><span class="line">sudo mv /usr/xu/* .	将/usr/xu中的所有文件移到当前目录（.表示当前）</span><br><span class="line"></span><br><span class="line">sudo cp dir1/a.doc dir2 表示将dir1下的a.doc文件复制到dir2目录下</span><br><span class="line"></span><br><span class="line">sudo rm -rf mp3	删除了当前目录下mp3文件夹，可跟目录。</span><br><span class="line"></span><br><span class="line">sudo rm -f /var/log/httpd/access.log	强制删除/var/log/httpd/access.log文件</span><br></pre></td></tr></tbody></table></figure>
+<p>文件及文件夹更名：<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv FMmp3 mp3 将FMmp3改名为mp3</span><br></pre></td></tr></tbody></table></figure><p></p>
+<blockquote>
+<p>权限设置</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 folder_path</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>修改密码</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd pi                   #修改 pi 密码  </span><br><span class="line">sudo passwd root                 #设置 root 密码    </span><br><span class="line">su root                          #切换到 root 用户  </span><br><span class="line">su pi                            #切换到 pi 用户 </span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>find寻找</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -iname "sshd_config" # 寻找文件夹</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="时间设置"><a href="#时间设置" class="headerlink" title="时间设置"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/github_38111866/article/details/76057237">时间设置</a></h2><p>调整时区<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure tzdata 打开设置</span><br><span class="line"></span><br><span class="line">选择Asia亚洲shanghai时间</span><br><span class="line"></span><br><span class="line">sudo ntpd -s -d 矫正时间</span><br><span class="line"></span><br><span class="line">//sudo date  --s="2017-07-25 10:43:00" 强制设置时间</span><br><span class="line"></span><br><span class="line">date 显示时间</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h2><p>编辑<code>/etc/apt/sources.list</code>文件<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br><span class="line"></span><br><span class="line">注释原来源，换为清华大学源</span><br><span class="line"></span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib</span><br><span class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>编辑<code>/etc/apt/sources.list.d/raspi.list</code>文件<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list.d/raspi.list</span><br><span class="line"></span><br><span class="line">注释原来源，换为清华大学源</span><br><span class="line"></span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui</span><br></pre></td></tr></tbody></table></figure><p></p>
+<blockquote>
+<p>更新软件库及依赖<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update --更新软件源</span><br><span class="line">apt list --upgradable --更新了哪些内容</span><br><span class="line"></span><br><span class="line">sudo apt upgrade --升级所有软件，时间漫长，慎重</span><br></pre></td></tr></tbody></table></figure><p></p>
+</blockquote>
+<h2 id="开启及关闭GUI"><a href="#开启及关闭GUI" class="headerlink" title="开启及关闭GUI"></a><a target="_blank" rel="noopener" href="https://www.cxyzjd.com/article/qq_42908042/91129443">开启及关闭GUI</a></h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config # 打开设置</span><br><span class="line"></span><br><span class="line">boot options # boot设置</span><br><span class="line"></span><br><span class="line"># 选择console Autologin Text console</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="进阶应用"><a href="#进阶应用" class="headerlink" title="进阶应用"></a>进阶应用</h1><p>由于树莓派内存较小，<code>mysql</code>有点大，我的学习资料都跑不起来了。</p>
+<h2 id="安装SQLite"><a href="#安装SQLite" class="headerlink" title="安装SQLite"></a>安装SQLite</h2><p>一般来讲，Linux一般已内置<a target="_blank" rel="noopener" href="https://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite</a><br><a target="_blank" rel="noopener" href="https://www.labno3.com/2021/03/25/setting-up-an-sqlite-database-on-a-raspberry-pi/">示例教程</a></p>
+<p>检查”<code>SQLite3</code>“</p>
+<blockquote>
+<p>未安装</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt install sqlite3</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>启动</p>
+</blockquote>
+<p>命令行下SQLite3会出现版本号和sql命令行</p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 SQLite-name.db		在外命令行下直接创建</span><br><span class="line"></span><br><span class="line">sqlite&gt;.open SQLite-name.db		SQLite命令行下创建，标识为(sqlite&gt;)</span><br><span class="line">//.open会检查数据库时候存在，存在就打开，不存在就创建</span><br><span class="line"></span><br><span class="line">sqlite&gt;.databases		查看数据库列表</span><br><span class="line"></span><br><span class="line">sqlite&gt;.quit		退出数据库操作</span><br><span class="line">//CTRL+D一样</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="PHP调用"><a href="#PHP调用" class="headerlink" title="PHP调用"></a><a target="_blank" rel="noopener" href="https://www.runoob.com/sqlite/sqlite-php.html">PHP调用</a></h2><p>请参阅<a target="_blank" rel="noopener" href="https://www.runoob.com/sqlite/sqlite-php.html">PHP_SQLite菜鸟教程</a>，<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-tutorial.html">PHP菜鸟教程</a></p>
+<blockquote>
+<p>PHP中连接数据库并遍历数据按html模板输出</p>
+</blockquote>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">      <span class="meta">&lt;?php</span></span><br><span class="line">      <span class="class"><span class="keyword">class</span> <span class="title">MyDB</span> <span class="keyword">extends</span> <span class="title">SQLite3</span></span></span><br><span class="line"><span class="class">      </span>{</span><br><span class="line">          <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">          </span>{</span><br><span class="line">              <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">open</span>(<span class="string">'../pi_sql_web.db'</span>);</span><br><span class="line">          }</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="variable">$db</span> = <span class="keyword">new</span> <span class="title function_ invoke__">MyDB</span>();</span><br><span class="line">      <span class="keyword">if</span> (!<span class="variable">$db</span>) {</span><br><span class="line">          <span class="keyword">echo</span> <span class="variable">$db</span>-&gt;<span class="title function_ invoke__">lastErrorMsg</span>();</span><br><span class="line">      } <span class="keyword">else</span> {</span><br><span class="line">          <span class="comment">//echo "Opened database successfully\n";</span></span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="variable">$sql</span> = <span class="string">&lt;&lt;&lt;EOF</span></span><br><span class="line"><span class="string">      SELECT * from desk_project;</span></span><br><span class="line"><span class="string">EOF</span>;</span><br><span class="line"></span><br><span class="line">      <span class="variable">$ret</span> = <span class="variable">$db</span>-&gt;<span class="title function_ invoke__">query</span>(<span class="variable">$sql</span>);</span><br><span class="line">      <span class="keyword">while</span> (<span class="variable">$row</span> = <span class="variable">$ret</span>-&gt;<span class="title function_ invoke__">fetchArray</span>(SQLITE3_ASSOC)) {</span><br><span class="line">          <span class="keyword">echo</span> <span class="string">'&lt;div class="shortcut" onclick="Win10.openUrl(\''</span>.<span class="variable">$row</span>[<span class="string">'url'</span>].<span class="string">'\',</span></span><br><span class="line"><span class="string">          \'&lt;img class=\\\'icon\\\' src=\\\''</span>.<span class="variable">$row</span>[<span class="string">'ico'</span>].<span class="string">'\\\'/&gt;终端操作\')"&gt;'</span>;</span><br><span class="line">          <span class="keyword">echo</span> <span class="string">'&lt;img class="icon" src="'</span>.<span class="variable">$row</span>[<span class="string">'ico'</span>].<span class="string">'" /&gt;'</span>;</span><br><span class="line">          <span class="keyword">echo</span> <span class="string">'&lt;div class="title"&gt;'</span>.<span class="variable">$row</span>[<span class="string">'name'</span>].<span class="string">'&lt;/div&gt;'</span>;</span><br><span class="line">          <span class="keyword">echo</span> <span class="string">'&lt;/div&gt;'</span>;</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>PHP执行一段SQL并拿到值</p>
+</blockquote>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM pi_cyan ORDER BY RANDOM() limit 1;"</span>;</span><br><span class="line">    <span class="variable">$ret</span> = <span class="variable">$db</span>-&gt;<span class="title function_ invoke__">query</span>(<span class="variable">$sql</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="variable">$row</span> = <span class="variable">$ret</span>-&gt;<span class="title function_ invoke__">fetchArray</span>(SQLITE3_ASSOC)) {</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'&lt;div class="title"&gt;'</span>.<span class="variable">$row</span>[<span class="string">'cyan'</span>].<span class="string">'&amp;nbsp;&amp;nbsp;&amp;nbsp;__@'</span>.<span class="variable">$row</span>[<span class="string">'name'</span>].<span class="string">'&lt;/div&gt;'</span>;</span><br><span class="line">    }</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Pytho调用"><a href="#Pytho调用" class="headerlink" title="Pytho调用"></a>Pytho调用</h2><blockquote>
+<p>读，查数据库</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"></span><br><span class="line">conn = sqlite3.connect(<span class="string">'----||test.db'</span>)    <span class="comment"># 应当使用绝对路径，否则不能正确读库</span></span><br><span class="line">c = conn.cursor()</span><br><span class="line"><span class="built_in">print</span> (<span class="string">"数据库打开成功"</span>)</span><br><span class="line"></span><br><span class="line">cursor = c.execute(<span class="string">"SELECT id, name, address, salary  from COMPANY"</span>)</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> cursor:</span><br><span class="line">   <span class="built_in">print</span> <span class="string">"ID = "</span>, row[<span class="number">0</span>]</span><br><span class="line">   <span class="built_in">print</span> <span class="string">"NAME = "</span>, row[<span class="number">1</span>]</span><br><span class="line">   <span class="built_in">print</span> <span class="string">"ADDRESS = "</span>, row[<span class="number">2</span>]</span><br><span class="line">   <span class="built_in">print</span> <span class="string">"SALARY = "</span>, row[<span class="number">3</span>], <span class="string">"\n"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (<span class="string">"数据操作成功"</span>)</span><br><span class="line">conn.close()</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>python一键换源<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></tbody></table></figure><p></p>
+</blockquote>
+<h2 id="树莓派进程守护"><a href="#树莓派进程守护" class="headerlink" title="树莓派进程守护"></a>树莓派进程守护</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2020/06/30/linux-usage-systemd.html">树莓派进程守护systemd</a></p>
+</blockquote>
+<p>在<code>/usr/lib/systemd/system/</code>目录下新建<code>service</code>文件</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /usr/lib/systemd/system/alist.service</span><br></pre></td></tr></tbody></table></figure>
+<p>写入配置</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=alist   --名称</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">WorkingDirectory=path_alist  --alist安装目录，下同</span><br><span class="line">ExecStart=path_alist/alist-xxxx -conf data/config.json   --</span><br><span class="line">Restart=on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>启动: systemctl start alist</li>
+<li>关闭: systemctl stop alist</li>
+<li>自启: systemctl enable alist</li>
+<li>状态: systemctl status alist</li>
+<li>重启: systemctl restart alist</li>
+</ul>
+<blockquote>
+<p>screen</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">screen -S project_name  创建</span><br><span class="line"></span><br><span class="line">screen -r project_name  进入已有的窗口</span><br><span class="line"></span><br><span class="line">screen -ls</span><br><span class="line"></span><br><span class="line">CTRL+A 选中 d隐藏</span><br><span class="line"></span><br><span class="line">kill name_or_id 杀死进程</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h2><p>frp：<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frpc -c ./frpc.ini   启动</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>1.尝试破解邻居wifi—-失败5，成功1<br>    (1).房屋内信号奇差，遂开始研究无线中继</p>
+<pre><code>    [1].尝试esp8266开发板中继
+        1).因淘宝买到崴货失败
+
+    [2].尝试树莓派搭建中继服务---树莓派2楼掉下干碎，维修￥15
+
+    [3].中继搭建成功
+        1).WiFi芯片功率较低而速度极慢，放弃
+
+    [4].开始研究无线网卡作为AP中继
+        1).因无线网卡芯片不支持Linux失败。。。
+
+    [5].开始研究USB网络共享
+        1).因拼多多买到崴货数据线失败
+</code></pre><p>2.尝试钓鱼执法偷密码—-因技术原因失败</p>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-blue" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><p>更新于2022.6</p></div></div>
+<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><blockquote>
+<p>首先查看树莓派是否已自带docker</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker -v</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wzhrsh/article/details/116230165">卸载与重装</a></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">#卸载docker</span><br><span class="line">sudo apt-get remove docker</span><br><span class="line">sudo apt-get remove docker-engine docker.io</span><br><span class="line">#卸载docker-ce</span><br><span class="line">sudo apt-get remove docker-ce</span><br><span class="line">#卸载安装依赖</span><br><span class="line">sudo apt-get autoremove --purge docker-ce</span><br><span class="line">上面的命令不会移除镜像、容器、卷或者是用户创建的配置文件，如果想卸载所有的镜像、容器、卷，可运行</span><br><span class="line">rm -rf /var/lib/docker</span><br><span class="line"></span><br><span class="line">--------------------------------------------------</span><br><span class="line">首先安装依赖</span><br><span class="line">sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common</span><br><span class="line">信任 Docker 的 GPG 公钥</span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line">对于 amd64 架构的计算机，添加软件仓库</span><br><span class="line"> </span><br><span class="line">sudo add-apt-repository \</span><br><span class="line"> "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu \</span><br><span class="line">$(lsb_release -cs) \</span><br><span class="line">stable"</span><br><span class="line">最后安装</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce</span><br><span class="line">把当前用户加到docker用户组中</span><br><span class="line">添加docker用户组</span><br><span class="line"> </span><br><span class="line">sudo groupadd docker</span><br><span class="line"> </span><br><span class="line">把自己加到docker用户组中</span><br><span class="line"> </span><br><span class="line">#myusername   是你自己的用户名</span><br><span class="line">sudo gpasswd -a myusername docker</span><br><span class="line"> </span><br><span class="line">重启docker后台服务</span><br><span class="line"> </span><br><span class="line">sudo service docker restart</span><br><span class="line">切换当前用户到新group</span><br><span class="line"> </span><br><span class="line">newgrp - docker</span><br><span class="line">确定docker可以非sudo运行</span><br><span class="line"> </span><br><span class="line">docker ps --查看所有项目</span><br><span class="line"></span><br><span class="line">sudo docker run hello-world --测试docker是否成功安装</span><br><span class="line"></span><br><span class="line">将会输出`Hello from Docker!`</span><br><span class="line">--------------------------------------------------</span><br><span class="line"></span><br><span class="line">#下载 Docker 图形化界面 portainer</span><br><span class="line">sudo docker pull portainer/portainer</span><br><span class="line">#创建 portainer 容器</span><br><span class="line">sudo docker volume create portainer_data</span><br><span class="line">#运行 portainer</span><br><span class="line">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br><span class="line"></span><br><span class="line">--------------------------------------------------</span><br><span class="line">#重启 systemctl 守护进程</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">#设置 Docker 开机启动</span><br><span class="line">sudo systemctl enable docker</span><br><span class="line">#开启 Docker 服务</span><br><span class="line">sudo systemctl start docker</span><br><span class="line"># 重启</span><br><span class="line">systemctl daemon-reload</span><br><span class="line"> </span><br><span class="line">systemctl restart docker</span><br><span class="line"># sudo systemctl disable docker 取消开机自启</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>进入容器虚拟目录</p>
+</blockquote>
+<p>docker container exec -it 容器id /bin/bash</p>
+<h2 id="部署alist"><a href="#部署alist" class="headerlink" title="部署alist"></a>部署alist</h2><p>官方文档，docker安装</p>
+<h1 id="部分问题"><a href="#部分问题" class="headerlink" title="部分问题"></a>部分问题</h1><blockquote>
+<p>apt-get安装中的E: Sub-process /usr/bin/dpkg returned an error code (1)问题</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/dpkg/</span><br><span class="line">sudo mv info/ info_bak          # 现将info文件夹更名</span><br><span class="line">sudo mkdir info                 # 再新建一个新的info文件夹</span><br><span class="line">sudo apt-get update             # 更新</span><br><span class="line">sudo apt-get -f install         # 修复</span><br><span class="line">sudo mv info/* info_bak/        # 执行完上一步操作后会在新的info文件夹下生成一些文件，现将这些文件全部移到info_bak文件夹下</span><br><span class="line">sudo rm -rf info                # 把自己新建的info文件夹删掉</span><br><span class="line">sudo mv info_bak info           # 把以前的info文件夹重新改回名</span><br></pre></td></tr></tbody></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">不旦枕戈</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nrhs-space.github.io/2022/10/14/raspi/">https://nrhs-space.github.io/2022/10/14/raspi/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nrhs-space.github.io" target="_blank">朝花夕拾</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a></div><div class="post_share"><div class="social-share" data-image="https://pic1.imgdb.cn/item/6348dda816f2c2beb169c6f4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/16/extend_device/"><img class="prev-cover" src="https://s1.ax1x.com/2022/11/13/zFRQPK.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">桌面拓展及优雅的设备流转</div></div></a></div><div class="next-post pull-right"><a href="/2022/09/30/meet_and_leave/"><img class="next-cover" src="https://pic1.imgdb.cn/item/6342e0d916f2c2beb145c6b5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">感谢陪伴</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">不旦枕戈</div><div class="author-info__description">理想现实主义者</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fab fa-windows"></i><span>花的秘密世界</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-info card-announcement-animation"></i><span>Echo</span></div><div class="announcement_content">“我不想如此过完这一生，可是好像逃不过”</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E6%97%A0%E5%B1%8F%E5%B9%95%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.1.</span> <span class="toc-text">树莓派无屏幕连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AFssh"><span class="toc-number">1.2.</span> <span class="toc-text">开启ssh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEWifi%E8%BF%9E%E6%8E%A5%E5%8F%8A%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.</span> <span class="toc-text">配置Wifi连接及网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.4.</span> <span class="toc-text">定时执行任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%AA%E8%A1%A8%E7%9B%98%E5%AE%89%E8%A3%85"><span class="toc-number">1.5.</span> <span class="toc-text">仪表盘安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85chromium%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">1.6.</span> <span class="toc-text">重新安装chromium浏览器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ftp%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85"><span class="toc-number">1.7.</span> <span class="toc-text">ftp服务安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">1.8.</span> <span class="toc-text">文件夹及文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.9.</span> <span class="toc-text">时间设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E6%BA%90"><span class="toc-number">1.10.</span> <span class="toc-text">更换源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E5%8F%8A%E5%85%B3%E9%97%ADGUI"><span class="toc-number">1.11.</span> <span class="toc-text">开启及关闭GUI</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E5%BA%94%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">进阶应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85SQLite"><span class="toc-number">2.1.</span> <span class="toc-text">安装SQLite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.2.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E8%B0%83%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">PHP调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pytho%E8%B0%83%E7%94%A8"><span class="toc-number">2.4.</span> <span class="toc-text">Pytho调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4"><span class="toc-number">2.5.</span> <span class="toc-text">树莓派进程守护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-number">2.6.</span> <span class="toc-text">内网穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.7.</span> <span class="toc-text">安装docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2alist"><span class="toc-number">2.8.</span> <span class="toc-text">部署alist</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">部分问题</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/Graduation/" title="亲爱的花"><img src="https://pic.imgdb.cn/item/64c8e3d51ddac507cc1a81df.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="亲爱的花"></a><div class="content"><a class="title" href="/2023/06/30/Graduation/" title="亲爱的花">亲爱的花</a><time datetime="2023-06-30T15:59:59.000Z" title="发表于 2023-06-30 23:59:59">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/Always_with_me/" title="Always with me"><img src="https://pic.imgdb.cn/item/64ca3a1a1ddac507cc73853d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always with me"></a><div class="content"><a class="title" href="/2023/06/01/Always_with_me/" title="Always with me">Always with me</a><time datetime="2023-06-01T13:14:05.000Z" title="发表于 2023-06-01 21:14:05">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]"><img src="https://pic.imgdb.cn/item/63bd61cbbe43e0d30e088c6f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于GPS的坐标路径分析系统[待更新]"></a><div class="content"><a class="title" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]">基于GPS的坐标路径分析系统[待更新]</a><time datetime="2022-12-16T07:05:02.000Z" title="发表于 2022-12-16 15:05:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人"><img src="https://s1.ax1x.com/2022/11/27/zNjMhn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NovelAI——AI绘图+QQ机器人"></a><div class="content"><a class="title" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人">NovelAI——AI绘图+QQ机器人</a><time datetime="2022-11-26T10:18:47.000Z" title="发表于 2022-11-26 18:18:47">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！"><img src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『弹幕笔记』开源！"></a><div class="content"><a class="title" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！">『弹幕笔记』开源！</a><time datetime="2022-11-12T13:48:39.000Z" title="发表于 2022-11-12 21:48:39">2022-11-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2023 By 不旦枕戈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">立于皓月之边，不弱星光之势</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async="" data-pjax="" src="https://npm.elemecdn.com/akilar-candyassets/js/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/05/01/The truth_leave/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-01</span><a class="blog-slider__title" href="2022/05/01/The truth_leave/" alt="">The truth that you leave</a><div class="blog-slider__text">原以为告别总会留有时间，相拥着泪别亦或者目送着渐行渐远。但后来才发现，告别大多都是悄无声息的。原来那次相见，就已经是最后一面。</div><a class="blog-slider__button" href="2022/05/01/The truth_leave/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/11/12/BulletNote_open-source/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-12</span><a class="blog-slider__title" href="2022/11/12/BulletNote_open-source/" alt="">『弹幕笔记』开源！</a><div class="blog-slider__text">我喜欢一些奇奇怪怪的东西，即使我不会以此谋生。但我喜欢有能力实现自己想法的自己。</div><a class="blog-slider__button" href="2022/11/12/BulletNote_open-source/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/12/05/Note-sql/" alt=""><img width="48" height="48" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-05</span><a class="blog-slider__title" href="2021/12/05/Note-sql/" alt="">SQL食用笔记</a><div class="blog-slider__text">此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</div><a class="blog-slider__button" href="2021/12/05/Note-sql/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async="" src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>医院统计与病案管理笔记 | 朝花夕拾</title><meta name="keywords" content="期末,学习笔记"><meta name="author" content="不旦枕戈"><meta name="copyright" content="不旦枕戈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="文章分为两个部分，分别记录了病案管理与医院统计的重点学习内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="医院统计与病案管理笔记">
+<meta property="og:url" content="https://nrhs-space.github.io/2021/12/25/Note-illness_count/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="文章分为两个部分，分别记录了病案管理与医院统计的重点学习内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg">
+<meta property="article:published_time" content="2021-12-25T05:16:36.000Z">
+<meta property="article:modified_time" content="2022-05-13T02:30:06.810Z">
+<meta property="article:author" content="不旦枕戈">
+<meta property="article:tag" content="期末">
+<meta property="article:tag" content="学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://nrhs-space.github.io/2021/12/25/Note-illness_count/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d32f3f32e50ca331a0cc77ab592b373";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://npm.elemecdn.com/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '医院统计与病案管理笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-13 10:30:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="朝花夕拾" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s4.ax1x.com/2021/12/25/TUdiwV.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝花夕拾</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">医院统计与病案管理笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-25T05:16:36.000Z" title="发表于 2021-12-25 13:16:36">2021-12-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-13T02:30:06.810Z" title="更新于 2022-05-13 10:30:06">2022-05-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="医院统计与病案管理笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2021/12/25/Note-illness_count/#post-comment"><span id="twikoo-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('https://s4.ax1x.com/2021/12/25/TUdiwV.jpg');"></div><article class="post-content" id="article-container"><h1 id="病案管理"><a href="#病案管理" class="headerlink" title="病案管理"></a>病案管理</h1><h2 id="📒法律与时间相关"><a href="#📒法律与时间相关" class="headerlink" title="📒法律与时间相关"></a>📒法律与时间相关</h2><div class="note success flat"><p>该类目以题库为基础,分类了与<code>法律</code>，<code>时间</code>规定相关的内容。</p>
+</div>
+<ol>
+<li><code>1982</code>年卫生部颁布(<strong>《全国医院工作条例、医院工作制度与医院工作人员职责》</strong>),要求医院必须建立病案科。</li>
+<li>(<code>2009</code>)年12月26日颁发的<strong>《中华人民共和国侵权责任法》</strong><ul>
+<li>第<code>61条</code>规定,医疗机构必须按规定填写并妥善保管病历资料</li>
+<li>第<code>54条</code>规定,患者在诊疗活动中受到损害,医疗机构及其医务人员有过错的,由医疗机构承担赔偿责任</li>
+</ul>
+</li>
+<li>(<code>2012</code>)年,原卫生部公布<strong>《医院评审标准》</strong>对病案管理人员做了要求。</li>
+<li>(<code>2002</code>)年,国务院颁布<strong>《医疗事故处理条例》</strong>，生效的时间是(<code>2002年9月1日</code>)<ul>
+<li>第<code>8</code>条明确规定,医疗机构应当按照国务院卫生行政部门的规定要求,书写并妥善保管病历资料</li>
+<li>明确规定:“严禁涂改、伪造、隐匿、销毁或者抢夺病历资料”</li>
+</ul>
+</li>
+<li>作为<code>CIS</code>核心的电子病案早期尝试可追溯到(<code>20世纪70年代</code>)</li>
+<li><code>20世纪60年代</code>美`国麻省总医院开发完成的最早期电子病案系统之一是(COSTAR)</li>
+<li><strong>《中华人民共和国电子签名法》</strong>实施日期是(<code>2005年4月1日</code>)</li>
+<li><code>1995</code>年,我国卫生部提出了(<strong>金卫工程</strong>),该工程中将电子病案系统作为重点研究课题之一</li>
+<li><code>2013</code>年的<strong>《医疗机构病历管理规定》</strong>明确了对同一患者建立唯一的标识号码。<em><code>1987</code>即开始颁布</em><ul>
+<li>已建立电子病历的医疗机构,应当将病历标识号码与患者(身份证号)编号相关联。</li>
+<li>明确指出“医疗机构应当建立病历管理制度,设置专门部门或者配备专(兼)职人员具体负责本机构病历和病案的保存与管理工作”</li>
+<li>住院病历由(所在病区)统一保管。</li>
+<li>《医疗机构病历管理规定》施行的时间是<code>2002年9月1日</code></li>
+<li>要求借阅病历应当在(<code>3</code>)个工作日内归还</li>
+<li>纸质病历和电子病历具有(同等效力)</li>
+</ul>
+</li>
+<li>光盘存储技术目前应用广泛,资料显示光盘的使用寿命为<code>10~20年</code></li>
+<li>目前我国使用的全国统一病案首页是(<code>2012</code>)版病案首页</li>
+<li><code>20世纪80年代中期</code>,政府医疗卫生政策变化催生了临床信息系统的代表国家是(美国)</li>
+<li><strong>《三级综合医院评审标准实施细则(2011年版)》</strong>,其中的C级标准要求<ul>
+<li>病案科非相关专业人员小于(<code>50%</code>)</li>
+<li>病案首页诊断填写完整,主要诊断的正确率达到(<code>100%</code>)</li>
+<li>患者出院后,住院病历在7个工作日之内回归病案科达到(<code>90%</code>)</li>
+<li>国务院副总理的病案至少保存(<code>20</code>)年</li>
+<li>门(急)诊病历最后一次就诊后至少保存<code>15年</code></li>
+<li>住院病历的保存期不得少于<code>30年</code></li>
+<li>国务院副总理的病案保密级别为机密级,至少20年</li>
+</ul>
+</li>
+<li>ISO:<ul>
+<li>于<code>1979</code>年成立了(<code>TC176</code>)</li>
+<li>ISO在(<code>1994</code>)年提出的ISO族</li>
+</ul>
+</li>
+<li>卫生部以文件形式发布的三个文件《城市社区卫生服务机构设置原则》、《城市社区卫生服务中心设置指导标准》、《城市社区卫生站设置指导标准》的时间是(<code>2000年12月29日</code>)</li>
+<li>社区卫生服务管理制度中的处方管理制度规定一般处方保存的时间为(<code>一年</code>)</li>
+<li><code>1968</code>年美国的Weed等率先提出并要求医生的医疗服务中要有(<strong>以个人健康问题</strong>)为导向的健康档案记录方式</li>
+<li>(<code>197``4</code>)年世界卫生组织(WHO)根据社区卫生护理界的专家们的定义,给出了建立在社区卫生作用上的社区定义</li>
+<li>目前,病案的称谓已不再仅指医疗记录,而是指更为广义的健康记录,这种改变首先出现在<code>20世纪90年代</code></li>
+<li>我国最早的病案记录是<code>公元前200年</code>西汉时(<em>最早出现纸张病案</em>)的淳于意,他写的25例病案记录在《史记-扁鹊仓公列传》</li>
+<li>我国最早的医学文字记录出现在<code>3500年前</code></li>
+<li>我国<code>第六次</code>全国病案管理学术会议召开的时间、地点是(<code>1996年9月在成都召开</code>)</li>
+<li><code>20世纪50年代</code>,欧美国家开始采用病案保存的方式是(微缩)</li>
+<li>美国在四所大型医院中开展了病案管理专业教育的时间是<code>1935年</code></li>
+<li>北京市崇文区卫生学校举办了第一个正规教育的中专病案班,时间是<code>1985年</code></li>
+<li>病案管理专业列入<strong>《中华人民共和国普通中等专业学校专业目录》</strong>的时间是<code>1993年</code></li>
+<li>我国<code>第一次</code>全国性的病案统计会议召开的时间、地点是<code>1981年</code>在南京召开</li>
+<li>我国病案学会以中华病案学会的名义加入国际病案学会的时间是<code>1992年</code></li>
+<li>国际病案学术会议每<code>四年一次</code>,正式成立国际病案组织联合会的时间是<code>1968年</code></li>
+<li>人类历史第一个病案室位于美国波士顿的麻省综合医院,建于<code>1897</code>年</li>
+<li>我国原卫生部于(<code>1953</code>)年将诊籍、医案、病历定名为病案</li>
+<li>中华医院管理学会设计的<strong>《医院评审文件》</strong>要求我国<code>二级以上</code>医疗单位应当设立病案委员会。</li>
+<li>(<code>1922</code>)年<code>3月</code>建立了医院病案委员会,推动了北京协和医院病案工作的发展建设。</li>
+<li>国际上第一个病案学术组织—北美病案管理学会成立于<code>1928</code>年</li>
+<li>我国第一个地方性病案管理学组织成立于<code>1982</code>年</li>
+<li><strong>《中华人民共和国执业医师法》</strong>施行的时间是(<code>1995年5月1日</code>)<ul>
+<li>第<code>23</code>条明确指出:“医师实施医疗、预防、保健措施、签署有关医学证明文件,必须亲自诊查、调查,并按照规定及时填写医学文书,不得隐匿、伪造或者销毁医学文书及有关资料”</li>
+<li>第<code>22</code>条规定,医师在执业活动中要关心、爱护、尊重患者,保护患者的隐私</li>
+</ul>
+</li>
+<li><code>1982</code>年<strong>《医院工作制度》</strong>指出:“住院病案原则上应该(永久保存)</li>
+<li><code>2002年4月1日</code>起实施的<strong>《最高人民法院关于民事诉讼证据的若干规定》</strong>中<code>第四条</code>第一款<code>第八项</code>规定:“因医疗行为引起的侵权诉讼,由医疗机构就医行为与损害后果之间不存在因果关系及不存在医疗过错承担(<strong>举证责任</strong>)</li>
+<li><code>1983</code>年开始的以“相关疾病诊断分组”为标准的“预付收费体制”,其“相关疾病诊断分组”的简称是(<code>DRGs</code>)</li>
+<li>一般需长期治疗的慢性患者或疾病恢复慢的患者出院<code>2-4周</code>内应随访一次,此后至少(<code>三个月</code>)随访一次</li>
+<li>国家档案局正式颁发<strong>《档案库房技术管理暂行规定》</strong>的时间是<code>1987</code>年</li>
+<li>《护士管理办法》第24条规定,护士在执业中得熟悉就医者的隐私,不得泄露,但法律另有规定的除外</li>
+<li>我国最早的医学文字记录起源于<code>商代</code>(载体为甲骨)</li>
+<li>一般认为我国现代病案管理的起始时间是<code>1921</code></li>
+<li>第十二届国际病案大会的主题是“卫生信息管理的未来”,大会举办的地点是<code>德国慕尼黑</code></li>
+</ol>
+<blockquote>
+<p>下面部分不可归类于他处者</p>
+</blockquote>
+<ol>
+<li><strong>《病历书写基本规范》</strong>(试点)规定化验单在出具结果后应在<code>24小时内</code>粘贴</li>
+<li>《病历书写基本规范&gt;(试行)规定首次病程记录应当完成的时间是在患者入院后8小时内</li>
+<li>因抢救危重患者,未能及时书写病历的,有关医务人员应当在抢救结束后6小时内据实补记,并加以注明</li>
+<li>全国医院工作条例规定:“病历是医疗、教学和科研的重要资料,也是法律依据”</li>
+<li>1987年国务院发布的现行《医疗事故处理办法》第8条明确规定:“发生故事或事件的医疗单位,应指派专人妥善保管有关的各种原始资料。”</li>
+<li>医疗机构应当在收到住院患者检查检验结果和相关资料后24小时内归入或者录入住院病历</li>
+<li>借阅病历应当在3个工作日内归还</li>
+</ol>
+<h2 id="📒作用、功能、职责"><a href="#📒作用、功能、职责" class="headerlink" title="📒作用、功能、职责"></a>📒作用、功能、职责</h2><div class="note success flat"><p>该类目以题库为基础，分类了某些名词的<code>作用</code>属性</p>
+</div>
+<blockquote>
+<p>病案信息的作用</p>
+<ul>
+<li>医疗作用</li>
+<li>研究作用</li>
+<li>教学作用</li>
+<li>管理作用</li>
+<li>医疗付款作用</li>
+<li>医疗纠纷与法律依据作用</li>
+<li>历史作用</li>
+</ul>
+<p>基本医疗</p>
+</blockquote>
+<p><em>我国基本医疗保险组织参保、征收保险费的统筹单位原则上是地级市以上单位</em></p>
+<ul>
+<li>基本技术</li>
+<li>基本服务</li>
+<li>基本收费</li>
+<li>基本用药</li>
+</ul>
+<blockquote>
+<p>病案的功能</p>
+<ul>
+<li>备忘功能</li>
+<li>备考功能</li>
+<li>守信功能</li>
+<li>凭证功能</li>
+</ul>
+<p>保险三要素</p>
+<ul>
+<li>风险存在并导致经济损失</li>
+<li>建立保险基金</li>
+<li>订立保险合同</li>
+</ul>
+<hr>
+<p>系列编号</p>
+<ul>
+<li>每次都给一个新号</li>
+<li>可减少工作流程，病案磨损等。但资料分散，不利于管理，查找…</li>
+</ul>
+<p>单一编号</p>
+<ul>
+<li>将一个患者的所有医疗记录集中在一个病案号中管理。</li>
+<li>集中管理，保持了连续性与完整性。但工作流程繁琐，病案容易磨损…</li>
+</ul>
+<p>系列单一编号</p>
+<ul>
+<li>将前两种编号结合起来。每次患者入院发一个新号，然后将旧号并入新号</li>
+<li>浪费人力物力，又降低了病案供应速度</li>
+</ul>
+</blockquote>
+<p>P. <em>大多数医院均采用单一编号</em></p>
+<hr>
+<blockquote>
+<p>一号集中制</p>
+</blockquote>
+<p><em>全面搜集有关患者的医疗信息</em> </p>
+<ul>
+<li>患者所有诊疗记录均保存在一个编号当中</li>
+<li>保证了资料的完整性，连续性</li>
+</ul>
+<blockquote>
+<p>两号集中制</p>
+<ul>
+<li>住院记录与门诊记录分别编号，但病案却集中在一个编号中管理</li>
+<li>一旦发给住院号，则全使用住院号</li>
+<li>保证了资料的完整性，连续性</li>
+</ul>
+<p>一号分开制</p>
+<ul>
+<li>住院病案与门诊病案分开管理，但使用同一个病案号</li>
+<li>保证了安全，但增加了工作量</li>
+</ul>
+<p>两号分开制</p>
+<ul>
+<li>住院病案与门诊病案分别编码，单独存放，互不关联</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<p>转科登记所具备的登记作用是</p>
+</blockquote>
+<ul>
+<li>可作为统计的原始资料，也可作为提供查找病案的原始记录</li>
+</ul>
+<blockquote>
+<p>病案对临床研究与临床流行病学研究具有</p>
+</blockquote>
+<ul>
+<li>备考作用</li>
+</ul>
+<blockquote>
+<p>病案所具有的信息作用主要是指</p>
+</blockquote>
+<ul>
+<li>直接提供医疗服务的资料</li>
+</ul>
+<blockquote>
+<p>门诊量的增减、住院病种的变化、住院天数的变化、医疗付费的增减,体现了病案信息的</p>
+</blockquote>
+<ul>
+<li>管理作用</li>
+</ul>
+<blockquote>
+<p>病案的医疗作用主要利用的病案的</p>
+</blockquote>
+<ul>
+<li>备忘作用</li>
+</ul>
+<blockquote>
+<p>病案用于医院管理是利用病案的</p>
+</blockquote>
+<ul>
+<li>备考功能</li>
+</ul>
+<blockquote>
+<p>应用病案的凭证功能的是</p>
+</blockquote>
+<ul>
+<li>医疗付款</li>
+</ul>
+<blockquote>
+<p>病案的历史作用是利用病案</p>
+</blockquote>
+<ul>
+<li>备考与备忘功能</li>
+</ul>
+<blockquote>
+<p>医务人员对患者疾病正确诊断和决定治疗方案时病案信息所起的作用是</p>
+</blockquote>
+<ul>
+<li>医疗作用</li>
+</ul>
+<blockquote>
+<p>通过对病案资料的统计加工才能发挥的病案信息作用是</p>
+</blockquote>
+<ul>
+<li>医院管理作用</li>
+</ul>
+<blockquote>
+<p>基本医疗保险的作用不包括</p>
+</blockquote>
+<ul>
+<li>提高医疗资源利用率</li>
+</ul>
+<blockquote>
+<p>在随诊工作的整个过程中,病案管理人员的作用是</p>
+</blockquote>
+<ul>
+<li>桥梁作用</li>
+</ul>
+<blockquote>
+<p>为保证病案的有效使用及最大效率地发挥病案作用,采用一系列的措施称为</p>
+</blockquote>
+<ul>
+<li>病案控制</li>
+</ul>
+<blockquote>
+<p>病案管理质控主要是</p>
+</blockquote>
+<ul>
+<li>对病案管理工作的各个流程进行质量检查、评估</li>
+</ul>
+<blockquote>
+<p>对医师、护士、技术人员所写的并按内容记录级报告的及时性、完整性、准确性及治疗合理性的要求,反映医疗水平和医院管理水平的是</p>
+</blockquote>
+<ul>
+<li>病案书写质量</li>
+</ul>
+<h2 id="📒缩略简写"><a href="#📒缩略简写" class="headerlink" title="📒缩略简写"></a>📒缩略简写</h2><div class="note success flat"><p>该类目以题库为基础，分类了某些名词的英文缩写等内容</p>
+</div>
+<ol>
+<li>在电子病案术语中,基于计算机的医学记录的缩写是CMR</li>
+<li>一体化病案IMR</li>
+<li>问题排列病案POMR</li>
+<li>资料来源定向病案SOMR</li>
+<li>病案号MRN</li>
+<li>国际病案协会IFHRO</li>
+<li>中华病案学会CMRA</li>
+<li>戴明环又称PDCA循环</li>
+</ol>
+<ul>
+<li>分为4个阶段，8个步骤</li>
+</ul>
+<ol>
+<li>按服务项目收费FFS</li>
+<li>按病种付费DRGs</li>
+</ol>
+<h2 id="📒指标与要求"><a href="#📒指标与要求" class="headerlink" title="📒指标与要求"></a>📒指标与要求</h2><div class="note success flat"><p>该类目以题库与教材为基础，分类了一些大家喜闻乐见的~死规定~好要求</p>
+</div>
+<blockquote>
+<p>病案委员会</p>
+<ul>
+<li>由院长，临床科室等职能科室专家与病案科主任组成</li>
+<li>每年至少召开1~2次会议</li>
+<li>病案科是病案委员会的办事机构</li>
+</ul>
+<p>三级医院</p>
+<ul>
+<li>科主任应具有本专业高技术职务任职资格者承担</li>
+<li>无菌手术切口感染率≤0.5%</li>
+</ul>
+<p>二级医院</p>
+<ul>
+<li>二甲及以上医院专门从事住院病历管理的人员与医院病床比不得少于1:50</li>
+<li>病案科主任应具有本专业中技术职务任职资格者承担</li>
+</ul>
+<p>其他</p>
+<ol>
+<li>病案科应设有供医务人员讨论、分析、参阅病案的阅览室,其总面积为20~50m²</li>
+<li>病案科工作人员需有独立的办公室,每人最少应拥有的工作空间面积为6m²</li>
+<li>发达国家医院病床与病案管理人员的配备比例为10~15:1</li>
+<li>环节质量控制的覆盖率应为35%~45%</li>
+<li>终末质量监控的覆盖率应大于等于70%</li>
+<li>随诊工作开展较好的医院,随诊率一般应≥95%</li>
+<li>病案库房</li>
+</ol>
+<ul>
+<li>防水、防潮重点不包括病案柜周围</li>
+<li>建筑耐火等级为一级</li>
+<li>与周围的建筑之间的防火间距应不小于30~35m</li>
+<li>温度标准为14℃~20℃,相对湿度为45%~ 60%。</li>
+</ul>
+<ol>
+<li>病案科内至少应有贮存5年以上常用病案的空间</li>
+<li>对于病案而言,不适宜的库房温度是指高于30℃，低于0℃</li>
+<li>从事门诊病历管理的人员与医院日均门诊量的比不得少于1:300</li>
+<li>病案科室主任应至少要有从事本专业工作5年以上</li>
+<li>病案管理工人分为3个技术等级</li>
+<li>住院病案于患者出院24h内交送病案科</li>
+<li>挂号员每日退号率为≤2%</li>
+<li>医师因工作外出、出国或生病等合理原因长期停诊或短期停诊,必须提前3天向挂号处和医务部报批</li>
+<li></li>
+</ol>
+</blockquote>
+<h2 id="不可归类于他处者的部分题目-T-300-702"><a href="#不可归类于他处者的部分题目-T-300-702" class="headerlink" title="不可归类于他处者的部分题目 T.300-702"></a>不可归类于他处者的部分题目 T.300-702</h2><ol>
+<li>目前我国常用的患者姓名索引的排列方法包括：汉语拼音法、四角号码法、汉语拼音与四角号码合用</li>
+<li>对慢性病的精细化管理的要求,每年定期随访监测、行为干预不少于4次</li>
+<li>社区卫生服务是以基层卫生机构为主体，全科医生为骨干，以人的健康为中心，需求为导向。</li>
+<li>病案管理学是一门边缘学科</li>
+<li>病案科属于医技科室,二级以上医院病案管理科室应直属于院长领导</li>
+<li>医务人员在医疗活动过程中形成的医疗记录为病历，完成医疗活动整理后才为病案</li>
+<li>第一所授予病案学士学位的单位是：美国圣-玛丽医院</li>
+<li>医患关系在法律上属于：民事法律关系</li>
+<li>我国各级基本医疗保险经办机构,其行政上隶属于劳动保障部门</li>
+<li>将医疗保险分为直接关系型和间接关系型的分类形式是：按医疗服务的供求关系分类</li>
+<li>基本医疗保险简称的“三个目录”是指:药品目录、诊疗项目目录、医疗服务设施范围目录</li>
+<li>“乙类目录”由国家制定,各地可根据实际情况进行调整,但增加和减少的品种之和不得超过国家制定的乙类目录”药品总数的15%</li>
+<li>我国基本医疗保险统筹基金中用人单位缴纳与个人账户资金的比例大约为7：3</li>
+<li>造纸植物纤维的种类中不包括合成纤维</li>
+<li>造纸植物纤维的主要化学成分是纤维素、半纤维素、木素</li>
+<li>病案表格功能中不包括：审核资料</li>
+<li>在电子病案主要技术中多层结构技术又称为：中间件技术</li>
+</ol>
+<hr>
+<h1 id="医院统计"><a href="#医院统计" class="headerlink" title="医院统计"></a>医院统计</h1><div class="note warning flat"><p><strong>本章涉及较多统计学知识，可能我也有部分错误。注意查看。</strong></p>
+</div>
+<h2 id="一些统计学术语"><a href="#一些统计学术语" class="headerlink" title="一些统计学术语"></a>一些统计学术语</h2><ol>
+<li>计量资料：是对每个观察单位用定量方法测定某项指标量的大小所得到的资料，有单位，有确切值（身高体重）。</li>
+<li>数值变量：说明事物数字特征，由数值变量的测量值构成的资料称为数值变量资料（定量资料）。大多数的数值变量为连续型变量,如身高、体重…</li>
+<li>分类变量：说明事物类别的一个名称（疗效，行业，性别，血型）。也为计数资料。</li>
+</ol>
+<ul>
+<li>有序：取值各类别间存在一定程度差异（学历），它也是等级资料。</li>
+</ul>
+<ol>
+<li>定量资料：以数字形式表现出来的研究资料</li>
+</ol>
+<ul>
+<li>离散型：在离散点上分布的原始数据(家庭人口)</li>
+</ul>
+<ol>
+<li>定性资料：以文字，图形，录像，音频等非数字形式表现的资料</li>
+<li>等级资料：具有一定级别的资料，没有确切的值（疗效）</li>
+<li>计数资料：将观察单位按照其性质与类别分组，然后分析各组情况。只在乎数量，不在乎具体指标性质</li>
+<li>定量变量：即连续量，由测量或计数，统计得到的量（血脂），它具有数值特征。</li>
+<li>离散型资料：其取值可以一一列举出来</li>
+<li>连续型资料：取值为范围内任意值</li>
+<li>二项分类资料：将所有文本划分为两个互不相容的类别的方法。</li>
+</ol>
+<h2 id="概念及含义"><a href="#概念及含义" class="headerlink" title="概念及含义"></a>概念及含义</h2><ol>
+<li>归纳法：平均分析，相关分析，相对分析，回归分析</li>
+<li>医院统计分析的基本内容：</li>
+</ol>
+<ul>
+<li>分析事物内部构成</li>
+<li>分析事物的相互关系</li>
+<li>分析计划指标完成情况</li>
+<li>综合对比分析</li>
+</ul>
+<ol>
+<li>统计量是描述样本特征的指标</li>
+<li>有代表性的样本指的是依照随机原则抽取总体中的个体</li>
+<li>统计资料的类型包括数值变量资料和分类变量资料</li>
+<li>老龄化是指65岁及以上老龄人口占总人口的比重达到7%</li>
+<li>病死率:疾病的预后</li>
+<li>死亡率:人群中因该病死亡的频数</li>
+</ol>
+<h2 id="法律与规定"><a href="#法律与规定" class="headerlink" title="法律与规定"></a>法律与规定</h2><ol>
+<li>《国家卫生统计调查制度》制定的依据是《全国卫生统计工作管理办法》</li>
+<li>医院统计工作的主要内容是在《全国卫生资源与医疗服务调查制度》指导下开展的</li>
+</ol>
+<h2 id="其他部分"><a href="#其他部分" class="headerlink" title="其他部分"></a>其他部分</h2><ol>
+<li>统计工作的步骤中,最关键的一步是设计</li>
+<li>统计分析的主要内容是统计描述与统计推断</li>
+<li>等级分组资料兼有计量资料和计数资料的一些性质</li>
+<li>相对数指标分析中标化率不反映某现象发生的实际水平</li>
+<li>构成比通常以100%为比例基数</li>
+<li>计算相对数的目的是便于比较</li>
+<li>计算标化率的目的是消除资料内部构成不同的影响,使率具有可比性</li>
+<li>描述分类变量资料的主要统计指标是相对数</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">不旦枕戈</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nrhs-space.github.io/2021/12/25/Note-illness_count/">https://nrhs-space.github.io/2021/12/25/Note-illness_count/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nrhs-space.github.io" target="_blank">朝花夕拾</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%9C%9F%E6%9C%AB/">期末</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></div><div class="post_share"><div class="social-share" data-image="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/15/CTF-blue_space_wp/"><img class="prev-cover" src="https://s4.ax1x.com/2022/01/15/7GLgo9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">蓝色空间CTF『欢乐赛』Writeup</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/05/Note-sql/"><img class="next-cover" src="https://s4.ax1x.com/2021/12/06/or02FS.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQL食用笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/04/Note-icd/" title="ICD-10 编码笔记"><img class="cover" src="https://s4.ax1x.com/2021/12/06/oyDHxg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-04</div><div class="title">ICD-10 编码笔记</div></div></a></div><div><a href="/2021/12/04/Note-web/" title="Web 奇怪开发技巧 『搜集中』"><img class="cover" src="https://s4.ax1x.com/2021/12/12/oboXH1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-04</div><div class="title">Web 奇怪开发技巧 『搜集中』</div></div></a></div><div><a href="/2021/12/05/Note-sql/" title="SQL食用笔记"><img class="cover" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-05</div><div class="title">SQL食用笔记</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">不旦枕戈</div><div class="author-info__description">理想现实主义者</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fab fa-windows"></i><span>花的秘密世界</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-info card-announcement-animation"></i><span>Echo</span></div><div class="announcement_content">“我不想如此过完这一生，可是好像逃不过”</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%97%85%E6%A1%88%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">病案管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E6%B3%95%E5%BE%8B%E4%B8%8E%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3"><span class="toc-number">1.1.</span> <span class="toc-text">📒法律与时间相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E4%BD%9C%E7%94%A8%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E8%81%8C%E8%B4%A3"><span class="toc-number">1.2.</span> <span class="toc-text">📒作用、功能、职责</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E7%BC%A9%E7%95%A5%E7%AE%80%E5%86%99"><span class="toc-number">1.3.</span> <span class="toc-text">📒缩略简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%92%E6%8C%87%E6%A0%87%E4%B8%8E%E8%A6%81%E6%B1%82"><span class="toc-number">1.4.</span> <span class="toc-text">📒指标与要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E5%BD%92%E7%B1%BB%E4%BA%8E%E4%BB%96%E5%A4%84%E8%80%85%E7%9A%84%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE-T-300-702"><span class="toc-number">1.5.</span> <span class="toc-text">不可归类于他处者的部分题目 T.300-702</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%BB%E9%99%A2%E7%BB%9F%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">医院统计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%AF%E8%AF%AD"><span class="toc-number">2.1.</span> <span class="toc-text">一些统计学术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%90%AB%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">概念及含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%95%E5%BE%8B%E4%B8%8E%E8%A7%84%E5%AE%9A"><span class="toc-number">2.3.</span> <span class="toc-text">法律与规定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%83%A8%E5%88%86"><span class="toc-number">2.4.</span> <span class="toc-text">其他部分</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/Graduation/" title="亲爱的花"><img src="https://pic.imgdb.cn/item/64c8e3d51ddac507cc1a81df.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="亲爱的花"></a><div class="content"><a class="title" href="/2023/06/30/Graduation/" title="亲爱的花">亲爱的花</a><time datetime="2023-06-30T15:59:59.000Z" title="发表于 2023-06-30 23:59:59">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/Always_with_me/" title="Always with me"><img src="https://pic.imgdb.cn/item/64ca3a1a1ddac507cc73853d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always with me"></a><div class="content"><a class="title" href="/2023/06/01/Always_with_me/" title="Always with me">Always with me</a><time datetime="2023-06-01T13:14:05.000Z" title="发表于 2023-06-01 21:14:05">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]"><img src="https://pic.imgdb.cn/item/63bd61cbbe43e0d30e088c6f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于GPS的坐标路径分析系统[待更新]"></a><div class="content"><a class="title" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]">基于GPS的坐标路径分析系统[待更新]</a><time datetime="2022-12-16T07:05:02.000Z" title="发表于 2022-12-16 15:05:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人"><img src="https://s1.ax1x.com/2022/11/27/zNjMhn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NovelAI——AI绘图+QQ机器人"></a><div class="content"><a class="title" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人">NovelAI——AI绘图+QQ机器人</a><time datetime="2022-11-26T10:18:47.000Z" title="发表于 2022-11-26 18:18:47">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！"><img src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『弹幕笔记』开源！"></a><div class="content"><a class="title" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！">『弹幕笔记』开源！</a><time datetime="2022-11-12T13:48:39.000Z" title="发表于 2022-11-12 21:48:39">2022-11-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2023 By 不旦枕戈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">立于皓月之边，不弱星光之势</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async="" data-pjax="" src="https://npm.elemecdn.com/akilar-candyassets/js/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/05/01/The truth_leave/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-01</span><a class="blog-slider__title" href="2022/05/01/The truth_leave/" alt="">The truth that you leave</a><div class="blog-slider__text">原以为告别总会留有时间，相拥着泪别亦或者目送着渐行渐远。但后来才发现，告别大多都是悄无声息的。原来那次相见，就已经是最后一面。</div><a class="blog-slider__button" href="2022/05/01/The truth_leave/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/11/12/BulletNote_open-source/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-12</span><a class="blog-slider__title" href="2022/11/12/BulletNote_open-source/" alt="">『弹幕笔记』开源！</a><div class="blog-slider__text">我喜欢一些奇奇怪怪的东西，即使我不会以此谋生。但我喜欢有能力实现自己想法的自己。</div><a class="blog-slider__button" href="2022/11/12/BulletNote_open-source/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/12/05/Note-sql/" alt=""><img width="48" height="48" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-05</span><a class="blog-slider__title" href="2021/12/05/Note-sql/" alt="">SQL食用笔记</a><div class="blog-slider__text">此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</div><a class="blog-slider__button" href="2021/12/05/Note-sql/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async="" src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

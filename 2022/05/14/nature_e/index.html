@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>e为什么是自然常数 | 朝花夕拾</title><meta name="keywords" content="数学"><meta name="author" content="不旦枕戈"><meta name="copyright" content="不旦枕戈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="很久前，我的小外甥女问我树木是什么时候长高的，我说每时每刻都在长高，那现在又长高了多少呢？我想，现在我能回答了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="e为什么是自然常数">
+<meta property="og:url" content="https://nrhs-space.github.io/2022/05/14/nature_e/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="很久前，我的小外甥女问我树木是什么时候长高的，我说每时每刻都在长高，那现在又长高了多少呢？我想，现在我能回答了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/05/14/O6mBAU.png">
+<meta property="article:published_time" content="2022-05-14T01:41:16.000Z">
+<meta property="article:modified_time" content="2022-05-14T03:26:16.049Z">
+<meta property="article:author" content="不旦枕戈">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/05/14/O6mBAU.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://nrhs-space.github.io/2022/05/14/nature_e/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d32f3f32e50ca331a0cc77ab592b373";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://npm.elemecdn.com/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'e为什么是自然常数',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-14 11:26:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="朝花夕拾" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/05/14/O6nCgs.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝花夕拾</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">e为什么是自然常数</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-14T01:41:16.000Z" title="发表于 2022-05-14 09:41:16">2022-05-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-14T03:26:16.049Z" title="更新于 2022-05-14 11:26:16">2022-05-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="e为什么是自然常数"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/05/14/nature_e/#post-comment"><span id="twikoo-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('https://s1.ax1x.com/2022/05/14/O6nCgs.png');"></div><article class="post-content" id="article-container"><p>在高中时，我无数次计算过<code>e</code>这个数。它常常伴随着各种奇奇怪怪的函数，方程出现。但老师只教过我怎样去算它，<code>e</code>约等于2.718…<code>e</code>的导数还是<code>e</code>……</p>
+<p>我也一直难以理解这个数，直到一次偶然机会，我才发现，<code>e</code>真是太神奇了！</p>
+<h2 id="e的历史"><a href="#e的历史" class="headerlink" title="e的历史"></a>e的历史</h2><p>我们在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%87%AA%E7%84%B6%E5%B8%B8%E6%95%B0/1298918">百度百科</a>上搜一下”e”，解释是：</p>
+<p><img src="https://s1.ax1x.com/2022/05/14/O6eOkF.jpg" alt=""></p>
+<p>数学对它的定义是“自然常数”。我对于常数的理解一直是，不会随着时间变换而变换的数。它就像明天一定会到来一样固定。</p>
+<p>但它为什么自然呢？</p>
+<h2 id="简单比喻"><a href="#简单比喻" class="headerlink" title="简单比喻"></a>简单比喻</h2><p>我们以银行存钱来比喻。银行存钱一般以年利率来计算，存一块钱，年利率3%。一年后就可以得到1.03块钱。</p>
+<p>我们假如有一个银行的利率是100%，那么，存1块钱，在一年后就应该得到2块钱。</p>
+<p>而利率是可以拆分的，年利率可以拆分为月利率，月利率下面还有七日利率。</p>
+<p>我们一块钱存半年，可以得到1.5元。我们再投资，1.5再存半年，应该得到1.5*(1+50%)=2.25。</p>
+<p>没错，我们的钱钱变多了😛</p>
+<p>如果银行允许我们无限操作，那么，我想我有了一个大胆的想法😎。</p>
+<hr>
+<p>但把时间拆成无数份，我们存了再取，取了再存。我们的钱钱是否真的会无限变大呢？</p>
+<p>我们存一年，利率公式为1<em>(1+100%)=2<br>一年分为两个时间段，利率公式为1</em>(1+50%)²=2.25<br>一年分为三个时间段，利率公式为1<em>(1+33%)³=2.352<br>一年分为四个时间段，利率公式为1</em>(1+25%)⁴=2.441<br>……</p>
+<p>时间是无限份的，我们就可以得到$\displaystyle\lim_{x\to+\infty}\left(1+\frac{1}{x}\right)^x$极限公式(第二重要极限😛)</p>
+<p>我们对它求一下极限，它其实就是e。</p>
+<p>我们将x带入值计算y=$\displaystyle\lim_{x\to+\infty}\left(1+\frac{1}{x}\right)^x$。也会发现，在y短暂的快速变化后，y值变化的速度越来越小，开始无限趋近于2.718…..</p>
+<p>它就是e</p>
+<hr>
+<p>很久之前，我的小外甥女问我树是什么时候长高的。我说在晚上你睡着了它就开始悄悄长高了。</p>
+<p>那它是突然一下就长高了呢还是一直在长呢？</p>
+<p>一直在长高呢，就像你长个子一样，每时每刻都在长。</p>
+<p>那现在它又长高了多少呢？</p>
+<p>….</p>
+<p>是阿，时间是无限的，是不可分割的。相比起上一刻，我们又变化了多少呢？</p>
+<p>我想，现在有了答案。我们变化了e</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">不旦枕戈</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nrhs-space.github.io/2022/05/14/nature_e/">https://nrhs-space.github.io/2022/05/14/nature_e/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nrhs-space.github.io" target="_blank">朝花夕拾</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/05/14/O6mBAU.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/17/stars/"><img class="prev-cover" src="https://s1.ax1x.com/2022/07/17/j5biyq.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">主不在乎</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/09/local_network/"><img class="next-cover" src="https://s1.ax1x.com/2022/05/09/OYkwAH.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">模拟器实现三层交换机互通及telnet登陆</div></div></a></div></nav><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">不旦枕戈</div><div class="author-info__description">理想现实主义者</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fab fa-windows"></i><span>花的秘密世界</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-info card-announcement-animation"></i><span>Echo</span></div><div class="announcement_content">“我不想如此过完这一生，可是好像逃不过”</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#e%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.</span> <span class="toc-text">e的历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%AF%94%E5%96%BB"><span class="toc-number">2.</span> <span class="toc-text">简单比喻</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/Graduation/" title="亲爱的花"><img src="https://pic.imgdb.cn/item/64c8e3d51ddac507cc1a81df.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="亲爱的花"></a><div class="content"><a class="title" href="/2023/06/30/Graduation/" title="亲爱的花">亲爱的花</a><time datetime="2023-06-30T15:59:59.000Z" title="发表于 2023-06-30 23:59:59">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/Always_with_me/" title="Always with me"><img src="https://pic.imgdb.cn/item/64ca3a1a1ddac507cc73853d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always with me"></a><div class="content"><a class="title" href="/2023/06/01/Always_with_me/" title="Always with me">Always with me</a><time datetime="2023-06-01T13:14:05.000Z" title="发表于 2023-06-01 21:14:05">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]"><img src="https://pic.imgdb.cn/item/63bd61cbbe43e0d30e088c6f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于GPS的坐标路径分析系统[待更新]"></a><div class="content"><a class="title" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]">基于GPS的坐标路径分析系统[待更新]</a><time datetime="2022-12-16T07:05:02.000Z" title="发表于 2022-12-16 15:05:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人"><img src="https://s1.ax1x.com/2022/11/27/zNjMhn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NovelAI——AI绘图+QQ机器人"></a><div class="content"><a class="title" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人">NovelAI——AI绘图+QQ机器人</a><time datetime="2022-11-26T10:18:47.000Z" title="发表于 2022-11-26 18:18:47">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！"><img src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『弹幕笔记』开源！"></a><div class="content"><a class="title" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！">『弹幕笔记』开源！</a><time datetime="2022-11-12T13:48:39.000Z" title="发表于 2022-11-12 21:48:39">2022-11-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2023 By 不旦枕戈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">立于皓月之边，不弱星光之势</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://npm.elemecdn.com/katex@latest/dist/katex.min.css"><script src="https://npm.elemecdn.com/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://npm.elemecdn.com/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async="" data-pjax="" src="https://npm.elemecdn.com/akilar-candyassets/js/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/05/01/The truth_leave/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-01</span><a class="blog-slider__title" href="2022/05/01/The truth_leave/" alt="">The truth that you leave</a><div class="blog-slider__text">原以为告别总会留有时间，相拥着泪别亦或者目送着渐行渐远。但后来才发现，告别大多都是悄无声息的。原来那次相见，就已经是最后一面。</div><a class="blog-slider__button" href="2022/05/01/The truth_leave/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/11/12/BulletNote_open-source/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-12</span><a class="blog-slider__title" href="2022/11/12/BulletNote_open-source/" alt="">『弹幕笔记』开源！</a><div class="blog-slider__text">我喜欢一些奇奇怪怪的东西，即使我不会以此谋生。但我喜欢有能力实现自己想法的自己。</div><a class="blog-slider__button" href="2022/11/12/BulletNote_open-source/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/12/05/Note-sql/" alt=""><img width="48" height="48" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-05</span><a class="blog-slider__title" href="2021/12/05/Note-sql/" alt="">SQL食用笔记</a><div class="blog-slider__text">此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</div><a class="blog-slider__button" href="2021/12/05/Note-sql/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async="" src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

